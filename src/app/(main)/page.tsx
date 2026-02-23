@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa6";
 import { PiNotepadLight } from "react-icons/pi";
 import { FiMessageSquare } from "react-icons/fi";
-
+import { RainbowButton } from "@/components/ui/rainbow-button";
 export default function Home() {
   return (
     <div className="max-w-5xl">
@@ -109,11 +109,17 @@ export default function Home() {
         </p>
         <p className="mt-2 font-main text-gray-400">Mostly powered by strong <span className="text-white font-serif italic ">coffee </span> and stubborn ambition ☕</p>
       </div>
-      <div className="flex px-10 py-4 items-center gap-3">
-        <span className="gap-2 text-white/85 bg-white/30 text-lg  border-2 border-gray-500 px-2 py-1 rounded font-main font-bold">
-          <a href="" className="flex items-center gap-1">
-           <PiNotepadLight /> Resume/CV </a>
-        </span>
+      <div className="flex px-10 py-4 items-center gap-3 ">
+        <RainbowButton variant="outline">
+          <a href="https://docs.google.com/document/d/e/2PACX-1vSvmlZaSpYs7Z7JWNe2o1VddGUWKsqNUGaQmWqGMDRT-lMaMF5QwWDXeVDqat9EQFwf5Ec_BDmSXWTE/pub" target="_blank" rel="noopener noreferrer"
+            className=" font-main font-semibold flex items-center gap-2"
+          >Resume/CV <PiNotepadLight />
+          </a></RainbowButton>
+        <RainbowButton>
+          <a href="https://x.com/tanishtirpathi" target="_blank" rel="noopener noreferrer"
+            className=" font-main font-semibold flex items-center gap-2"
+          >Connect <FiMessageSquare />
+          </a></RainbowButton>
       </div>
     </div>
   );
