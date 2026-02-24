@@ -2,9 +2,10 @@
 import TopBg from "../../components/layout/topbg";
 import HeroPfp from "@/features/uicomponents/heropfp";
 import SocialLinks from "@/features/uicomponents/sociallinks";
-import IntroAbout from "@/features/uicomponents/IntroAbout";
+import IntroAbout from "@/features/uicomponents/introAbout";
 import ConnectButtons from "@/features/uicomponents/connectButtons";
 import { TechStack } from "@/features/uicomponents/techstack";
+import GithubActivity from "@/features/uicomponents/github";
 export default function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Home() {
        <SocialLinks />
       <ConnectButtons />
       <TechStack />
+      <GithubActivity/>
     </div>
   );
 }
