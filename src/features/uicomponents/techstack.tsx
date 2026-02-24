@@ -5,7 +5,7 @@ import { TECH_STACK } from "@/features/data/techstack"
 
 export function TechStack() {
   return (
-    <section id="stack" className="px-1 py-6">
+    <section id="stack" className="px-1 py-6 my-10">
       <h2 className="text-3xl font-sans text-gray-300 font-bold ">
         Tech Stack
       </h2>
