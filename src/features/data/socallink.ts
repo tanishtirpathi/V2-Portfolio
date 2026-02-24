@@ -1,4 +1,3 @@
-
 import {
   FaXTwitter,
   FaLinkedin,
@@ -8,6 +7,8 @@ import {
   FaPinterest,
   FaEnvelope
 } from "react-icons/fa6"
+
+import { FaDev, FaMedium } from "react-icons/fa"
 
 export const socialLinks = [
   {
@@ -51,5 +52,17 @@ export const socialLinks = [
     icon: FaEnvelope,
     color: "hover:text-green-400",
     title: "Email"
+  },
+  {
+    href: "https://dev.to/yourusername", // change this
+    icon: FaDev,
+    color: "hover:text-black dark:hover:text-cyan-400",
+    title: "Dev.to"
+  },
+  {
+    href: "https://medium.com/@yourusername", // change this
+    icon: FaMedium,
+    color: "hover:text-black dark:hover:text-white",
+    title: "Medium"
   }
 ]
