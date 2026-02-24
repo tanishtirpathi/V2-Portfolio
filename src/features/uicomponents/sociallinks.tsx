@@ -3,7 +3,7 @@ import { socialLinks } from "@/features/data/socallink"
 
 export default function SocialLinks() {
   return (
-    <div className="flex items-center mt-5 px-1 gap-2 text-gray-500 text-xl">
+    <div className="flex items-center mt-5 px-1 gap-2 text-gray-500 text-xl mb-5">
       {socialLinks.map((link) => {
         const Icon = link.icon
         return (

@@ -1,27 +1,49 @@
+"use client";
 import Image from "next/image";
-export default function HeroPfp() {
-    return(
-          <div className="flex items-center gap-3">
-                <Image
-                  src="/images/pfp.jpg"
-                  alt="Profile Picture"
-                  width={120}
-                  height={120}
-                  className="rounded-full border-2 border-white/40  shadow-xl h-30 "
-                />
-        
-                <div>
-                  <span className="flex items-center gap-4">
-                    <h1 className="font-serif italic text-4xl">Tanish Tirpathi</h1>
-                    <p className="text-gray-500 text-3xl font-bold font-main">- Full stack developer</p>
-                  </span>
-                  <span className="flex items-center ">
-                    <div className="h-2 w-2 bg-green-500 rounded-full">
-                    </div><h5 className="text-sm px-1 text-gray-500 font-mono font-semibold">
-                      available to work </h5>
-                  </span>
-                </div>
-        
-              </div>
-    )
+
+export default function HeroSection() {
+  return (
+    <section className="relative w-full mb-5">
+
+      {/* Background */}
+      <div className="relative w-full h-[220px] sm:h-[260px]">
+        <Image
+          src="/images/bg.jpg"
+          alt="Background banner"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Profile Content */}
+      <div className="relative max-w-6xl mx-auto ">
+        <div className="flex items-end gap-4 -mt-16 sm:-mt-10">
+
+          {/* PFP */}
+          <Image
+            src="/images/pfp.jpg"
+            alt="Tanish Tirpathi"
+            width={120}
+            height={120}
+            priority
+            className="rounded-full shadow-xl object-cover w-14 h-24 sm:w-36 sm:h-36"
+          />
+
+          {/* Info */}
+          <div className="pb-4 flex flex-col items-start ">
+            <h1 className="text-2xl sm:text-4xl font-serif italic">
+              Tanish Tirpathi
+            </h1>
+
+            <p className="text-gray-500 font-semibold font-mono text-xs ">
+              Full Stack Developer
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 }

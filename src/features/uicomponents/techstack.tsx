@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { TECH_STACK } from "@/features/data/techstack"
+import SectionBorder from "@/components/layout/seprators"
 
 export function TechStack() {
   return (
@@ -10,7 +11,7 @@ export function TechStack() {
         Tech Stack
       </h2>
       <p className="text-gray-400 mb-4 font-mono text-xs "> Tech behind my all systems </p>
-
+<SectionBorder className="mb-5"/>
       <ul
         className="
           grid
@@ -112,7 +113,7 @@ export function TechStack() {
             </a>
           </li>
         ))}
-      </ul>
+      </ul><SectionBorder className="mt-5" />
     </section>
   )
 }
