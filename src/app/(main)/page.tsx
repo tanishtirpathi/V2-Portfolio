@@ -16,7 +16,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { TechStack } from "@/features/uicomponents/techstack";
 export default function Home() {
   return (
-    <div className="max-w-5xl">
+    <div>
       <TopBg />
       <div className="flex items-center gap-3">
         <Image
