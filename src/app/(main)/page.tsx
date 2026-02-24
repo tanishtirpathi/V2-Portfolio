@@ -1,5 +1,5 @@
 "use client";
-import TopBg from "../components/layout/topbg";
+import TopBg from "../../components/layout/topbg";
 import Image from "next/image";
 import {
   FaXTwitter,
@@ -13,6 +13,7 @@ import {
 import { PiNotepadLight } from "react-icons/pi";
 import { FiMessageSquare } from "react-icons/fi";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { TechStack } from "@/features/uicomponents/techstack";
 export default function Home() {
   return (
     <div className="max-w-5xl">
@@ -107,7 +108,9 @@ export default function Home() {
           applications that turn complex ideas into production-ready software.
 
         </p>
-        <p className="mt-2 font-main text-gray-400">Mostly powered by strong <span className="text-white font-serif italic ">coffee </span> and stubborn ambition ☕</p>
+        <span className="mt-2 font-main text-gray-400">
+          Mostly powered by strong <span className="text-white font-serif italic ">coffee </span>
+           and stubborn ambition ☕</span>
       </div>
       <div className="flex px-10 py-4 items-center gap-3 ">
         <RainbowButton variant="outline">
@@ -121,6 +124,7 @@ export default function Home() {
           >Connect <FiMessageSquare />
           </a></RainbowButton>
       </div>
+      <TechStack/>
     </div>
   );
 }
