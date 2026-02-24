@@ -11,36 +11,36 @@ export interface Project {
 
 export const ProjectDetail: Project[] = [
     {
-        title: "Project 1",
+        title: "Trend-Up",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/images/PFP.png",
-        LiveLink: "https://example.com/project1",
-        GithubLink: "github.com/project1",
+        image: "/images/Project/Trend.png",
+        LiveLink: "https://trendup.tanishtirpathi.me",
+        GithubLink: "https://github.com/tanishtirpathi/Trend-Up-",
         status: "Completed",
-        location:"/projects/project1"
+        location:"/projects/trendUp"
     },
         {
-        title: "Project 2",
+        title: "LeetLab",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/images/PFP.png",
-        LiveLink: "https://example.com/project2",
-        GithubLink: "github.com/project2",
-        status: "Completed",
-        location:"/projects/project2"
+        image: "/images/Project/LeetCode.png",
+        LiveLink: "https://lens.tanishtirpathi.me",
+        GithubLink: "https://github.com/tanishtirpathi/LeetLab",
+        status: "Building",
+        location:"/projects/leetLab"
     },
         {
-        title: "Project 3",
+        title: "MindPin",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/images/PFP.png",
+        image: "/images/Project/Mind.png",
         LiveLink: "https://example.com/project3",
-        GithubLink  : "github.com/project3",
+        GithubLink  : "https://github.com/tanishtirpathi/MindPin",
         status: "Completed",
         location:"/projects/project3"
     },
         {
-        title: "Project 4",
+        title: "Trip Guard ",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/images/PFP.png",
+        image: "/images/Project/trip.png",
         LiveLink: "https://example.com/project4",
         GithubLink: "github.com/project4",
         status: "Completed",
