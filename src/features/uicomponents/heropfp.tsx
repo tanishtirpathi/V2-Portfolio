@@ -3,11 +3,11 @@ export default function HeroPfp() {
     return(
           <div className="flex items-center gap-3">
                 <Image
-                  src="/images/PFP.png"
+                  src="/images/pfp.jpg"
                   alt="Profile Picture"
                   width={120}
                   height={120}
-                  className="rounded-full border-2 border-white/20  shadow-xl h-30 "
+                  className="rounded-full border-2 border-white/40  shadow-xl h-30 "
                 />
         
                 <div>

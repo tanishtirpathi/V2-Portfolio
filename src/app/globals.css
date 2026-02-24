@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+::selection {
+  background: rgb(196, 196, 196);
+  color: black;
+}
 
 @custom-variant dark (&:is(.dark *));
 
