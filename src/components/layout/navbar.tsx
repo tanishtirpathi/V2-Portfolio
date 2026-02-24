@@ -1,35 +1,55 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { Sun, Moon } from "lucide-react"
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setDarkMode(isDark);
-  }, []);
+    const isDark = document.documentElement.classList.contains("dark")
+    setDarkMode(isDark)
+  }, [])
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setDarkMode(!darkMode);
-  };
+    document.documentElement.classList.toggle("dark")
+    setDarkMode(!darkMode)
+  }
 
   return (
-    <nav className="w-full  dark:border-neutral-700 bg-white dark:bg-black transition-colors">
-      <div className="max-w-5xl mx-auto  font-main font-bold flex justify-end items-center py-4 px-4 gap-6 text-sm">
+    <nav
+      className="
+        fixed
+        top-0
+        w-1/2
+        z-50
+        backdrop-blur-lg
+        bg-white/60
+        dark:bg-black/10  
+        dark:border-neutral-800
+      "
+    >
+      <div className="max-w-5xl mx-auto font-main font-bold flex justify-end items-center py-4 px-4 gap-6 text-sm">
 
-        <Link href="/" className="flex items-center gap-1 opacity-70 hover:opacity-100 hover:underline transition">
+        <Link
+          href="/"
+          className="opacity-70 hover:opacity-100 hover:underline transition"
+        >
           Main
         </Link>
 
-        <Link href="/projects" className="flex items-center gap-1 opacity-70 hover:opacity-100 hover:underline transition">
+        <Link
+          href="/projects"
+          className="opacity-70 hover:opacity-100 hover:underline transition"
+        >
           Projects
         </Link>
 
-        <Link href="/blogs" className="flex items-center gap-1 opacity-70 hover:opacity-100 hover:underline transition">
+        <Link
+          href="/blogs"
+          className="opacity-70 hover:opacity-100 hover:underline transition"
+        >
           Blogs
         </Link>
 
@@ -42,5 +62,5 @@ export default function Navbar() {
 
       </div>
     </nav>
-  );
+  )
 }
