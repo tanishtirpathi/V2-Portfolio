@@ -25,13 +25,13 @@ export default function Navbar() {
         w-1/2
         z-50
         backdrop-blur-lg
-        bg-white/60
-        dark:bg-black/10
+        bg-white/80
+        dark:bg-black/20
         dark:border-neutral-800
         rounded-lg
       "
     >
-      <div className="max-w-5xl mx-auto font-main font-bold flex justify-end items-center py-2 px-4 gap-6 text-sm">
+      <div className="max-w-5xl mx-auto font-mono font-semibold flex justify-end items-center py-2 px-4 gap-6 text-sm">
 
         <Link
           href="/"

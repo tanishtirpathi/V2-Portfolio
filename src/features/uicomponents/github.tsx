@@ -4,11 +4,11 @@ import { GitHubCalendar } from "react-github-calendar"
 
 export default function GithubActivity() {
   return (
-    <section className="w-full mx-auto py-6 bg-black text-white rounded-2xl">
+    <section className="w-full mx-auto py-6 bg-black text-white mt-10">
       <h2 className="text-2xl font-bold font-sans text-gray-300">GitHub Activity</h2>
       <p className="text-gray-400 mb-4 font-mono text-xs">I know it's useless but </p>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto border border-white/10 px-4 rounded-md py-2 ">
         {/* Hover wrapper */}
         <div className="relative inline-block group">
           <a
