@@ -16,8 +16,7 @@ export default function MainLayout({
 
 
       <div className="flex justify-center ">
-        <div className=" w-1/2">
-
+        <div className="w-full md:w-4/5 lg:w-1/2">
           <Navbar />
           {children}
         </div>

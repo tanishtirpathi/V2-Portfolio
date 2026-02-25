@@ -31,13 +31,13 @@ export const BlogsCard: FC<BlogsCardProps> = ({ limit }) => {
             hover: text-white/90">
               
               <div className="col-span-12 lg:col-span-8 ">
-                <h2 className="text-base leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/70 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300 font-serif italic">
+                <h2 className="text-xs sm:text-xs md:text-lg leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/70 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300 font-serif italic">
                   {blog.title}
                 </h2>
               </div>
 
               <div className="col-span-12 lg:col-span-4 lg:text-right">
-                <div className="flex font-sans lg:justify-end gap-4 text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">
+                <div className="flex font-sans lg:justify-end gap-4 text-xs sm:text-xs md:text-xs  text-neutral-500 dark:text-neutral-400 tracking-wide transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">
                   <span>{blog.time}</span>
                 </div>
               </div>

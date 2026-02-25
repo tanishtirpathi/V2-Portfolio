@@ -13,11 +13,12 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
     : ProjectDetail;
 
   return (
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
   {projectsToShow.map((project, index) => (
     <div
       key={index}
-      className="group relative bg-[#fdfbfb] dark:bg-[#18181b] backdrop-blur-lg border border-gray-300/40 shadow-lg dark:border-white/10 
+      className="group relative bg-[#fdfbfb] dark:bg-[#18181b] 
+      backdrop-blur-lg border border-gray-300/40 shadow-lg dark:border-white/10 
       rounded-2xl overflow-hidden transition-all duration-200 
       hover:-translate-y-1 hover:border-white/20"
     >

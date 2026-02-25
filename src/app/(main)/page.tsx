@@ -16,34 +16,27 @@ import BlogShow from "@/features/components/Blogs/Blogs";
 import Footer from "@/features/uicomponents/footer";
 import DiagonalPattern from "@/features/components/LRBorder/lrborder";
 export default function Home() {
-
-
   const GithubActivity = dynamic(
     () => import("../../features/uicomponents/github"),
     { ssr: false }
-  )
+  );
+
   return (
-    <div className="relative ">
+    <div className="relative w-full overflow-x-hidden">
 
-
-      <DiagonalPattern side="left" />
-      <DiagonalPattern side="right" />
-
-      <HeroSection />
-      <SectionBorder className="mt-6" />
-      <IntroAbout />
-      <SocialLinks />
-      <SectionBorder className="mt-6" />
-      <ConnectButtons />
-      <TechStack />
-      <ProjectShow />
-
-      <GithubActivity />
-
-      <BlogShow />
-      <Footer />
-
-
+      <main className=" px-4 sm:px-4 lg:px-4">
+        <HeroSection />
+        <SectionBorder className="mt-6" />
+        <IntroAbout />
+        <SocialLinks />
+        <SectionBorder className="mt-6" />
+        <ConnectButtons />
+        <TechStack />
+        <ProjectShow />
+        <GithubActivity />
+        <BlogShow />
+        <Footer />
+      </main>
     </div>
   );
 }
