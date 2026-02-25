@@ -4,8 +4,8 @@ import { ShimmerButton } from "@/components/ui/shimmer-button"
 export default function BlogShow() {
   return (
     <div className="my-15">
-      <h2 className="text-3xl font-sans text-gray-300 font-bold">Blogs</h2>
-      <h4 className="text-xs text-gray-400 font-mono mb-6">Here are some of my recent blogs </h4>
+      <h2 className="text-3xl font-sans text-black dark:text-gray-300 font-bold">Blogs</h2>
+      <h4 className="text-xs text-black/70 dark:text-gray-400 font-mono mb-6">Here are some of my recent blogs </h4>
       <div className="px-5"><BlogsCard limit={3} />
       </div>
 
