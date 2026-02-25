@@ -1,7 +1,7 @@
 export default function IntroAbout() {
     return (
         <div className="px-2 mt-6 max-w-3xl mb-10">
-            <p className="text-gray-400 leading-relaxed text-lg font-sans font-semibold ">
+            <p className="text-gray-500 leading-relaxed text-lg font-sans font-semibold ">
 
                 I build full-stack systems with{" "}
 
