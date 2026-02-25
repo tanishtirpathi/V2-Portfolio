@@ -16,8 +16,15 @@ export default function HeroSection() {
           sizes="100vw"
           className="object-cover"
         />
-      </div>
 
+        {/* Overlay (optional for better readability) */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        {/* Centered Text */}
+        <span className="absolute inset-0 flex items-center justify-center text-white font-serif italic text-base tracking-widest [text-shadow:0_4px_15px_rgba(0,0,0,0.9)]">
+        I am not saying I am best , But lets just say The Bar is High
+        </span>
+      </div>
       {/* Profile Content */}
       <div className="relative max-w-6xl mx-auto ">
         <div className="flex items-end gap-4 -mt-16 sm:-mt-10">

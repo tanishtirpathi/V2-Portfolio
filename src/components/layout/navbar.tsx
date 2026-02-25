@@ -56,7 +56,7 @@ export default function Navbar() {
 
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
+          className="p-2 rounded-md cursor-pointer transition"
         >
           {darkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>

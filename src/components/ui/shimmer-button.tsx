@@ -42,7 +42,7 @@ export const ShimmerButton = React.forwardRef<
           } as CSSProperties
         }
         className={cn(
-          "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden [border-radius:var(--radius)] border border-white/10 px-4 py-2 whitespace-nowrap text-white/80 [background:var(--bg)]",
+          "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden [border-radius:var(--radius)] border border-black/30 dark:border-white/10 px-4 py-2 whitespace-nowrap text-black  dark:text-white/80 [background:#1313137a] dark:[background:var(--bg)]",
           "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px",
           className
         )}
@@ -59,7 +59,10 @@ export const ShimmerButton = React.forwardRef<
           {/* spark */}
           <div className="animate-shimmer-slide absolute inset-0 [aspect-ratio:1] h-[100cqh] [border-radius:0] [mask:none]">
             {/* spark before */}
-            <div className="animate-spin-around absolute -inset-full w-auto [translate:0_0] rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))]" />
+            <div className="animate-spin-around absolute -inset-full w-auto [translate:0_0] rotate-0\
+
+             [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,#18181b dark:var(--shimmer-color)_var(--spread),transparent_var(--spread))]" 
+             />
           </div>
         </div>
         {children}
@@ -69,7 +72,7 @@ export const ShimmerButton = React.forwardRef<
           className={cn(
             "absolute inset-0 size-full",
 
-            "rounded-md px-4 py-1 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
+            "rounded-md px-4 py-1 text-sm font-medium  shadow-[inset_0_-8px_10px_#00000000] dark:shadow-[inset_0_-8px_10px_#ffffff1f]",
 
             // transition
             "transform-gpu transition-all duration-300 ease-in-out",
@@ -85,7 +88,7 @@ export const ShimmerButton = React.forwardRef<
         {/* backdrop */}
         <div
           className={cn(
-            "absolute [inset:var(--cut)] -z-20 [border-radius:var(--radius)] [background:var(--bg)]"
+            "absolute [inset:var(--cut)] -z-20 [border-radius:var(--radius)] [background:#fdfbfb] dark:[background:var(--bg)]"
           )}
         />
       </button>
