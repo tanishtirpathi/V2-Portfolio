@@ -14,6 +14,7 @@ import ProjectShow from "@/features/components/Projects/ProjectShow";
 import SectionBorder from "@/components/layout/seprators";
 import BlogShow from "@/features/components/Blogs/Blogs";
 import Footer from "@/features/uicomponents/footer";
+import DiagonalPattern from "@/features/components/LRBorder/lrborder";
 export default function Home() {
 
 
@@ -22,7 +23,12 @@ export default function Home() {
     { ssr: false }
   )
   return (
-    <div>
+    <div className="relative ">
+
+
+      <DiagonalPattern side="left" />
+      <DiagonalPattern side="right" />
+
       <HeroSection />
       <SectionBorder className="mt-6" />
       <IntroAbout />
@@ -31,11 +37,13 @@ export default function Home() {
       <ConnectButtons />
       <TechStack />
       <ProjectShow />
-      
+
       <GithubActivity />
-      
+
       <BlogShow />
       <Footer />
+
+
     </div>
   );
 }
