@@ -6,12 +6,12 @@ import SectionBorder from "@/components/layout/seprators"
 
 export function TechStack() {
   return (
-    <section id="stack" className="px-1 py-6 my-10">
+    <section id="stack" className="px-1 py-6 mt-10 mb-20">
       <h2 className="text-3xl font-sans text-gray-300 font-bold ">
         Tech Stack
       </h2>
       <p className="text-gray-400 mb-4 font-mono text-xs "> Tech behind my all systems </p>
-<SectionBorder className="mb-5"/>
+     <SectionBorder className="mb-5"/>
       <ul
         className="
           grid

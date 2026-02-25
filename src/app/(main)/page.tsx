@@ -13,7 +13,7 @@ import { TechStack } from "@/features/uicomponents/techstack";
 import ProjectShow from "@/features/components/Projects/ProjectShow";
 import SectionBorder from "@/components/layout/seprators";
 import BlogShow from "@/features/components/Blogs/Blogs";
-
+import Footer from "@/features/uicomponents/footer";
 export default function Home() {
 
 
@@ -30,9 +30,12 @@ export default function Home() {
       <SectionBorder className="mt-6" />
       <ConnectButtons />
       <TechStack />
-      <ProjectShow /> <SectionBorder className="mt-6" />
+      <ProjectShow />
+      
       <GithubActivity />
+      
       <BlogShow />
+      <Footer />
     </div>
   );
 }

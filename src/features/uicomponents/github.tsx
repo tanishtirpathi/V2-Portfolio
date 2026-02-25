@@ -4,7 +4,7 @@ import { GitHubCalendar } from "react-github-calendar"
 
 export default function GithubActivity() {
   return (
-    <section className="w-full mx-auto py-6 bg-black text-white mt-10">
+    <section className="w-full py-6 bg-black text-white mt-20 mb-20 ">
       <h2 className="text-2xl font-bold font-sans text-gray-300">GitHub Activity</h2>
       <p className="text-gray-400 mb-4 font-mono text-xs">I know it's useless but </p>
 
