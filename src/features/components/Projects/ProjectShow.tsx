@@ -4,8 +4,8 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 export default function ProjectShow() {
   return (
     <div className="my-10">
-      <h2 className="text-3xl font-sans text-gray-300 font-bold">Projects</h2>
-      <h4 className="text-xs text-gray-400 font-mono mb-6">Here are some of my recent projects</h4>
+      <h2 className="text-3xl font-sans text-black/90 dark:text-gray-300 font-bold">Projects</h2>
+      <h4 className="text-xs text-gray-700 dark:text-gray-400 font-mono mb-6">Here are some of my recent projects</h4>
 
       <ProjectCard limit={4} />
 

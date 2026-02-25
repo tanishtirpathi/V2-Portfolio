@@ -21,11 +21,11 @@ export default function Navbar() {
     <nav
       className="
         fixed
-        top-4
+        top-2
         w-1/2
         z-50
         backdrop-blur-lg
-        bg-white/80
+        bg-white/10
         dark:bg-black/20
         dark:border-neutral-800
         rounded-lg

@@ -13,7 +13,7 @@ export default function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.title}
-            className={`relative group transition-colors duration-200 ${link.color}`}
+            className={`relative group transition-colors duration-200 ${link.color} dark: `}
           >
             <Icon />
 
@@ -21,7 +21,7 @@ export default function SocialLinks() {
               className="
                 absolute -top-8 left-1/2 -translate-x-1/2
                 text-xs
-                bg-black text-white
+                bg-black/80 text-white
                 dark:bg-white dark:text-black
                 px-2 py-1
                 rounded

@@ -39,7 +39,7 @@ const utterance = new SpeechSynthesisUtterance("तनिष त्रिपा�
   return (
     <button
       onClick={speakName}
-      className="px-3 text-3xl text-white/50 hover:opacity-80 transition cursor-pointer"
+      className="px-3 text-3xl text-black/80 dark:text-white/50 hover:opacity-80 transition cursor-pointer"
     >
       <IoVolumeHigh />
     </button>

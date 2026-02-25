@@ -14,7 +14,7 @@ export const socialLinks = [
   {
     href: "https://twitter.com/tanishtirpathi",
     icon: FaXTwitter,
-    color: "hover:text-white",
+    color: " hover:text-black dark:hover:text-white",
     title: "Twitter"
   },
   {
@@ -26,7 +26,7 @@ export const socialLinks = [
   {
     href: "https://github.com/tanishtirpathi",
     icon: FaGithub,
-    color: "hover:text-white",
+    color: "hover:text-black dark:hover:text-white",
     title: "GitHub"
   },
   {

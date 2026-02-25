@@ -7,11 +7,11 @@ import SectionBorder from "@/components/layout/seprators"
 export function TechStack() {
   return (
     <section id="stack" className="px-1 py-6 mt-10 mb-20">
-      <h2 className="text-3xl font-sans text-gray-300 font-bold ">
+      <h2 className="text-3xl font-sans text-black/90 dark:text-gray-300 font-bold ">
         Tech Stack
       </h2>
-      <p className="text-gray-400 mb-4 font-mono text-xs "> Tech behind my all systems </p>
-     <SectionBorder className="mb-5"/>
+      <p className="text-gray-700 dark:text-gray-400 mb-4 font-mono text-xs "> Tech behind my all systems </p>
+      <SectionBorder className="mb-5" />
       <ul
         className="
           grid
@@ -35,7 +35,7 @@ export function TechStack() {
                 absolute -top-7
                 text-xs
                 bg-black text-white
-                dark:bg-white dark:text-black
+                dark:bg-white dark:text-black/80
                 px-2 py-1
                 rounded
                 opacity-0
@@ -59,37 +59,37 @@ export function TechStack() {
                 <>
                   {/* Light Mode Icon */}
                   <Image
-                    src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                    alt={`${tech.title} icon`}
-                    width={32}
-                    height={32}
-                    className="
-                      block dark:block
-                      transition-transform duration-200
-                      group-hover:scale-110
-                      w-7 h-7
-                      sm:w-8 sm:h-8
-                      md:w-9 md:h-9
-                      lg:w-10 lg:h-10
-                    "
-                    unoptimized
-                  />
-
-                  {/* Dark Mode Icon */}
-                  <Image
                     src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
                     alt={`${tech.title} icon`}
                     width={32}
                     height={32}
                     className="
-                      hidden dark:hidden
-                      transition-transform duration-200
-                      group-hover:scale-110
-                      w-7 h-7
-                      sm:w-8 sm:h-8
-                      md:w-9 md:h-9
-                      lg:w-10 lg:h-10
-                    "
+        block dark:hidden
+        transition-transform duration-200
+        group-hover:scale-110
+        w-7 h-7
+        sm:w-8 sm:h-8
+        md:w-9 md:h-9
+        lg:w-10 lg:h-10
+      "
+                    unoptimized
+                  />
+
+                  {/* Dark Mode Icon */}
+                  <Image
+                    src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
+                    alt={`${tech.title} icon`}
+                    width={32}
+                    height={32}
+                    className="
+        hidden dark:block
+        transition-transform duration-200
+        group-hover:scale-110
+        w-7 h-7
+        sm:w-8 sm:h-8
+        md:w-9 md:h-9
+        lg:w-10 lg:h-10
+      "
                     unoptimized
                   />
                 </>
@@ -100,13 +100,13 @@ export function TechStack() {
                   width={32}
                   height={32}
                   className="
-                    transition-transform duration-200
-                    group-hover:scale-110
-                    w-7 h-7
-                    sm:w-8 sm:h-8
-                    md:w-9 md:h-9
-                    lg:w-10 lg:h-10
-                  "
+      transition-transform duration-200
+      group-hover:scale-110
+      w-7 h-7
+      sm:w-8 sm:h-8
+      md:w-9 md:h-9
+      lg:w-10 lg:h-10
+    "
                   unoptimized
                 />
               )}
