@@ -1,10 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic"
-
-
-
-import TopBg from "../../components/layout/topbg";
 import HeroSection from "@/features/uicomponents/heropfp";
 import SocialLinks from "@/features/uicomponents/sociallinks";
 import IntroAbout from "@/features/uicomponents/introAbout";
@@ -22,9 +18,10 @@ export default function Home() {
   );
 
   return (
-    <div className="relative w-full overflow-x-hidden">
-
-      <main className=" px-4 sm:px-4 lg:px-4">
+    <div className="relative w-full ">
+      <main className="mx-auto relative w-full max-w-2xl px-4">
+        <DiagonalPattern side="left" />
+        <DiagonalPattern side="right" />
         <HeroSection />
         <SectionBorder className="mt-6" />
         <IntroAbout />

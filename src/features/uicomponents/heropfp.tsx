@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
 
       {/* Profile Content */}
-      <div className="relative mx-auto max-w-6xl px-4">
+      <div className="relative mx-auto max-w-6xl px-2">
         <div className="flex items-end gap-4 -mt-5 sm:-mt-10">
 
           {/* PFP */}
@@ -48,7 +48,7 @@ export default function HeroSection() {
               <SpeakNameButton />
             </h1>
 
-            <p className="text-gray-500 font-semibold font-mono text-xs sm:text-sm">
+            <p className="text-gray-500 font-semibold font-mono text-xs md:xs lg:text-xs">
               Full Stack Developer
             </p>
           </div>

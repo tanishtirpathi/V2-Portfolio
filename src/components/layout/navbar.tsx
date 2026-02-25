@@ -21,14 +21,18 @@ export default function Navbar() {
     <nav
       className="
         fixed
-        top-2
-        w-1/2
+        top-0
+        md:top-2
+        lg:top-2
+        w-full md:w-4/5 lg:w-1/2
         z-50
         backdrop-blur-lg
         bg-white/10
         dark:bg-black/20
         dark:border-neutral-800
-        rounded-lg
+        md:rounded-lg
+        rounded-none
+        lg:rounded-lg
       "
     >
       <div className="max-w-5xl mx-auto font-mono font-semibold flex justify-end items-center py-2 px-4 gap-6 text-sm">

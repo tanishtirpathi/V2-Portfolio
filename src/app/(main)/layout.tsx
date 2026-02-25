@@ -13,13 +13,11 @@ export default function MainLayout({
       <Link href="/os" className="fixed top-0 right-0">
         <DevelopersCorner />
       </Link>
-
-
-      <div className="flex justify-center ">
+      <div className="flex justify-center items-start">
         <div className="w-full md:w-4/5 lg:w-1/2">
           <Navbar />
           {children}
-        </div>
+        </div>   
       </div>
     </>
   );
