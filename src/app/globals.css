@@ -6,6 +6,7 @@
   color: black;
 }
 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

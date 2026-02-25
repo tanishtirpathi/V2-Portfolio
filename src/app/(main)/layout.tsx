@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Navbar from "../../components/layout/navbar";
+import DevelopersCorner from "@/components/os/pagefolder";
 
 export default function MainLayout({
   children,
@@ -9,8 +10,8 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <Link href="/os" className="fixed top-10 right-12">
-        OS
+      <Link href="/os" className="fixed top-0 right-0">
+        <DevelopersCorner />
       </Link>
 
 
