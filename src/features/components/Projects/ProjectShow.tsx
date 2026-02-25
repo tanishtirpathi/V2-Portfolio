@@ -1,6 +1,6 @@
 import { ProjectCard } from "./projectCard";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-
+import Link from "next/link";
 export default function ProjectShow() {
   return (
     <div className="my-10">
@@ -11,10 +11,10 @@ export default function ProjectShow() {
 
       <div className="mt-6 text-center">
         <RainbowButton variant="outline">
-          <a href="https://docs.google.com/document/d/e/2PACX-1vSvmlZaSpYs7Z7JWNe2o1VddGUWKsqNUGaQmWqGMDRT-lMaMF5QwWDXeVDqat9EQFwf5Ec_BDmSXWTE/pub" target="_blank" rel="noopener noreferrer"
+          <Link href="./projects" target="_blank" rel="noopener noreferrer"
             className=" font-main font-semibold flex items-center gap-2"
           >View All Projects
-          </a></RainbowButton>
+          </Link></RainbowButton>
       </div>
     </div>
   );

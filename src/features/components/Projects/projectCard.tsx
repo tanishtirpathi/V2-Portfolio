@@ -27,7 +27,8 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
         <Image
           src={project.image}
           alt={project.title}
-          fill
+          width={400}
+          height={240}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 dark:bg-gradient-to-t from-black/70 via-black/30 to-transparent" />

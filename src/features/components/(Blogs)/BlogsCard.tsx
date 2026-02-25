@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BlogsDetails } from "./BlogsData"
 import { FC } from "react";
 interface BlogsCardProps {

@@ -1,4 +1,11 @@
-import type { TechStack } from "../types/tech-stack"
+
+export interface TechStack {
+  key: string, 
+  title:string,
+  href:string,
+  categories: string[],
+  theme?: boolean,
+}
 
 export const TECH_STACK: TechStack[] = [
   {

@@ -8,7 +8,7 @@ import ConnectButtons from "@/features/uicomponents/connectButtons";
 import { TechStack } from "@/features/uicomponents/techstack";
 import ProjectShow from "@/features/components/Projects/ProjectShow";
 import SectionBorder from "@/components/layout/seprators";
-import BlogShow from "@/features/components/Blogs/Blogs";
+import BlogShow from "@/features/components/(Blogs)/Blogs";
 import Footer from "@/features/uicomponents/footer";
 import DiagonalPattern from "@/features/components/LRBorder/lrborder";
 export default function Home() {

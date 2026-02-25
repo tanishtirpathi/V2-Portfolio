@@ -25,7 +25,7 @@ export default function GithubActivity() {
           <div className="block dark:hidden">
             <GitHubCalendar
               username="tanishtirpathi"
-              blockSize={9}
+              blockSize={8}
               blockMargin={3}
               fontSize={14}
               colorScheme="light"
@@ -45,7 +45,7 @@ export default function GithubActivity() {
           <div className="hidden dark:block">
             <GitHubCalendar
               username="tanishtirpathi"
-              blockSize={9}
+              blockSize={8}
               blockMargin={3}
               fontSize={14}
               colorScheme="dark"
