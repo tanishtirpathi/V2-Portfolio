@@ -31,7 +31,7 @@ export const dataExperence: DataExperence[] = [  {
 
   {
     id: 3,
-      image:"/images/Exp/Scaler.png",
+      image:"/images/Exp/scaler.png",
     title: "Remote Trainee / Intern",
     company: "Scaler",
     startDate: "June-2024",
@@ -39,4 +39,5 @@ export const dataExperence: DataExperence[] = [  {
       "Completed structured training in basic programming, LinkedIn optimization, and introductory Agentic AI concepts. Built small practice applications and explored AI workflow fundamentals.",
     Technologies: ["JavaScript", "Programming Fundamentals", "Agentic AI Basics"]
   }
+
 ];
