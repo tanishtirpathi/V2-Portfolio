@@ -1,21 +1,21 @@
 "use client";
 
 import dynamic from "next/dynamic"
-import HeroSection from "@/features/uicomponents/heropfp";
-import SocialLinks from "@/features/uicomponents/sociallinks";
-import IntroAbout from "@/features/uicomponents/introAbout";
-import ConnectButtons from "@/features/uicomponents/connectButtons";
-import { TechStack } from "@/features/uicomponents/techstack";
+import HeroSection from "@/features/uicomponents/Heropfp";
+import SocialLinks from "@/features/uicomponents/Sociallinks";
+import IntroAbout from "@/features/uicomponents/IntroAbout";
+import ConnectButtons from "@/features/uicomponents/ConnectButtons";
+import { TechStack } from "@/features/uicomponents/Techstack";
 import ProjectShow from "@/features/components/Projects/ProjectShow";
 import SectionBorder from "@/components/layout/seprators";
 import BlogShow from "@/features/components/(Blogs)/Blogs";
-import Footer from "@/features/uicomponents/footer";
+import Footer from "@/features/uicomponents/Footer";
 import DiagonalPattern from "@/features/components/LRBorder/lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
 import {PersonalStuff } from "@/features/uicomponents/Personalstuff";
 export default function Home() {
   const GithubActivity = dynamic(
-    () => import("../../features/uicomponents/github"),
+    () => import("../../features/uicomponents/Github"),
     { ssr: false }
   );
 
