@@ -1,4 +1,4 @@
-import DiagonalPattern from "@/features/components/LRBorder/lrborder";
+import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { BlogsCard } from "@/features/components/(Blogs)/BlogsCard";
 export default function Home() {
   return (

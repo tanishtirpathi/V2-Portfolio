@@ -7,10 +7,10 @@ import IntroAbout from "@/features/uicomponents/IntroAbout";
 import ConnectButtons from "@/features/uicomponents/ConnectButtons";
 import { TechStack } from "@/features/uicomponents/Techstack";
 import ProjectShow from "@/features/components/Projects/ProjectShow";
-import SectionBorder from "@/components/layout/seprators";
+import SectionBorder from "@/components/layout/Seprators";
 import BlogShow from "@/features/components/(Blogs)/Blogs";
 import Footer from "@/features/uicomponents/Footer";
-import DiagonalPattern from "@/features/components/LRBorder/lrborder";
+import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
 import {PersonalStuff } from "@/features/uicomponents/Personalstuff";
 export default function Home() {

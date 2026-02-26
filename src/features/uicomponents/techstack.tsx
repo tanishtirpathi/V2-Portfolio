@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { TECH_STACK } from "@/features/data/techstack"
-import SectionBorder from "@/components/layout/seprators"
+import SectionBorder from "@/components/layout/Seprators"
 
 export function TechStack() {
   return (
