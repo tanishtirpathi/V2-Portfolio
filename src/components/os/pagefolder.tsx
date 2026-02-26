@@ -36,7 +36,7 @@ const DevelopersCorner: React.FC = () => {
           transition-all duration-300 font-serif italic
           group-hover:opacity-100 group-hover:translate-y-0
         ">
-        Developer's Corner
+        More Cool Things 
       </span>
     </div>
   );

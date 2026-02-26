@@ -34,7 +34,7 @@ export const ExperienceCard = ({
             </div>
 
             {/* Description */}
-            <p className="text-sm text-black/60 dark:text-gray-400 font-sans leading-relaxed mb-4">
+            <p className="text-xs sm:text-xs md:text-sm lg:text-sm text-black/60 dark:text-gray-400 font-sans leading-relaxed mb-4">
                 {description}
             </p>
 
@@ -44,7 +44,9 @@ export const ExperienceCard = ({
                     <span
                         key={index}
                         className="text-xs font-sans
-                         bg-black/10 dark:bg-white/5 text-black dark:text-white border border-dashed border-black/30 dark:border-white/40 px-3 py-1 rounded-md 
+                         bg-black/10 dark:bg-white/5 
+                         text-black dark:text-white border border-dashed 
+                         border-black/30 dark:border-white/40 px-3 py-1 rounded-md 
                          hover:bg-purple-500/20 transition-all duration-200"
                     >
                         {tech}

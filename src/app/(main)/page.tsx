@@ -31,6 +31,7 @@ export default function Home() {
         <ConnectButtons />
         <TechStack />
         <ProjectShow />
+        <SectionBorder className="mt-6" />
         <ExperienceSection/>
         <GithubActivity />
         <BlogShow />
