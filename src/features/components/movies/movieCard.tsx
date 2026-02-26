@@ -1,8 +1,8 @@
 import Image from "next/image"
-import { Movie } from "./MoviesData"
+import { Movies } from "./MoviesData"
 
 type MovieCardProps = {
-    movie: Movie
+    movie: Movies   
     className?: string
 }
 
