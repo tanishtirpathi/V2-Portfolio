@@ -11,6 +11,7 @@ import SectionBorder from "@/components/layout/seprators";
 import BlogShow from "@/features/components/(Blogs)/Blogs";
 import Footer from "@/features/uicomponents/footer";
 import DiagonalPattern from "@/features/components/LRBorder/lrborder";
+import { ExperienceSection } from "@/features/uicomponents/Experence";
 export default function Home() {
   const GithubActivity = dynamic(
     () => import("../../features/uicomponents/github"),
@@ -30,6 +31,7 @@ export default function Home() {
         <ConnectButtons />
         <TechStack />
         <ProjectShow />
+        <ExperienceSection/>
         <GithubActivity />
         <BlogShow />
         <Footer />

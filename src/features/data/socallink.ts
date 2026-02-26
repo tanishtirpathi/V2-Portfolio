@@ -30,7 +30,7 @@ export const socialLinks = [
     title: "GitHub"
   },
   {
-    href: "https://youtube.com/@tanishtirpathi",
+    href: "https://www.youtube.com/@tanishtirpathi0",
     icon: FaYoutube,
     color: "hover:text-red-500",
     title: "YouTube"
@@ -54,13 +54,13 @@ export const socialLinks = [
     title: "Email"
   },
   {
-    href: "https://dev.to/yourusername", // change this
+    href: "https://devpost.com/tanishtirpathi0", 
     icon: FaDev,
     color: "hover:text-black dark:hover:text-cyan-400",
     title: "Dev.to"
   },
   {
-    href: "https://medium.com/@yourusername", // change this
+    href: "https://medium.com/@tanishtirpathi0", 
     icon: FaMedium,
     color: "hover:text-black dark:hover:text-white",
     title: "Medium"

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Sun, Moon } from "lucide-react"
 
 export default function Navbar() {
@@ -35,35 +36,49 @@ export default function Navbar() {
         lg:rounded-lg
       "
     >
-      <div className="max-w-5xl mx-auto font-mono font-semibold flex justify-end items-center py-2 px-4 gap-6 text-sm">
+      <div className="max-w-5xl mx-auto font-mono font-semibold flex justify-between items-center py-2 px-4 text-sm">
 
-        <Link
-          href="/"
-          className="opacity-70 hover:opacity-100 hover:underline transition"
-        >
-          Main
+        {/* Left side image */}
+        <Link href="/" className="flex items-center hover:transform hover:scale-105 transition duration-200 ease-in-out">
+          <Image
+            src="/images/Top.jpg" 
+            alt="Logo"
+            width={40}
+            height={40}
+            className="rounded-md object-cover"
+          />
         </Link>
 
-        <Link
-          href="/projects"
-          className="opacity-70 hover:opacity-100 hover:underline transition"
-        >
-          Projects
-        </Link>
+        {/* Right side links */}
+        <div className="flex items-center gap-6 font-sans">
+          <Link
+            href="/"
+            className="opacity-70 hover:opacity-100 hover:underline transition"
+          >
+            Main
+          </Link>
 
-        <Link
-          href="/blogs"
-          className="opacity-70 hover:opacity-100 hover:underline transition"
-        >
-          Blogs
-        </Link>
+          <Link
+            href="/projects"
+            className="opacity-70 hover:opacity-100 hover:underline transition"
+          >
+            Projects
+          </Link>
 
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-md cursor-pointer transition"
-        >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+          <Link
+            href="/blogs"
+            className="opacity-70 hover:opacity-100 hover:underline transition"
+          >
+            Blogs
+          </Link>
+
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-md cursor-pointer transition"
+          >
+            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
 
       </div>
     </nav>
