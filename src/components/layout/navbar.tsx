@@ -66,7 +66,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/blogs"
+            href="/blog"
             className="opacity-70 hover:opacity-100 hover:underline transition"
           >
             Blogs
