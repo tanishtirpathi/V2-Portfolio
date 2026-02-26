@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Navbar from "../../components/layout/navbar";
+import Navbar from "../../components/layout/Navbar";
 import DevelopersCorner from "@/components/os/pagefolder";
 
 export default function MainLayout({

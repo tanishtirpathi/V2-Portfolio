@@ -1,5 +1,5 @@
 "use client";
-import SpeakNameButton from "@/components/layout/speakbutton";
+import SpeakNameButton from "@/components/layout/Speakbutton";
 import Image from "next/image";
 
 export default function HeroSection() {
