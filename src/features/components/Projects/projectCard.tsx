@@ -19,7 +19,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
       key={index}
       className="group relative bg-[#fdfbfb] dark:bg-[#18181b] 
       backdrop-blur-lg border border-gray-300/40 shadow-lg dark:border-white/10 
-      rounded-2xl overflow-hidden transition-all duration-200 
+      rounded-2xl overflow-hidden transition-all duration-150  ease-in-out 
       hover:-translate-y-1 hover:border-white/20"
     >
       {/* Image */}
@@ -29,7 +29,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
           alt={project.title}
           width={400}
           height={240}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 dark:bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
       </div>
