@@ -50,9 +50,9 @@ export default function Home() {
                 </div>
             </section>
             <div className="items-center flex gap-4 justify-center mt-10 ">
-                <CoolButton href="/">
-                    Go to Home
-                </CoolButton>
+          <CoolButton onClick={() => window.location.href = '/'}>
+          Go to Home
+        </CoolButton>
 
                 <Link href="/setup"
                     className="flex justify-center group

@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       <div className="mt-10 justify-center flex">
-        <CoolButton variant="outline" href="/">
+        <CoolButton onClick={() => window.location.href = '/'}>
           Go to Home
         </CoolButton>
       </div>

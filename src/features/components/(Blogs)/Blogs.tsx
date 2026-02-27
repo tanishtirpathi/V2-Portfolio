@@ -1,4 +1,3 @@
-//import { CoolButton } from "@/components/layout/coolButton";
 //import Link from "next/link";
 import { BlogsCard } from "./BlogsCard";
 export default function BlogShow() {

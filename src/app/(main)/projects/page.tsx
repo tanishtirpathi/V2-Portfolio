@@ -13,9 +13,9 @@ export default function Home() {
       <ProjectCard />
 
       <div className="mt-10 justify-center flex">
-              <CoolButton variant="outline" href="/">
-                Go to Home
-              </CoolButton>
+             <CoolButton onClick={() => window.location.href = '/'}>
+          Go to Home
+        </CoolButton>
             </div>
     </div>
   );

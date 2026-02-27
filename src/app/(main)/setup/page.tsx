@@ -85,9 +85,9 @@ export default function Home() {
             </section>
             <div className="items-center flex  justify-center mt-10  gap-4" >
                 <div className=" justify-center flex">
-                    <CoolButton href="/">
-                        Go to Home
-                    </CoolButton>
+                    <CoolButton onClick={() => window.location.href = '/'}>
+          Go to Home
+        </CoolButton>
                 </div>
                 <Link href="/VScode"
                     className="flex justify-center group
