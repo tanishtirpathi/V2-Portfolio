@@ -4,7 +4,8 @@ import DiagonalPattern from "@/features/components/LRBorder/Lrborder"
 
 export default function Home() {
   return (
-    <div className="max-w-3xl py-20 relative">
+    
+    <div className="max-w-3xl mx-auto py-20 relative">
            <DiagonalPattern side="left" />
               <DiagonalPattern side="right" />
     <div className="mb-12 text-center">
@@ -18,11 +19,12 @@ export default function Home() {
 
     </div>
       {/* 2 per row */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 px-4 md:px-1 lg:px-0">
         {moviesData.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
+  
   )
 }

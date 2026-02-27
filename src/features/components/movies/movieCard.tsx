@@ -17,18 +17,19 @@ export const MovieCard = ({ movie, className }: MovieCardProps) => {
         >
             {/* Poster */}
             <div className="relative  overflow-hidden">
-                <Image
+              <div className="w-full md:h-80 lg:h-82 h-50 relative">
+                  <Image
                     src={movie.posterUrl || "/placeholder.jpg"}
                     alt={movie.title}
-                    width={400}
-                    height={500}
+                      fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
+              </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                 <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md 
-          text-white text-sm font-semibold px-2 py-1 rounded-md">
+                text-white text-sm font-semibold px-2 py-1 rounded-md">
                     ⭐ {movie.rating.toFixed(1)}
                 </div>
             </div>
