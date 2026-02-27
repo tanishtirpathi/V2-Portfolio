@@ -31,4 +31,5 @@ export const CoolButton: FC<CoolButtonProps> = ({
       {children}
     </button>
   );
+
 };
