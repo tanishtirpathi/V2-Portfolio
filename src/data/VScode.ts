@@ -28,5 +28,30 @@ export const VScodes: VScode[] = [
         name: "Live Server",
         link: "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer",
     },
+        {
+        name: "THEME:- Tokyo Night",
+        link: "https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night",
+    },
+    {
+        name: "Waka-Time",
+        link: "https://marketplace.visualstudio.com/items?itemName=wakatime.vscode-wakatime",
+    },
+    {
+        name: "Material Icon Theme",
+        link: "https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme",
+    },
+    {
+        name: "npm Intellisense",
+        link: "https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense",
+    },
+    {
+        name: "Github Copilot",
+        link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
+    },
+    {
+        name: "Dev Containers",
+        link: "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers",
+    },
+
 
 ];
