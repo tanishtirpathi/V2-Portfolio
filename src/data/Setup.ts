@@ -17,7 +17,7 @@ export const setups: Setup[] = [
     },
         {
         title: "keyboard",
-        image: "/images/setup/keyBoard.jpg",
+        image: "/images/setup/Keyboard.jpg",
         link: "https://www.amazon.in/Ant-Esports-MK700-V2-Mechanical/dp/B0DFCW1ZNL/ref=sr_1_5?nsdOptOutParam=true&sr=8-5"
     },
         {

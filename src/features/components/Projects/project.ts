@@ -40,7 +40,7 @@ export const ProjectDetail: Project[] = [
        {
         title: "Playlister",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/playlistr.png",
+        image: "/images/Project/Playlistr.png",
         LiveLink: "https://playlistr.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Playlistr",
         status: "Building",

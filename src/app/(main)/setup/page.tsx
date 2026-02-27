@@ -82,7 +82,16 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-
+            <div className="items-center flex flex-col justify-center mt-10 group">
+                <Link href="/VScode"
+                    className="flex justify-center
+                border border-black/30 dark:border-white/80
+                rounded-md px-4 py-2 shadow-xl
+                items-center gap-2 ">
+                    <span className="text-black/80 dark:text-white/80 font-main font-semibold group-hover:text-black
+                 group-hover:underline transition-all duration-300">VS-code Setup</span>
+                    <span className="group-hover:-translate-y-2 group-hover:translate-x-2 transition-all duration-300 "> <GoArrowUpRight /></span>
+                </Link></div>
         </div>
     );
 }

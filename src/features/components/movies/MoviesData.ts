@@ -25,7 +25,7 @@ export const moviesData: Movies[] = [
         id: 3,
         title: "Interstellar",
         description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        posterUrl: "/images/Movies/interstiller.jpg",
+        posterUrl: "/images/Movies/Interstiller.jpg",
         rating: 8.6,
     },
     {
