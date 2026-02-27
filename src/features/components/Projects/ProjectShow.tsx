@@ -11,7 +11,7 @@ export default function ProjectShow() {
 
       <div className="mt-6 text-center">
         <RainbowButton variant="outline">
-          <Link href="./projects" target="_blank" rel="noopener noreferrer"
+          <Link href="./projects" rel="noopener noreferrer"
             className=" font-main font-semibold flex items-center gap-2"
           >View All Projects
           </Link></RainbowButton>

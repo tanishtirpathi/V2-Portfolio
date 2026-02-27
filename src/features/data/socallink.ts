@@ -5,7 +5,8 @@ import {
   FaYoutube,
   FaInstagram,
   FaPinterest,
-  FaEnvelope
+  FaEnvelope,
+  FaChess
 } from "react-icons/fa6"
 
 import { FaDev, FaMedium } from "react-icons/fa"
@@ -16,6 +17,12 @@ export const socialLinks = [
     icon: FaXTwitter,
     color: " hover:text-black dark:hover:text-white",
     title: "Twitter"
+  },
+    {
+    href: "https://www.chess.com/member/tanishtirpathi",
+    icon: FaChess,
+    color: " hover:text-black dark:hover:text-white",
+    title: "Chess"
   },
   {
     href: "https://linkedin.com/in/tanishtirpathi",

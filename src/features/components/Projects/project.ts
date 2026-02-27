@@ -37,6 +37,15 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         location: "/projects/mindPin"
     },
+       {
+        title: "Playlister",
+        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
+        image: "/images/Project/playlistr.png",
+        LiveLink: "https://playlistr.tanishtirpathi.me",
+        GithubLink: "https://github.com/tanishtirpathi/Playlistr",
+        status: "Building",
+        location: "/projects/playlistr"
+    },
     {
         title: "Trip Guard ",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
