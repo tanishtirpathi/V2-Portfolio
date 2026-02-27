@@ -1,3 +1,4 @@
+import { CoolButton } from "@/components/layout/CoolButton";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ProjectCard } from "@/features/components/Projects/projectCard";
 export default function Home() {
@@ -10,6 +11,12 @@ export default function Home() {
           some projects are meant to flex      </p>
       </div>
       <ProjectCard />
+
+      <div className="mt-10 justify-center flex">
+              <CoolButton variant="outline" href="/">
+                Go to Home
+              </CoolButton>
+            </div>
     </div>
   );
 }
