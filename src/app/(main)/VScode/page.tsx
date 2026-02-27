@@ -22,7 +22,7 @@ export default function Home() {
             <SectionBorder className="mt-10" />
             <section className="mt-16 px-5 ">
                 <div className="flex items-center">  <div className="relative w-13 h-13  mb-8">
-                    <Image src="/images/CodeSetup/VScode.png" className="object-cover p-2 rounded-xl" alt="Setup Image" fill />
+                    <Image src="/images/CodeSetup/Vscode.png" className="object-cover p-2 rounded-xl" alt="Setup Image" fill />
                 </div>
                     <h2 className="text-3xl font-bold font-sans text-black/80 dark:text-white/80 mb-8">
                         # Extensions
