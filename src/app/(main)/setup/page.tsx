@@ -1,3 +1,5 @@
+"use client"
+
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { setups, CodeSetup } from "@/data/Setup";
 import SectionBorder from "@/components/layout/Seprators";

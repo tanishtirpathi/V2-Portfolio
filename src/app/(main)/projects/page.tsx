@@ -1,3 +1,6 @@
+
+"use client"
+
 import { CoolButton } from "@/components/layout/CoolButton";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ProjectCard } from "@/features/components/Projects/projectCard";

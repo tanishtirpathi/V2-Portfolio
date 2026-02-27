@@ -1,3 +1,4 @@
+"use client"
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { VScodes } from "@/data/VScode";
 import SectionBorder from "@/components/layout/Seprators";

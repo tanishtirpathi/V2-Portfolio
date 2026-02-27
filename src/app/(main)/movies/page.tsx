@@ -1,3 +1,5 @@
+"use client"
+
 import { moviesData } from "@/features/components/movies/MoviesData"
 import { MovieCard } from "@/features/components/movies/movieCard"
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder"
