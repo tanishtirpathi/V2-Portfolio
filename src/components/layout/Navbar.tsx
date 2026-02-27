@@ -50,12 +50,12 @@ export default function Navbar() {
         </Link>
 
         {/* Right side links */}
-        <div className="flex items-center gap-6 font-sans">
+        <div className="flex items-center gap-6 font-sans font-bold">
           <Link
             href="/"
             className="opacity-70 hover:opacity-100 hover:underline transition"
           >
-            Main
+            Home
           </Link>
 
           <Link

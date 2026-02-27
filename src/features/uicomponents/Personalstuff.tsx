@@ -29,6 +29,7 @@ export const PersonalStuff = () => {
                     </div></Link>
             </div>
             <div className="shadow-lg rounded-md bg-gray-100 dark:bg-black/10 px-1">
+            <Link href="/setup">
                 <div className="w-full px-4 py-2 bg-gray-100 
                                 dark:bg-white/10 rounded-lg 
                                 mt-4 flex items-center gap-4 
@@ -42,7 +43,7 @@ export const PersonalStuff = () => {
                         <h4 className="text-sm font-main text-gray-600 dark:text-gray-400">My current development environment</h4>
                     </div>
 
-                </div>
+                </div></Link>
             </div>
             <div className="shadow-lg rounded-md bg-gray-100 dark:bg-black/10 px-1">
                 <Link href="/VSCode">
