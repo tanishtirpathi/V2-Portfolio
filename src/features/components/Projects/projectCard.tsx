@@ -45,6 +45,14 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
 
                 <div className="flex gap-3 text-lg text-gray-400">
                   <a
+                    href={project.LiveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black  dark:hover:text-white transition-colors"
+                  >
+                    <IoEarthOutline />
+                  </a>
+                  <a
                     href={project.GithubLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -52,14 +60,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                   >
                     <LuGithub />
                   </a>
-                  <a
-                    href={project.LiveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    <IoEarthOutline />
-                  </a>
+
                 </div>
               </div>
 
