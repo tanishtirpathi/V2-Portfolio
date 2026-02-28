@@ -24,11 +24,78 @@ const instrument = Instrument_Serif({
   weight: "400", // required for serif
   display: "swap",
 });
-export const metadata: Metadata = {
-  title: "Tanish Tirpathi",
-  description: "Tanish Tirpathi's personal website. A software engineer with a passion for building innovative solutions and exploring new technologies.",
-};
 
+export const metadata: Metadata = {
+  metadataBase: new URL("https://tanishtirpathi.me"), // change to your real domain
+
+  title: {
+    default: "Tanish Tirpathi",
+    template: "%s | Tanish Tirpathi",
+  },
+
+  description:
+    "Tanish Tirpathi is a software engineer passionate about building innovative digital solutions and exploring cutting-edge technologies.",
+
+  applicationName: "Tanish Tirpathi",
+  authors: [{ name: "Tanish Tirpathi", url: "https://tanishtirpathi.me" }],
+  creator: "Tanish Tirpathi",
+  publisher: "Tanish Tirpathi",
+
+  keywords: [
+    "Tanish Tirpathi",
+    "Web Development",
+    "Startup",
+    "MERN Developer",
+    "Next.js Developer",
+    "Modern Web App"
+  ],
+
+  icons: {
+    icon: "/MOV.jpg",
+    shortcut: "/MOV.jpg",
+    apple: "/MOV.jpg",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://tanishtirpathi.me",
+    title: "Tanish Tirpathi",
+    description:
+      "Tanish Tirpathi — A modern digital platform built with performance and intelligence.",
+    siteName: "Tanish Tirpathi",
+    images: [
+      {
+        url: "/MOV.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tanish Tirpathi Preview",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tanish Tirpathi",
+    description:
+      "Tanish Tirpathi — A modern digital platform built by Tanish Tirpathi.",
+    images: ["/OG.png"],
+    creator: "@tanishtirpathi",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  category: "technology",
+};
 export default function RootLayout({
   children,
 }: Readonly<{
