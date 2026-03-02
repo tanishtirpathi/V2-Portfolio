@@ -4,7 +4,7 @@ export default function OSPage() {
   return (
     <main className="min-h-screen bg-white text-black flex items-center justify-center">
       <h1 className="text-3xl font-serif font-light">
-        Interactive OS Mode in development. Please check back later after 3 march.
+        Interactive OS Mode in development. Please check back later after 13 march.
       </h1>
       <div className="fixed top-5 right-5">
         <button

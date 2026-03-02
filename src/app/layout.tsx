@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/OGB.png",
-    shortcut: "/OGB.png",
-    apple: "/OGB.png",
+    icon: "/ICON.jpg",
+    shortcut: "/ICON.jpg",
+    apple: "/ICON.jpg",
   },
 
   openGraph: {
