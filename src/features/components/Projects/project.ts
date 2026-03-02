@@ -14,7 +14,7 @@ export const ProjectDetail: Project[] = [
         title: "Trend-Up",
         description: "It is a Real time chat application with auto chat deletion feature and also It has currently 30+ user active ",
         image: "/images/Project/Trend.png",
-        LiveLink: "https://trend-up.vercel.app",
+        LiveLink: "https://trendup.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Trend-up-",
         status: "Completed",
         location: "/projects/trendUp"
@@ -32,7 +32,7 @@ export const ProjectDetail: Project[] = [
         title: "MindPin",
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
         image: "/images/Project/Mind.png",
-        LiveLink: "https://mindpin.vercel.app",
+        LiveLink: "https://mindpin.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Mindpin",
         status: "Completed",
         location: "/projects/mindPin"
