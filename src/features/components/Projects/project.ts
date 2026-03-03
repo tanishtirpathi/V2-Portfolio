@@ -52,8 +52,9 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://trip-guard.vercel.app/",
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
-        location: "/projects/tripGuard"
+        location: "/projects/TripGuard"
     }
 
 
 ]
+
