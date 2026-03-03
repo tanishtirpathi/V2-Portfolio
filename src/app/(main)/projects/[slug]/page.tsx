@@ -58,7 +58,7 @@ export default async function ProjectPage(props: { params: { slug: string } }) {
         <div className="overflow-hidden rounded-xl">
           <Image
             className="shadow-xl border border-black/20 rounded-xl w-full object-fit"
-            src={`/images/project/${slug}.jpg`}
+            src={`/images/Project/${slug}.jpg`}
             alt={slug}
             width={800}
             height={300}
@@ -130,4 +130,5 @@ export default async function ProjectPage(props: { params: { slug: string } }) {
       </div>
     </div>
   );
+
 }
