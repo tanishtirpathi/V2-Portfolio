@@ -21,7 +21,7 @@ export const ProjectDetail: Project[] = [
     {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
-        image: "/images/Project/LeetCode.png",
+        image: "/images/Project/Leetlow.jpg",
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
         status: "Building",
@@ -39,7 +39,7 @@ export const ProjectDetail: Project[] = [
        {
         title: "Playlister",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/Playlistr.png",
+        image: "/images/Project/Playlistr.jpg",
         LiveLink: "https://playlistr.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Playlistr",
         status: "Building",
@@ -48,7 +48,7 @@ export const ProjectDetail: Project[] = [
     {
         title: "Trip Guard ",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/trip.png",
+        image: "/images/Project/TripGuard.jpg",
         LiveLink: "https://trip-guard.vercel.app/",
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
