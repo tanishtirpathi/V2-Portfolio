@@ -25,7 +25,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
         status: "Building",
-        location: "/projects/leetLow"
+        location: "/projects/LeetLow"
     },
     {
         title: "MindPin",
@@ -57,4 +57,5 @@ export const ProjectDetail: Project[] = [
 
 
 ]
+
 
