@@ -36,7 +36,7 @@ export default function Navbar() {
         lg:rounded-lg
       "
     >
-      <div className="max-w-5xl mx-auto font-mono font-semibold flex justify-between items-center py-2 px-4 text-sm">
+      <div className="max-w-3xl mx-auto font-mono font-semibold flex justify-between items-center py-2 px-4 text-sm">
 
         {/* Left side image */}
         <Link href="/" className="flex items-center hover:transform hover:scale-105 transition duration-200 ease-in-out">
