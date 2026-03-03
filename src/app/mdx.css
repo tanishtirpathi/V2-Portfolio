@@ -1,0 +1,41 @@
+.mdx-wrapper {
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.mdx-wrapper h1 {
+  font-size: 48px;
+  font-weight: semi-bold;
+  font-family: geist;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mdx-wrapper h2 {
+  font-size: 32px;
+  margin-top: 40px;
+}
+
+.mdx-wrapper p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.mdx-wrapper ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.mdx-wrapper li {
+  margin-bottom: 8px;
+}
+
+.mdx-wrapper a {
+  color: #0070f3;
+  text-decoration: none;
+}
+.mdx-wrapper img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
