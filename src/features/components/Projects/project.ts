@@ -21,11 +21,11 @@ export const ProjectDetail: Project[] = [
     {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
-        image: "/images/Project/Leetlow.jpg",
+        image: "/images/Project/LeetLow.jpg",
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
         status: "Building",
-        location: "/projects/leetlow"
+        location: "/projects/leetLow"
     },
     {
         title: "MindPin",
@@ -43,7 +43,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://playlistr.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Playlistr",
         status: "Building",
-        location: "/projects/playlistr"
+        location: "/projects/Playlistr"
     },
     {
         title: "Trip Guard ",
@@ -54,5 +54,6 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         location: "/projects/tripGuard"
     }
+
 
 ]
