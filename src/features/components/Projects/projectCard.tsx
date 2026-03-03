@@ -3,6 +3,7 @@ import { ProjectDetail } from "./project";
 import { LuGithub } from "react-icons/lu";
 import { IoEarthOutline } from "react-icons/io5";
 import { HiArrowUpRight } from "react-icons/hi2";
+import Link from "next/link";
 interface ProjectCardProps {
   limit?: number;
 }
@@ -96,9 +97,9 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               <button className="flex items-center gap-2 text-sm text-black/70 hover:text-black dark:text-gray-400 
           dark:hover:text-white transition-all duration-300 group/view">
 
-                <a href={project.location} target="_blank" rel="noopener noreferrer">
+                <Link href={project?.location || "/projects"}  >
                   View Details
-                </a>
+                </Link>
                 <HiArrowUpRight className="transition-transform duration-300 group-hover/view:translate-x-1 group-hover/view:-translate-y-1" />
               </button>
             </div>
