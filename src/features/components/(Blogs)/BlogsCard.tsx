@@ -1,5 +1,6 @@
 import { BlogsDetails } from "./BlogsData"
 import { FC } from "react";
+import Link from "next/link";
 interface BlogsCardProps {
   limit?: number;
 }
@@ -12,10 +13,9 @@ export const BlogsCard: FC<BlogsCardProps> = ({ limit }) => {
   return (
     <>
       {blogsToShow.map((blog, index) => (
-        <a
+        <Link
           key={index}
-          href={blog.location}
-          target="_blank"
+          href={blog?.location || "#"}
           rel="noopener noreferrer"
           className="block w-full touch-manipulation active:opacity-75"
           style={{
@@ -43,7 +43,7 @@ export const BlogsCard: FC<BlogsCardProps> = ({ limit }) => {
 
             </div>
           </article>
-        </a>
+        </Link>
       ))}
     </>
   );
