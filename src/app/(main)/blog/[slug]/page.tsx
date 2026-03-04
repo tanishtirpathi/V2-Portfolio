@@ -32,7 +32,7 @@ export default async function BlogPage({
 
       <div className="relative z-10 mt-10 space-y-6">
         <Link
-          href="/blogs"
+          href="/blog"
           className="inline-flex items-center text-sm px-3 py-1.5 rounded-lg border border-black/20 dark:border-white/20 bg-white/40 dark:bg-white/5 backdrop-blur-md hover:underline"
         >
           Back to blogs

@@ -1,4 +1,4 @@
-//import Link from "next/link";
+import Link from "next/link";
 import { BlogsCard } from "./BlogsCard";
 export default function BlogShow() {
   return (
@@ -14,10 +14,10 @@ export default function BlogShow() {
           dark:bg-black/80 px-4 py-2 rounded-lg
          hover:bg-gray-400/70 dark:hover:bg-white/5 shadow-xl cursor-pointer 
          transition duration-300 ease-in-out">
-            <a href="./blog" target="_blank" rel="noopener noreferrer"
+            <Link href="./blog" rel="noopener noreferrer"
               className=" font-main text-sm font-semibold flex items-center "
             >View My Philosophy
-            </a></span>
+            </Link></span>
         </span>
       </div>
     </div>
