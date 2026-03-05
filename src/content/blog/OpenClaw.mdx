@@ -1,0 +1,250 @@
+# Building My Own OpenClaw-Style AI Agent
+
+Before starting, one thing is important:  
+This project was not built to compete with any product. I built it purely to experience what **real engineering feels like** — experimenting, breaking things, fixing them, and finally making something that actually works.
+
+---
+
+## Why I Built This
+
+I came across a video by **Piyush Garg** where he explained how OpenClaw works internally and what it actually does.
+
+While watching it, something clicked in my mind.
+
+About **two years ago**, I had already tried building something similar — a **Jarvis-like assistant** for myself. But at that time, I never took it seriously or built it properly.
+
+Here is that old project:
+
+> https://github.com/tanishtirpathi/Jarvis
+
+After watching the video, a few thoughts started running through my head:
+
+- Curiosity — how does something like this actually work?
+- Why can’t I build the same thing myself?
+- What is the point of being an engineer if I can’t recreate systems like this?
+- I also didn’t want to send my **personal machine data to someone else's servers**.
+
+So I decided to build my own version.
+
+
+---
+
+<img
+  src="/images/Blog/OPENCLAW.png"
+  alt="Iron Man arc reactor glowing"
+  width="600"
+/>
+
+---
+
+
+## Understanding How OpenClaw Works
+
+That night I started researching how OpenClaw actually works internally.
+
+At a high level, the architecture looks something like this:
+
+- User Command (Telegram / WhatsApp)
+↓
+- Planner (LLM)
+↓
+- Action Generator
+↓
+- Tool Executor (Browser / OS / APIs)
+↓
+- Observation (Screenshot / DOM / Output)
+↓
+- Memory Update
+↓
+- Loop Again
+
+When I understood the basic workflow, it honestly didn't look impossible.
+
+So I decided:
+
+**I'll start building it the next day.**
+
+---
+
+## The Build Process
+
+The next day I came back from my exam, opened my laptop, and started working.
+
+The process was simple:
+
+- Open ChatGPT
+- Research different approaches
+- Open VS Code
+- Start coding
+
+---
+
+<img
+  src="/images/Blog/OPENCLAW2.jpg"
+  alt="Iron Man arc reactor glowing"
+  width="600"
+/>
+
+---
+
+## Step 1 — Creating the Telegram Bot
+
+The first step was creating a **Telegram bot** for remote communication.
+
+I used:
+
+> "BotFather"
+
+to generate the bot and get the API token.
+
+After that I:
+
+- wrote the initial Python code
+- added my Telegram user ID
+- connected the bot to a **local Python server running on my laptop**
+
+Once the connection worked, I started adding basic commands.
+
+---
+
+## Step 2 — Basic Features
+
+The first version included simple commands like:
+
+- `/start`
+- weather updates
+- news updates
+
+This helped verify that the **bot communication and command system** were working properly.
+
+---
+
+## Step 3 — Integrating an LLM
+
+Next, I integrated the **Gemini API** so the bot could respond intelligently.
+
+This allowed the assistant to:
+
+- process prompts
+- understand commands
+- generate responses
+
+Now it started feeling like an **actual AI assistant** instead of a simple bot.
+
+---
+
+## Step 4 — Connecting It With My Laptop
+
+At this point something still felt incomplete.
+
+The real power of an agent like this is **controlling your machine remotely**.
+
+So I started researching how to integrate **system-level commands**.
+
+The workflow became:
+
+1. Send a command from Telegram
+2. The bot receives it on my local server
+3. Python triggers a specific function
+4. That function executes something on my laptop
+
+After implementing this system, my bot could control my machine.
+
+---
+
+<img
+  src="/images/Blog/OPENCLAW3.jpg"
+  alt="Iron Man arc reactor glowing"
+  width="600"
+/>
+
+---
+
+## What My Agent Can Do
+
+Currently, the assistant can perform these actions:
+
+- Shutdown laptop (with password protection)
+- Lock the screen
+- Open any application
+- Open any website
+- Take a screenshot and send it to Telegram
+- Restart the laptop
+- Activate **Study Mode** (custom automation setup)
+- Use the webcam to capture an image of my room
+- Perform Google searches
+- Fetch news updates
+- Fetch weather updates
+- Send my task reminders
+
+Everything runs through **Telegram commands**.
+
+---
+
+## Total Commands Implemented
+
+- shutdown (with password)
+- lock screen
+- open app
+- open website
+- screenshot
+- restart laptop
+- study mode
+- webcam capture
+- google search
+- news
+- weather
+- task reminder
+
+---
+
+## Future Plans
+
+This is still an early version, and I want to improve the architecture.
+
+My next steps are:
+
+### 1. Move Some Services Online
+
+Currently everything runs locally.  
+I want to host certain services online such as:
+
+- news
+- Gemini integration
+- background automation
+
+---
+
+### 2. Split the System Into Two Parts
+
+I plan to divide the system into:
+
+**Local Agent**
+
+- Runs only when my laptop is on
+- Controls OS-level actions
+- Executes commands like screenshots, apps, webcam, etc.
+
+**Cloud Agent**
+
+- Runs **24/7**
+- Handles tasks like:
+  - news updates
+  - weather
+  - last laptop activity
+  - reminders
+  - background processing
+
+This architecture will make the system **more scalable and reliable**.
+
+---
+
+## Final Thoughts
+
+This project wasn’t about building something perfect.
+
+It was about **understanding systems**, experimenting, and realizing that most complex tools are just combinations of simpler components.
+
+Sometimes the best way to learn engineering is simple:
+
+**See something interesting → Try to rebuild it yourself.**

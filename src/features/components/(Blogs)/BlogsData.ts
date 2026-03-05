@@ -16,6 +16,11 @@ export const BlogsDetails: Blogs[] = [
         time: "5 Min Read",
         location: "/blog/Stark"
     },
+    {
+        title: "Making My own OpenClaw ",
+        time: "4 Min Read",
+        location: "/blog/OpenClaw"
+    }
 
     // {
     //     title: "what make me always wake up and work instead of chilling whole day ",
