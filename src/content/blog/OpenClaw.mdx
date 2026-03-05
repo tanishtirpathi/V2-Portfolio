@@ -15,7 +15,9 @@ About **two years ago**, I had already tried building something similar — a **
 
 Here is that old project:
 
-> https://github.com/tanishtirpathi/Jarvis
+> <a href="https://github.com/tanishtirpathi/Jarvis" target="_blank">
+>   https://github.com/tanishtirpathi/Jarvis
+> </a>
 
 After watching the video, a few thoughts started running through my head:
 
@@ -25,7 +27,6 @@ After watching the video, a few thoughts started running through my head:
 - I also didn’t want to send my **personal machine data to someone else's servers**.
 
 So I decided to build my own version.
-
 
 ---
 
@@ -37,7 +38,6 @@ So I decided to build my own version.
 
 ---
 
-
 ## Understanding How OpenClaw Works
 
 That night I started researching how OpenClaw actually works internally.
@@ -45,17 +45,17 @@ That night I started researching how OpenClaw actually works internally.
 At a high level, the architecture looks something like this:
 
 - User Command (Telegram / WhatsApp)
-↓
+  ↓
 - Planner (LLM)
-↓
+  ↓
 - Action Generator
-↓
+  ↓
 - Tool Executor (Browser / OS / APIs)
-↓
+  ↓
 - Observation (Screenshot / DOM / Output)
-↓
+  ↓
 - Memory Update
-↓
+  ↓
 - Loop Again
 
 When I understood the basic workflow, it honestly didn't look impossible.
