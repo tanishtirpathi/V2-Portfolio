@@ -8,20 +8,20 @@ export default function OSPage() {
 
       {/* Background Image */}
       <Image
-        src="/OS/BGlight.webp"
+        src="/OS/BGlight.jpg"
         alt="OS background light"
         fill
         priority
-        className="object-cover -z-10 dark:hidden"
+        className="object-cover -z-10 dark:hidden transition-all duration-400"
       />
 
       {/* DARK MODE */}
       <Image
-        src="/OS/BGdark.webp"
+        src="/OS/BGdark.jpg"
         alt="OS background dark"
         fill
         priority
-        className="object-cover -z-10 hidden dark:block"
+        className="object-cover -z-10 hidden dark:block transition-all duration-400"
       />
 
       {/* Optional blur overlay for readability */}
@@ -29,7 +29,7 @@ export default function OSPage() {
 
       <TopBar />
 
-      <h1 className="text-3xl font-serif font-light text-center px-6">
+      <h1 className="text-3xl font-serif italic  font-light text-center px-6 dark:text-white dark:bg-black/50 rounded-md px-4 py-3 bg-white/50 text-black">
         Interactive OS Mode in development. Please check back later after 13 March.
       </h1>
 
