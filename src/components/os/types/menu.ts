@@ -1,8 +1,11 @@
-export type MenuItem = {
-    label: string
-    action?: string
-    separator?: boolean
-  }
+export type MenuItem =
+  | {
+      label: string
+      shortcut?: string
+      action?: string
+    }
+  | { separator: true }
+
   
   export type MenuSection = {
     title: string
