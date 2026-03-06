@@ -8,7 +8,7 @@ export default function OSPage() {
 
       {/* Background Image */}
       <Image
-        src="/OS/BGlight.jpg"
+        src="/OS/Bglight.jpg"
         alt="OS background light"
         fill
         priority
