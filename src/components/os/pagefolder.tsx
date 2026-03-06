@@ -1,5 +1,4 @@
 import React from "react";
-
 const DevelopersCorner: React.FC = () => {
   return (
     <div className="relative group w-[200px] h-[150px] bg-transparent rounded-xl overflow-hidden hidden lg:block">
