@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import TopBar from "@/components/os/compo/TopBar"
-
+import Dock from "@/components/os/compo/Dock"
 export default function OSPage() {
   return (
     <main className="relative min-h-screen text-black flex items-center justify-center overflow-hidden">
@@ -32,7 +32,7 @@ export default function OSPage() {
       <h1 className="text-3xl font-serif italic  font-light text-center px-6 dark:text-white dark:bg-black/50 rounded-md px-4 py-3 bg-white/50 text-black">
         Interactive OS Mode in development. Please check back later after 13 March.
       </h1>
-
+    <Dock />
       <div className="fixed top-5 right-5">
         <button
           className="

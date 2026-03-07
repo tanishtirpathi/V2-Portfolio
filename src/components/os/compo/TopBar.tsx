@@ -35,9 +35,7 @@ export default function TopBar({ appTitle = "Finder" }: Props) {
   useEffect(() => {
     const saved = localStorage.getItem("theme") === "dark"
     document.documentElement.classList.toggle("dark", saved)
-    setTimeout(() => {
-      setDark(saved)
-    }, 0)
+    setDark(saved)
   }, [])
 
   // Clock
@@ -97,18 +95,18 @@ export default function TopBar({ appTitle = "Finder" }: Props) {
                 shadow-2xl
               "
             >
-         {menu.items.map((item, i) =>
-                        "separator" in item ? (
-                          <DropdownMenuSeparator key={i} />
-                        ) : (
-                          <DropdownMenuItem
-                            key={i}
-                            className="text-sm hover:bg-white/20 dark:hover:bg-white/10"
-                          >
-                            {item.label}
-                          </DropdownMenuItem>
-                        )
-)}
+              {menu.items.map((item, i) =>
+                item.separator ? (
+                  <DropdownMenuSeparator key={i} />
+                ) : (
+                  <DropdownMenuItem
+                    key={i}
+                    className="text-sm hover:bg-white/20 dark:hover:bg-white/10"
+                  >
+                    {item.label}
+                  </DropdownMenuItem>
+                )
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
         ))}
