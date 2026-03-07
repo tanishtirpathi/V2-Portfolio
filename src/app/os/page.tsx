@@ -2,6 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import TopBar from "@/components/os/compo/TopBar"
 import Dock from "@/components/os/compo/Dock"
+import { FaHome } from "react-icons/fa";
+
 export default function OSPage() {
   return (
     <main className="relative min-h-screen text-black flex items-center justify-center overflow-hidden">
@@ -34,16 +36,13 @@ export default function OSPage() {
       </h1>
 
     <Dock/>
-      <div className="fixed top-5 right-5">
+      <div className="fixed top-8 right-5">
+       
         <button
           className="
           relative
           px-3 py-1
           rounded-md
-          backdrop-blur-md
-          bg-gray-200/30
-          border
-          border-white
           text-gray-900
           shadow-md
           transition-all
@@ -51,10 +50,8 @@ export default function OSPage() {
           hover:scale-[1.02]
           hover:bg-white/40
         "
-        >
-          <Link href="/" className="text-black no-underline">
-            Back to Home
-          </Link>
+        >  <Link href="/" className="text-white font-bold text-lg no-underline">
+            <FaHome /></Link>
         </button>
       </div>
     </main>
