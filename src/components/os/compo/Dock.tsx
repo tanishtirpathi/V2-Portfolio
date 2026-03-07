@@ -29,7 +29,7 @@ export default function Dock() {
       fixed bottom-4 left-1/2 -translate-x-1/2
       flex items-end gap-2
       px-4 py-2 rounded-xl
-      bg-black/55 backdrop-blur-2xl
+      bg-white/10 dark:bg-black/55 backdrop-blur-2xl
       border border-white/20
       shadow-2xl
       "
@@ -41,10 +41,10 @@ export default function Dock() {
           className="
           absolute -top-12 left-1/2 -translate-x-1/2
           px-4 py-1 rounded-md
-          bg-black/70 text-white
+         bg-white/40 dark:bg-black/70 text-black dark:text-white
           text-sm font-medium
           backdrop-blur-xl
-          shadow-xl
+          shadow-xl font-sans font-semibold
           pointer-events-none
           "
         >
@@ -89,7 +89,7 @@ export default function Dock() {
               className="
               w-[50px] h-[50px]
               rounded-lg
-              bg-white/20
+              bg-white/20 dark:bg-white/40
               backdrop-blur-xl
               border border-white/20
               shadow-lg
