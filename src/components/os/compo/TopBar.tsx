@@ -96,7 +96,7 @@ export default function TopBar({ appTitle = "Finder" }: Props) {
               "
             >
               {menu.items.map((item, i) =>
-                item.separator ? (
+              "separator" in item ? (
                   <DropdownMenuSeparator key={i} />
                 ) : (
                   <DropdownMenuItem
