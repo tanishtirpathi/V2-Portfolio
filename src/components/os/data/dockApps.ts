@@ -11,19 +11,19 @@ export const dockApps: DockApp[] = [
   {
     id: "About Me",
     label: "About Me",
-    icon: "/icons/skills.jpg",
+    icon: "/OS/icon/Blogs.webp",
     component: "SkillsShowcase",
   },
   {
     id: "Projects",
     label: "Projects",
-    icon: "/icons/Project.jpg",
+    icon: "/OS/icon/Project.webp",
     component: "Projects",
   },
   {
     id: "Blogs",
     label: "Blogs",
-    icon: "/icons/Notes.png",
+    icon: "/OS/icon/Notes.webp",
     component: "Blogs",
   },
 
@@ -31,7 +31,12 @@ export const dockApps: DockApp[] = [
 
   {
     label: "GitHub",
-    icon: "/icons/github.jpg",
+    icon: "/OS/icon/github.webp",
     url: "https://github.com/tanishtirpathi",
+  },
+   {
+    label: "twitter",
+    icon: "/OS/icon/x.jpg",
+    url: "https://x.com/tanishtirpathi",
   },
 ]
