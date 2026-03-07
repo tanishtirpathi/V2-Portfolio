@@ -33,8 +33,8 @@ export default function GithubActivity() {
                 light: [
                   "#f0ebef",
                   "#dbd1d9",
-                  "#af9cad",
-                  "#806b7e",
+                  "#685966",
+                  "#70576e",
                   "#4f3751",
                 ],
               }}
