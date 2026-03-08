@@ -181,11 +181,28 @@ body {
   }
 }
 
-html {
-  transition: dark 0.3s ease ,root 0.3s ease , background-color 0.3s ease, color 0.3s ease;
+/* View Transition API - diagonal wipe from top-right to bottom-left */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
+::view-transition-new(root) {
+  clip-path: polygon(100% 0, 100% 0, 100% 0);
+  animation: wipe-in 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
 
+::view-transition-old(root) {
+  animation: none;
+}
 
-
+@keyframes wipe-in {
+  0% {
+    clip-path: polygon(100% 0, 100% 0, 100% 0);
+  }
+  100% {
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  }
+}
 

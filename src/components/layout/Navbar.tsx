@@ -13,11 +13,17 @@ export default function Navbar() {
     setDarkMode(isDark)
   }, [])
 
-  const toggleTheme = () => {
+const toggleTheme = () => {
+  if (document.startViewTransition) {
+    document.startViewTransition(() => {
+      document.documentElement.classList.toggle("dark")
+      setDarkMode(!darkMode)
+    })
+  } else {
     document.documentElement.classList.toggle("dark")
     setDarkMode(!darkMode)
   }
-
+}
   return (
     <nav
       className="
