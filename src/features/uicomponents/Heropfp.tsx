@@ -46,7 +46,7 @@ export default function HeroSection() {
               Tanish Tirpathi
             </h1>
 
-            <p className="text-gray-500 font-semibold font-mono text-xs md:xs lg:text-xs">
+            <p className="text-gray-500 font-light font-mono text-xs md:text-xs lg:text-xs">
               Engineer - Polymath 
             </p>
           </div>

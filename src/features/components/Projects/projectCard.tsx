@@ -14,7 +14,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
     : ProjectDetail;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
+    <div className="grid grid-cols-2 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
       {projectsToShow.map((project, index) => (
         <div
           key={index}

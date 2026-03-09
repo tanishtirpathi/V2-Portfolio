@@ -16,7 +16,7 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="bg-white border-2 border-gray-200 rounded-xl shadow-xl p-4">
+      <div className="bg-[#c4c4c4] dark:bg-[#18181b] border-2 border-gray-200 rounded-xl shadow-xl p-4">
 
         <div className="relative w-full h-[600px] rounded-lg overflow-hidden border">
           <Image

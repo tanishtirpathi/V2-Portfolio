@@ -30,8 +30,7 @@ export default function Home() {
         <SocialLinks />
         <SectionBorder className="mt-6" />
         <ConnectButtons />
-                <SectionBorder className="mt-6" />
-
+        <SectionBorder className="mt-6" />
         <ExperienceSection />
         <ProjectShow />
         <SectionBorder className="mt-6" />
