@@ -13,17 +13,17 @@ export default function Navbar() {
     setDarkMode(isDark)
   }, [])
 
-const toggleTheme = () => {
-  if (document.startViewTransition) {
-    document.startViewTransition(() => {
+  const toggleTheme = () => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        document.documentElement.classList.toggle("dark")
+        setDarkMode(!darkMode)
+      })
+    } else {
       document.documentElement.classList.toggle("dark")
       setDarkMode(!darkMode)
-    })
-  } else {
-    document.documentElement.classList.toggle("dark")
-    setDarkMode(!darkMode)
+    }
   }
-}
   return (
     <nav
       className="
@@ -47,7 +47,7 @@ const toggleTheme = () => {
         {/* Left side image */}
         <Link href="/" className="flex items-center hover:transform hover:scale-105 transition duration-200 ease-in-out">
           <Image
-            src="/images/Top.jpg" 
+            src="/images/Top.jpg"
             alt="Logo"
             width={40}
             height={40}
@@ -69,6 +69,12 @@ const toggleTheme = () => {
             className="opacity-70 hover:opacity-100 hover:underline transition"
           >
             Projects
+          </Link>
+          <Link
+            href="/Resume"
+            className="opacity-70 hover:opacity-100 hover:underline transition"
+          >
+            Resume
           </Link>
 
           <Link

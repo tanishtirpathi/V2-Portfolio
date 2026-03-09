@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto py-20 px-4 relative">
+    <div className="max-w-2xl mx-auto py-20 px-4 relative">
 
       <DiagonalPattern side="left" />
       <DiagonalPattern side="right" />
