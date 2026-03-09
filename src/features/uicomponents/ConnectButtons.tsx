@@ -4,6 +4,7 @@ import { PiNotepadLight } from "react-icons/pi"
 import {  FiX } from "react-icons/fi"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { SiAirplayvideo } from "react-icons/si";
+import Link  from "next/link"
 
 export default function ConnectButtons() {
     const [showModal, setShowModal] = useState(false)
@@ -20,14 +21,12 @@ export default function ConnectButtons() {
         <>
             <div className="flex py-4 items-center gap-6">
                 <RainbowButton variant="outline">
-                    <a
-                        href="https://docs.google.com/document/d/e/2PACX-1vSvmlZaSpYs7Z7JWNe2o1VddGUWKsqNUGaQmWqGMDRT-lMaMF5QwWDXeVDqat9EQFwf5Ec_BDmSXWTE/pub"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/Resume"
                         className="font-main font-semibold flex items-center gap-2"
                     >
                         Resume/CV <PiNotepadLight />
-                    </a>
+                    </Link>
                 </RainbowButton>
 
                 <RainbowButton
