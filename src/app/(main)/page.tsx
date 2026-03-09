@@ -12,7 +12,7 @@ import BlogShow from "@/features/components/(Blogs)/Blogs";
 import Footer from "@/features/uicomponents/Footer";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
-import {PersonalStuff } from "@/features/uicomponents/Personalstuff";
+import { PersonalStuff } from "@/features/uicomponents/Personalstuff";
 export default function Home() {
   const GithubActivity = dynamic(
     () => import("../../features/uicomponents/Github"),
@@ -30,10 +30,12 @@ export default function Home() {
         <SocialLinks />
         <SectionBorder className="mt-6" />
         <ConnectButtons />
-        <TechStack />
+                <SectionBorder className="mt-6" />
+
+        <ExperienceSection />
         <ProjectShow />
         <SectionBorder className="mt-6" />
-        <ExperienceSection />
+        <TechStack />
         <GithubActivity />
         <SectionBorder className="mt-6" />
         <PersonalStuff />
