@@ -1,5 +1,4 @@
 "use client";
-import SpeakNameButton from "@/components/layout/Speakbutton";
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -43,13 +42,12 @@ export default function HeroSection() {
 
           {/* Info */}
           <div className="pb-3 flex flex-col">
-            <h1 className="text-xl sm:text-3xl md:text-4xl font-serif italic flex items-center gap-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif italic flex items-center gap-2">
               Tanish Tirpathi
-              <SpeakNameButton />
             </h1>
 
             <p className="text-gray-500 font-semibold font-mono text-xs md:xs lg:text-xs">
-              Full Stack Developer
+              Engineer - Polymath 
             </p>
           </div>
 
