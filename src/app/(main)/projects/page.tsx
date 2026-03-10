@@ -1,7 +1,6 @@
 
 "use client"
-
-import { CoolButton } from "@/components/layout/CoolButton";
+import Link from "next/link";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ProjectCard } from "@/features/components/Projects/projectCard";
 export default function Home() {
@@ -16,10 +15,13 @@ export default function Home() {
       <ProjectCard />
 
       <div className="mt-10 justify-center flex">
-             <CoolButton onClick={() => window.location.href = '/'}>
-          Go to Home
-        </CoolButton>
-            </div>
+        <Link
+          href="/"
+          className="text-sm font-bold px-4 py-2 rounded-md bg-black/90 text-white dark:bg-white/40 dark:text-black font-sans ">
+
+            Go to Home
+           </Link>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import SectionBorder from "@/components/layout/Seprators";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
-import { CoolButton } from "@/components/layout/CoolButton";
 export default function Home() {
     return (
         <div className="max-w-3xl mx-auto px-4 py-20 relative ">
@@ -87,9 +86,12 @@ export default function Home() {
             </section>
             <div className="items-center flex  justify-center mt-10  gap-4" >
                 <div className=" justify-center flex">
-                    <CoolButton onClick={() => window.location.href = '/'}>
-          Go to Home
-        </CoolButton>
+                     <Link
+          href="/"
+          className="text-sm font-bold px-4 py-2 rounded-md bg-black/90 text-white dark:bg-white/40 dark:text-black font-sans ">
+
+            Go to Home
+           </Link>
                 </div>
                 <Link href="/VScode"
                     className="flex justify-center group

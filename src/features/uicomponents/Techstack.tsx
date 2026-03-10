@@ -41,6 +41,8 @@ export function TechStack() {
                 opacity-0
                 group-hover:opacity-100
                 transition
+                font-bold 
+                font-sans
                 whitespace-nowrap
                 pointer-events-none
               "
