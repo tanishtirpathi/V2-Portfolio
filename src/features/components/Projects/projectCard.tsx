@@ -3,6 +3,7 @@ import { ProjectDetail } from "./project";
 import { LuGithub } from "react-icons/lu";
 import { IoEarthOutline } from "react-icons/io5";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { TECH_STACK } from "@/features/data/techstack"
 import Link from "next/link";
 interface ProjectCardProps {
   limit?: number;
@@ -68,6 +69,50 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               <p className="text-sm font-main font-semibold text-black/70 dark:text-gray-400 leading-relaxed line-clamp-3">
                 {project.description}
               </p>
+            </div>
+            <div className="flex flex-wrap gap-3 mt-3">
+              {project.tech.map((techKey) => {
+                const tech = TECH_STACK.find((t) => t.key === techKey);
+                if (!tech) return null;
+
+                return (
+                  <div key={tech.key} className="relative group">
+
+                    {tech.theme ? (
+                      <>
+                        {/* Light */}
+                        <Image
+                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
+                          alt={tech.title}
+                          width={24}
+                          height={24}
+                          className="block dark:hidden group-hover:scale-110 transition"
+                          unoptimized
+                        />
+
+                        {/* Dark */}
+                        <Image
+                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
+                          alt={tech.title}
+                          width={24}
+                          height={24}
+                          className="hidden dark:block group-hover:scale-110 transition"
+                          unoptimized
+                        />
+                      </>
+                    ) : (
+                      <Image
+                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
+                        alt={tech.title}
+                        width={24}
+                        height={24}
+                        className="group-hover:scale-110 transition"
+                        unoptimized
+                      />
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* Bottom Section */}

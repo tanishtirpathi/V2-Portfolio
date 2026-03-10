@@ -6,6 +6,7 @@ export interface Project {
     LiveLink: string;
     GithubLink: string;
     status: string;
+    tech: string[];
     location?: string;
 }
 export const ProjectDetail: Project[] = [
@@ -16,6 +17,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://trendup.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Trend-up-",
         status: "Completed",
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
         location: "/projects/Trendup"
     },
     {
@@ -24,6 +26,7 @@ export const ProjectDetail: Project[] = [
         image: "/images/Project/LeetLow.jpg",
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
         status: "Building",
         location: "/projects/LeetLow"
     },
@@ -32,15 +35,17 @@ export const ProjectDetail: Project[] = [
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
         image: "/images/Project/Mindpin.jpg",
         LiveLink: "https://mindpin.tanishtirpathi.me",
+        tech: ["express", "javascript", "css", "html"],
         GithubLink: "https://github.com/tanishtirpathi/Mindpin",
         status: "Completed",
         location: "/projects/Mindpin"
     },
-       {
+    {
         title: "Playlister",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
         image: "/images/Project/Playlistr.jpg",
         LiveLink: "https://playlistr.tanishtirpathi.me",
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/Playlistr",
         status: "Building",
         location: "/projects/Playlistr"
@@ -50,6 +55,7 @@ export const ProjectDetail: Project[] = [
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
         image: "/images/Project/TripGuard.jpg",
         LiveLink: "https://trip-guard.vercel.app/",
+        tech: ["React", "Javascript", "nodejs", "mongodb", "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
         location: "/projects/TripGuard"
