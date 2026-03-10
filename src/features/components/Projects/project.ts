@@ -35,7 +35,7 @@ export const ProjectDetail: Project[] = [
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
         image: "/images/Project/Mindpin.jpg",
         LiveLink: "https://mindpin.tanishtirpathi.me",
-        tech: ["express", "javascript", "css", "html"],
+        tech: ["express", "js", "tailwindcss", "html"],
         GithubLink: "https://github.com/tanishtirpathi/Mindpin",
         status: "Completed",
         location: "/projects/Mindpin"
@@ -55,7 +55,7 @@ export const ProjectDetail: Project[] = [
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
         image: "/images/Project/TripGuard.jpg",
         LiveLink: "https://trip-guard.vercel.app/",
-        tech: ["React", "Javascript", "nodejs", "mongodb", "tailwindcss"],
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
         location: "/projects/TripGuard"

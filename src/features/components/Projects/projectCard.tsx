@@ -84,8 +84,8 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                         <Image
                           src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
                           alt={tech.title}
-                          width={24}
-                          height={24}
+                          width={20}
+                          height={20}
                           className="block dark:hidden group-hover:scale-110 transition"
                           unoptimized
                         />
@@ -94,8 +94,8 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                         <Image
                           src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
                           alt={tech.title}
-                          width={24}
-                          height={24}
+                          width={20}
+                          height={20}
                           className="hidden dark:block group-hover:scale-110 transition"
                           unoptimized
                         />
@@ -104,8 +104,8 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                       <Image
                         src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
                         alt={tech.title}
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                         className="group-hover:scale-110 transition"
                         unoptimized
                       />
