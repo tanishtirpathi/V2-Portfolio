@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Navbar from "../../components/layout/Navbar";
+import SmoothScroll from "@/components/scrool/smooth";
 import DevelopersCorner from "@/components/os/pagefolder";
 
 export default function MainLayout({
@@ -9,7 +10,7 @@ export default function MainLayout({
   children: ReactNode;
 }) {
   return (
-    <>
+    <><SmoothScroll>
       <Link href="/os" className="fixed top-0 right-0">
         <DevelopersCorner />
       </Link>
@@ -17,8 +18,9 @@ export default function MainLayout({
         <div className="w-full md:w-4/5 lg:w-1/2">
           <Navbar />
           {children}
-        </div>   
+        </div>
       </div>
+    </SmoothScroll>
     </>
   );
 }
