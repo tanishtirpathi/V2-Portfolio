@@ -3,7 +3,6 @@ import Link from "next/link";
 import Navbar from "../../components/layout/Navbar";
 import SmoothScroll from "@/components/scrool/smooth";
 import DevelopersCorner from "@/components/os/pagefolder";
-import OnekoCat from "@/components/onako/Cat";
 export default function MainLayout({
   children,
 }: {
@@ -11,7 +10,6 @@ export default function MainLayout({
 }) {
   return (
     <><SmoothScroll>
-      <OnekoCat />
       <Link href="/os" className="fixed top-0 right-0">
         <DevelopersCorner />
       </Link>
