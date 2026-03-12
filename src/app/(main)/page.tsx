@@ -9,6 +9,7 @@ import { TechStack } from "@/features/uicomponents/Techstack";
 import ProjectShow from "@/features/components/Projects/ProjectShow";
 import SectionBorder from "@/components/layout/Seprators";
 import BlogShow from "@/features/components/(Blogs)/Blogs";
+import ChessCard from "@/components/chesscard/ChessCard";
 import Footer from "@/features/uicomponents/Footer";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
@@ -38,6 +39,7 @@ export default function Home() {
         <GithubActivity />
         <SectionBorder className="mt-6" />
         <PersonalStuff />
+        <ChessCard/>
         <SectionBorder className="mt-6" />
         <BlogShow />
         <Footer />
