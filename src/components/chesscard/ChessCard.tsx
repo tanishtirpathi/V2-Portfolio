@@ -30,11 +30,15 @@ export default function ChessCard() {
   if (error) return null;
 
   return (
-    <a
+  <div className="mt-10">
+     <h2 className="text-3xl font-sans text-black dark:text-gray-300 font-bold">Chess Review</h2>
+      <h4 className="text-xs text-black/70 dark:text-gray-400 font-mono mb-6">Here are some of my winning </h4>
+      <a
       href="https://www.chess.com/member/tanishtirpathi"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-4 p-4 rounded-xl border border-neutral-700 hover:border-neutral-500 transition-all bg-neutral-900 hover:bg-neutral-800"
+      className="flex items-center gap-4 p-4 rounded-xl border border-black/20
+       transition-all bg-[#DDDDDD] dark:bg-[#2D2D2D]  shadow-xl"
     >
       {/* Avatar */}
       <div className="relative w-12 h-12 shrink-0">
@@ -54,7 +58,7 @@ export default function ChessCard() {
       {/* Info */}
       <div className="flex flex-col gap-0.5 min-w-0">
         <div className="flex items-center gap-2">
-          <h3 className="font-semibold text-white text-sm">Chess.com</h3>
+          <h3 className="font-semibold text-black dark:text-white/80 font-sans text-sm">Tanish Tirpathi</h3>
           {data?.profile?.status === "premium" && (
             <span className="text-xs bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded-full">
               Premium
@@ -63,7 +67,7 @@ export default function ChessCard() {
         </div>
 
         {data ? (
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-black/70 dark:text-white/70">
             ⚡ {data.stats.chess_blitz?.last?.rating ?? "—"}
             &nbsp;·&nbsp;
             🕐 {data.stats.chess_rapid?.last?.rating ?? "—"}
@@ -74,10 +78,11 @@ export default function ChessCard() {
           <div className="h-3 w-32 bg-neutral-700 rounded animate-pulse mt-1" />
         )}
 
-        <p className="text-xs text-neutral-500">
+        <p className="text-xs text-black/70 dark:text-white/70">
           {data ? `${data.profile.followers} followers` : ""}
         </p>
       </div>
     </a>
+  </div>
   );
 }

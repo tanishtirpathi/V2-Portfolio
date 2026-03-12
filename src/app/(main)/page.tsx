@@ -39,6 +39,7 @@ export default function Home() {
         <GithubActivity />
         <SectionBorder className="mt-6" />
         <PersonalStuff />
+        <SectionBorder className="mt-6" />
         <ChessCard/>
         <SectionBorder className="mt-6" />
         <BlogShow />
