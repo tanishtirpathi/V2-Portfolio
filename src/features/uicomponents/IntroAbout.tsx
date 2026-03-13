@@ -1,8 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { motion , Variants  } from "framer-motion";
 
-const fadeUp = {
+const fadeUp : Variants = {
   hidden: {
     opacity: 0,
     y: 40,
@@ -12,7 +12,7 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: "easeOut" as const ,
     },
   },
 };
