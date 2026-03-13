@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ProjectDetail } from "./project";
 import { LuGithub } from "react-icons/lu";
@@ -5,6 +7,7 @@ import { IoEarthOutline } from "react-icons/io5";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { TECH_STACK } from "@/features/data/techstack"
 import Link from "next/link";
+import { motion } from "framer-motion";
 interface ProjectCardProps {
   limit?: number;
 }
@@ -17,8 +20,12 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
       {projectsToShow.map((project, index) => (
-        <div
+        <motion.div
           key={index}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
           className="group relative bg-[#fdfbfb] dark:bg-[#18181b] 
       backdrop-blur-lg border border-gray-300/40 shadow-lg dark:border-white/10 
       rounded-2xl overflow-hidden transition-all duration-150  ease-in-out 
@@ -149,7 +156,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

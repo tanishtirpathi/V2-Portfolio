@@ -6,6 +6,9 @@ import { RainbowButton } from "@/components/ui/rainbow-button"
 import { SiAirplayvideo } from "react-icons/si";
 import Link  from "next/link"
 
+import { motion } from "framer-motion";
+
+
 export default function ConnectButtons() {
     const [showModal, setShowModal] = useState(false)
 
@@ -19,7 +22,12 @@ export default function ConnectButtons() {
 
     return (
         <>
-            <div className="flex py-4 items-center gap-6">
+            <motion.div
+                className="flex py-4 items-center gap-6"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            >
                 <RainbowButton variant="outline">
                     <Link
                         href="/Resume"
@@ -35,7 +43,7 @@ export default function ConnectButtons() {
                 >
                     Video Intro <SiAirplayvideo />
                 </RainbowButton>
-            </div>
+            </motion.div>
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md animate-in fade-in duration-300">
 

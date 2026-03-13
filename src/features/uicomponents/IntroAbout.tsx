@@ -1,6 +1,31 @@
+"use client"
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
+
 export default function IntroAbout() {
     return (
-        <div className="px-2 mt-6 max-w-3xl mb-4">
+        <motion.div
+            className="px-2 mt-6 max-w-3xl mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            >
             <p className="text-black/60 dark:text-gray-400  leading-relaxed text-lg font-sans  ">
 
            Ya I love Building full stack things with {" "}
@@ -26,6 +51,6 @@ export default function IntroAbout() {
                     ambition </span>
                 ☕
             </span>
-        </div>
+        </motion.div>
     )
 }

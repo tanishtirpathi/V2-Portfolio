@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 export const ExperienceCard = ({
     image,
     title,
@@ -15,7 +18,13 @@ export const ExperienceCard = ({
     Technologies: string[]
 }) => {
     return (
-        <div className="group relative mb-10 border-b border-gray-300 dark:border-gray-600 pb-3 mx-2 pb-10">
+        <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="group relative mb-10 border-b border-gray-300 dark:border-gray-600 pb-3 mx-2 pb-10"
+        >
 
             {/* Header */}
             <div className="flex justify-between items-start mb-3 ">
@@ -53,6 +62,6 @@ export const ExperienceCard = ({
                     </span>
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
