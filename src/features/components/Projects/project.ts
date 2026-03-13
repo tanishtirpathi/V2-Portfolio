@@ -20,6 +20,16 @@ export const ProjectDetail: Project[] = [
         tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
         location: "/projects/Trendup"
     },
+        {
+        title: "Portfolio Website",
+        description: "This is my personal portfolio website where I showcase my projects, experience, blogs, and tech stack with a modern, responsive design built using Next.js and TypeScript.",
+        image: "/images/Project/Portfolio.jpg",
+        LiveLink: "https://tanishtirpathi.me",
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
+        status: "Completed",
+        location: "/projects/Portfolio"
+    },
     {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
@@ -40,16 +50,7 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         location: "/projects/Mindpin"
     },
-    {
-        title: "Playlister",
-        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/Playlistr.jpg",
-        LiveLink: "https://playlistr.tanishtirpathi.me",
-        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
-        GithubLink: "https://github.com/tanishtirpathi/Playlistr",
-        status: "Building",
-        location: "/projects/Playlistr"
-    },
+
     {
         title: "Trip Guard ",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
