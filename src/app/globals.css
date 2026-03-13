@@ -92,7 +92,43 @@
 body {
   font-family: var(--font-main), Arial, Helvetica, sans-serif;
 }
+.site-bottom-blur {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  height: 24vh;
+  pointer-events: none;
+  z-index: 40;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  background: color-mix(in oklab, var(--background) 65%, transparent);
+
+  mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.9) 20%,
+    rgba(0,0,0,0.6) 45%,
+    rgba(0,0,0,0.2) 70%,
+    rgba(0,0,0,0) 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.9) 20%,
+    rgba(0,0,0,0.6) 45%,
+    rgba(0,0,0,0.2) 70%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+.dark .site-bottom-blur {
+  background: color-mix(in oklab, var(--background) 80%, transparent);
+}
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

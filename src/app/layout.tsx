@@ -108,6 +108,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${hanken.variable} ${instrument.variable} antialiased `}
       >
         {children}
+        <div aria-hidden="true" className="site-bottom-blur" />
           <OnekoCat />
       </body>
     </html>
