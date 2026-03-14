@@ -32,20 +32,21 @@ export function TechStack() {
             {/* Hover Label */}
             <span
               className="
-                absolute -top-7
-                text-xs
-                bg-black text-white
-                dark:bg-white dark:text-black/80
-                px-2 py-1
-                rounded
-                opacity-0
-                group-hover:opacity-100
-                transition
-                font-bold 
-                font-sans
-                whitespace-nowrap
-                pointer-events-none
-              "
+                    absolute -top-8 left-1/2 -translate-x-1/2
+                    text-xs
+                    bg-black text-white
+                    dark:bg-white dark:text-black
+                    px-2 py-1
+                    rounded
+                    whitespace-nowrap
+                    pointer-events-none
+                    opacity-0 translate-y-2 scale-90
+                    group-hover:opacity-100
+                    group-hover:translate-y-0
+                    group-hover:scale-100
+                    transition-all duration-200
+                    font-bold font-sans
+                  "
             >
               {tech.title}
             </span>

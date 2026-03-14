@@ -31,8 +31,9 @@ export default function OSPage() {
 
       <TopBar />
 
-      <h1 className="text-3xl font-serif italic  font-light text-center px-6 dark:text-white dark:bg-black/50 rounded-md px-4 py-3 bg-white/50 text-black">
-        Interactive OS Mode in development. Please check back later after 13 March.
+      <h1 className="text-3xl font-serif italic  font-light text-center px-6 dark:text-white dark:bg-black/90
+       rounded-md px-4 py-3 bg-white/90 text-black">
+        Interactive OS Mode in development. Please check back later after 23 March.
       </h1>
 
     <Dock/>

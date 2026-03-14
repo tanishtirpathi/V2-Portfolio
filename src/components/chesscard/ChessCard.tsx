@@ -37,8 +37,8 @@ export default function ChessCard() {
       href="https://www.chess.com/member/tanishtirpathi"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-4 p-4 rounded-xl border border-black/20
-       transition-all bg-[#DDDDDD] dark:bg-[#2D2D2D]  shadow-xl"
+      className="flex items-center gap-4 p-4 rounded-xl border border-white dark:border-black
+       transition-all bg-[#DDDDDD] dark:bg-[#2D2D2D]  shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:bg-[#CCCCCC] dark:hover:bg-[#3A3A3A]"
     >
       {/* Avatar */}
       <div className="relative w-12 h-12 shrink-0">
