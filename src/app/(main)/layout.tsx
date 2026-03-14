@@ -19,6 +19,7 @@ export default function MainLayout({
           {children}
         </div>
       </div>
+      <div aria-hidden="true" className="site-bottom-blur" />
     </SmoothScroll>
     </>
   );
