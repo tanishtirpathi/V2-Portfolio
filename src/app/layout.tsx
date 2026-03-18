@@ -44,6 +44,11 @@ export const metadata: Metadata = {
 
   keywords: [
     "Tanish Tirpathi",
+    "tanish tirpathi",
+    "Tanish tirpathi portfolio",
+    "Tanish tirpathi",
+    "Tanish tripathi",
+    "tanishtirpathi ",
     "Web Development",
     "Startup",
     "MERN Developer",
@@ -59,7 +64,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: "https://tanishtirpathi.me",
+    url: "https://www.tanishtirpathi.me",
     title: "Tanish Tirpathi",
     description:
       "Tanish Tirpathi — A modern digital platform built with performance and intelligence.",
