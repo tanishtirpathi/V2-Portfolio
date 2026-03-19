@@ -17,7 +17,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://trendup.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Trend-up-",
         status: "Completed",
-        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss", "shadcn-ui"],
         location: "/projects/Trendup"
     },
         {
@@ -25,10 +25,20 @@ export const ProjectDetail: Project[] = [
         description: "This is my personal portfolio website where I showcase my projects, experience, blogs, and tech stack with a modern, responsive design built using Next.js and TypeScript.",
         image: "/images/Project/Portfolio.jpg",
         LiveLink: "https://tanishtirpathi.me",
-        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss", "motion", "shadcn-ui"],
         GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
         status: "Completed",
         location: "/projects/Portfolio"
+    },
+        {
+        title: "Playlitr",
+            description: "Playlitr is a song-playing website where you can listen to music without ads or sign-up.",
+        image: "/images/Project/Playlitr.jpg",
+        LiveLink: "https://playlitr.tanishtirpathi.me",
+        GithubLink: "https://github.com/tanishtirpathi/song-player/",
+        tech: ["nextjs2", "typescript", "Base Ui" , "js", "redis", "tailwindcss" , "motion", "shadcn-ui"],
+        status: "Building",
+        location: "/projects/Playlitr"
     },
     {
         title: "Leetlow",
@@ -36,7 +46,7 @@ export const ProjectDetail: Project[] = [
         image: "/images/Project/LeetLow.jpg",
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
-        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
+        tech: ["nextjs2", "typescript", "nodejs", "docker","mysql", "tailwindcss"],
         status: "Building",
         location: "/projects/LeetLow"
     },
