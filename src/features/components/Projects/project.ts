@@ -23,7 +23,7 @@ export const ProjectDetail: Project[] = [
     {
         title: "Portfolio Website",
         description: "This is my personal portfolio website where I showcase my projects, experience, blogs, and tech stack with a modern, responsive design built using Next.js and TypeScript.",
-        image: "/images/Project/Portfolio.png",
+        image: "/images/Project/Portfolio.jpg",
         LiveLink: "https://tanishtirpathi.me",
         tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss", "motion", "shadcn-ui"],
         GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
