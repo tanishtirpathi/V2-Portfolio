@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "Tanish Tirpathi",
     images: [
       {
-        url: "/OGB.png",
+        url: "/OBG.png",
         width: 1200,
         height: 630,
         alt: "Tanish Tirpathi Preview",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "Tanish Tirpathi",
     description:
       "Tanish Tirpathi — A modern digital platform built by Tanish Tirpathi.",
-    images: ["/OGB.png"],
+    images: ["/OBG.png"],
     creator: "@tanishtirpathi",
   },
 
