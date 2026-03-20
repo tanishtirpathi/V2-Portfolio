@@ -23,7 +23,7 @@ export const ExperienceCard = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className="group relative mb-10 border-b border-gray-300 dark:border-gray-600 pb-3 mx-2 pb-10"
+            className="group relative mb-10 border-b border-gray-300 dark:border-gray-600 pb-3 mx-2 pb-1 "
         >
 
             {/* Header */}
@@ -56,7 +56,7 @@ export const ExperienceCard = ({
                          bg-black/10 dark:bg-white/5 
                          text-black dark:text-white border border-dashed 
                          border-black/30 dark:border-white/40 px-3 py-1 rounded-md 
-                         hover:bg-purple-500/20 transition-all duration-200"
+                         hover:bg-purple-500/20 transition-all duration-200 hover:dark:bg-pink-200/40 cursor-default"
                     >
                         {tech}
                     </span>
