@@ -18,7 +18,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
     : ProjectDetail;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
+    <div className="grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
       {projectsToShow.map((project, index) => (
         <motion.div
           key={index}
@@ -48,11 +48,11 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
             {/* Top Content */}
             <div>
               <div className="flex items-start justify-between mb-3">
-                <h2 className="text-3xl font-light font-serif italic tracking-tight text-black dark:text-white">
+                <h2 className="text-lg md:text-xl lg:text-3xl font-light font-serif italic tracking-tight text-black dark:text-white">
                   {project.title}
                 </h2>
 
-                <div className="flex gap-3 text-lg text-gray-400">
+                <div className="flex gap-3 text-sm md:text-lg lg:text-lg text-gray-400">
                   <a
                     href={project.LiveLink}
                     target="_blank"
@@ -73,7 +73,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                 </div>
               </div>
 
-              <p className="text-sm font-main font-semibold text-black/70 dark:text-gray-400 leading-relaxed line-clamp-3">
+              <p className="text-xs md:text-sm lg:text-sm font-main font-semibold text-black/70 dark:text-gray-400 leading-relaxed line-clamp-3">
                 {project.description}
               </p>
             </div>
