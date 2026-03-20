@@ -4,6 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Sun, Moon } from "lucide-react"
+import { FaGithub } from "react-icons/fa"
+import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion"
 
 export default function Navbar() {
@@ -85,13 +87,38 @@ export default function Navbar() {
           >
             Blogs
           </Link>
-
+   
           <button
             onClick={toggleTheme}
             className="p-2 rounded-md cursor-pointer transition"
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+          <a
+            href="https://github.com/tanishtirpathi/V2-Portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open GitHub profile"
+            className="
+              group
+              inline-flex items-center gap-2
+              px-3 py-1.5
+              rounded-full
+              bg-gradient-to-r from-neutral-800 to-neutral-700
+              text-white
+              shadow-sm
+              hover:shadow-md hover:scale-105
+             
+              transition-all duration-200
+            "
+          >
+            <FaGithub size={16} />
+            <FaStar
+              size={14}
+              className="text-amber-300 group-hover:text-amber-200 transition-colors"
+            />
+            
+          </a>
         </div>
 
       </div>
