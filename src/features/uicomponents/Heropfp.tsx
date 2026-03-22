@@ -83,7 +83,7 @@ export default function HeroSection() {
               className="text-gray-500 font-light font-mono text-xs md:text-xs lg:text-xs"
               variants={fadeUp}
             >
-              Engineer - Polymath
+              Engineer - Polymath - creator
             </motion.p>
           </motion.div>
 
