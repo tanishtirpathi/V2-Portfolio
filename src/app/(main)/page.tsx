@@ -14,6 +14,7 @@ import Footer from "@/features/uicomponents/Footer";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
 import { PersonalStuff } from "@/features/uicomponents/Personalstuff";
+import Message from "@/components/Message/Message";
 export default function Home() {
   const GithubActivity = dynamic(
     () => import("../../features/uicomponents/Github"),
@@ -37,6 +38,8 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <TechStack />
         <GithubActivity />
+       <SectionBorder className="mt-6" />
+        <Message />
         <SectionBorder className="mt-6" />
         <PersonalStuff />
         <SectionBorder className="mt-6" />
