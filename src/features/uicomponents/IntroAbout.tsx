@@ -1,20 +1,21 @@
 "use client"
 
-import { motion , Variants  } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import LiveAge from "@/features/components/Age/Liveage";
 
-const fadeUp : Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut" as const ,
+const fadeUp: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 40,
     },
-  },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeOut" as const,
+        },
+    },
 };
 
 
@@ -25,10 +26,10 @@ export default function IntroAbout() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            >
+        >
             <p className="text-black/60 dark:text-gray-400  leading-relaxed text-lg font-sans  ">
 
-           Ya I love Building full stack things with {" "}
+                Ya I love Building full stack things with {" "}
 
                 <span className="inline-flex items-center gap-1 rounded italic text-yellow-500 font-serif">
                     <span className="dark:text-white text-black font-light">JavaScript</span>
@@ -40,7 +41,7 @@ export default function IntroAbout() {
                     <span className="dark:text-white text-black font-light">TypeScript</span>
                 </span>{" "}
                 <br />
-                <span>sometime build with other languages also</span> 
+                <span>sometime build with other languages also</span>
             </p>
             <span className="mt-2 font-sans text-black/60 dark:text-gray-400 font-semibold">
                 Mostly powered by strong
@@ -50,6 +51,9 @@ export default function IntroAbout() {
                 <span className="dark:text-white text-black text-lg font-serif italic px-1  font-light">
                     ambition </span>
                 ☕
+            </span>
+            <span className="mt-2 font-sans text-black/60 dark:text-gray-400 font-semibold block">
+                I've been here since <LiveAge /> years
             </span>
         </motion.div>
     )
