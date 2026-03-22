@@ -71,8 +71,17 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         location: "/projects/TripGuard"
     }
+,    {
+        title: "Notion-Cheker ",
+        description: "It is a system which go to my notion speicfic dashboard and get all data and send it to my telegram every time it change and also real time it update on my extension of browsers ",
+        image: "/images/Project/NotionChecker.jpg",
+        LiveLink: "https://github.com/tanishtirpathi/Notion_checker/tree/main/extension",
+        tech: [ "js", "nodejs",  "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/Notion_checker",
+        status: "Completed",
+        location: "/projects/NotionChecker"
+    }
 
 
 ]
-
 
