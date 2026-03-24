@@ -1,32 +1,12 @@
 "use client"
 
-import { motion, Variants } from "framer-motion";
 import LiveAge from "@/features/components/Age/Liveage";
 
-const fadeUp: Variants = {
-    hidden: {
-        opacity: 0,
-        y: 40,
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.3,
-            ease: "easeOut" as const,
-        },
-    },
-};
 
 
 export default function IntroAbout() {
     return (
-        <motion.div
-            className="px-2 mt-6 max-w-3xl mb-4"
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-        >
+        <div className="px-2 mt-6 max-w-3xl mb-4">
             <p className="text-black/60 dark:text-gray-400  leading-relaxed text-lg font-sans  ">
 
                 Ya I love Building full stack things with {" "}
@@ -53,8 +33,8 @@ export default function IntroAbout() {
                 ☕
             </span>
             <span className="mt-2 font-sans text-black/60 dark:text-gray-400 font-semibold block">
-                I've been here since <LiveAge /> years
+                I&apos;ve been here since <LiveAge /> years
             </span>
-        </motion.div>
+        </div>
     )
 }

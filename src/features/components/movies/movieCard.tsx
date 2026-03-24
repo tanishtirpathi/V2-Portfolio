@@ -21,6 +21,7 @@ export const MovieCard = ({ movie, className }: MovieCardProps) => {
                   <Image
                     src={movie.posterUrl || "/placeholder.jpg"}
                     alt={movie.title}
+                    loading={"lazy"}
                       fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

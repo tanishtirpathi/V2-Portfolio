@@ -37,6 +37,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               src={project.image}
               alt={project.title}
               width={400}
+              loading={"lazy"}
               height={240}
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />

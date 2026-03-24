@@ -66,6 +66,7 @@ export function TechStack() {
                     alt={`${tech.title} icon`}
                     width={32}
                     height={32}
+                    loading={"lazy"}
                     className="
         block dark:hidden
         transition-transform duration-200
@@ -84,6 +85,7 @@ export function TechStack() {
                     alt={`${tech.title} icon`}
                     width={32}
                     height={32}
+                    loading={"lazy"}
                     className="
         hidden dark:block
         transition-transform duration-200
@@ -101,6 +103,7 @@ export function TechStack() {
                   src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
                   alt={`${tech.title} icon`}
                   width={32}
+                  loading={"lazy"}
                   height={32}
                   className="
       transition-transform duration-200
