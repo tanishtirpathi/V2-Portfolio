@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useState, useEffect } from "react";
 
 const MILLISECONDS_IN_YEAR = 365.25 * 24 * 60 * 60 * 1000;
@@ -17,7 +16,7 @@ export function useLiveAge(birthDate:string) {
     };
 
     update(); 
-    const interval = setInterval(update, 50)
+    const interval = setInterval(update, 90)
 
     return () => clearInterval(interval);
   }, [birthDate]);

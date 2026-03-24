@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Left side image */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/Top.jpg"
+            src="/images/Top.webp"
             alt="Logo"
             width={40}
             height={40}

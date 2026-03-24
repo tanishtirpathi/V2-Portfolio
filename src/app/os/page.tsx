@@ -10,7 +10,7 @@ export default function OSPage() {
 
       {/* Background Image */}
       <Image
-        src="/OS/Bglight.jpg"
+        src="/OS/bglight.webp"
         alt="OS background light"
         fill
         priority
@@ -19,7 +19,7 @@ export default function OSPage() {
 
       {/* DARK MODE */}
       <Image
-        src="/OS/BGdark.jpg"
+        src="/OS/bgdark.webp"
         alt="OS background dark"
         fill
         priority

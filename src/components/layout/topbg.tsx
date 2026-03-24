@@ -5,7 +5,7 @@ export default function TopBg() {
   return (
     <div className="relative w-full h-[200px] ">
       <Image
-        src="/images/bg.jpg"
+        src="/images/bg.webp"
         alt="Background"
         fill
         priority

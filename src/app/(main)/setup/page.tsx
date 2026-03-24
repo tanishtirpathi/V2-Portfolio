@@ -17,7 +17,7 @@ export default function Home() {
                     My mark-1 suit in my cave with box of scraps</p>
             </div>
             <div className="relative w-full h-56 mb-10 border border-gray-400/30 dark:border-white/10  rounded-xl px-5 shadow-lg">
-                <Image src="/images/setup/SetupMain.jpg" className="object-cover p-2 rounded-xl" alt="Setup Image" fill />
+                <Image src="/images/setup/SetupMain.webp" className="object-cover p-2 rounded-xl" alt="Setup Image" fill />
             </div>
             <SectionBorder className="mt-10" />
             <section className="mt-16 px-5">

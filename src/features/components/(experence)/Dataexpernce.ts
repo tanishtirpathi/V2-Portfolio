@@ -10,7 +10,7 @@ export interface DataExperence {
 
 export const dataExperence: DataExperence[] = [  {
     id: 1,
-    image:"/images/Exp/SIH.jpg",
+    image:"/images/Exp/SIH.webp",
     title: "Smart India Hackathon – Internal Winner",
     company: "College Internal Round",
     startDate: "September-2025",
@@ -20,7 +20,7 @@ export const dataExperence: DataExperence[] = [  {
   },
   {
     id: 2,
-    image:"/images/Exp/IBM.jpg",
+    image:"/images/Exp/IBM.webp",
     title: "AI Chatbot Developer – Hackathon Winner",
     company: "IBM District Level Hackathon",
     startDate: "December-2024",
@@ -31,7 +31,7 @@ export const dataExperence: DataExperence[] = [  {
 
   {
     id: 3,
-      image:"/images/Exp/scaler.png",
+      image:"/images/Exp/scaler.webp",
     title: "Remote Trainee / Intern",
     company: "Scaler",
     startDate: "June-2024",

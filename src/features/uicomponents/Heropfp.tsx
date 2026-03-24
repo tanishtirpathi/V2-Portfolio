@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="relative w-full h-[200px] sm:h-[180px] md:h-[220px]">
         <Image
-          src="/images/bg.jpg"
+          src="/images/bg.webp"
           alt="Background banner"
           fill
           priority
@@ -41,7 +41,7 @@ export default function HeroSection() {
           
           >
             <Image
-              src="/images/pfp.jpg"
+              src="/images/pfp.webp"
               alt="Tanish Tirpathi"
               fill
               priority

@@ -20,7 +20,7 @@ export const PersonalStuff = () => {
                                 dark:hover:bg-white/20 transition-all  
                                 duration-300 cursor-pointer hover:-translate-y-1 ">
 
-                        <Image src="/MOV.jpg" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
+                        <Image src="/MOV.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
                         <div>
                             <h3 className="text-lg font-semibold font-sans ">Movies</h3>
                             <h4 className="text-sm font-main text-gray-600 dark:text-gray-400">Things that inspire me over the period of time</h4>
@@ -37,7 +37,7 @@ export const PersonalStuff = () => {
                                 dark:hover:bg-white/20 transition-all  
                                 duration-300 cursor-pointer hover:-translate-y-1 ">
 
-                    <Image src="/COD.jpg" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
+                    <Image src="/COD.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
                     <div>
                         <h3 className="text-lg font-semibold font-sans ">Coding Setup</h3>
                         <h4 className="text-sm font-main text-gray-600 dark:text-gray-400">My current development environment</h4>
@@ -54,7 +54,7 @@ export const PersonalStuff = () => {
                                 dark:hover:bg-white/20 transition-all  
                                 duration-300 cursor-pointer hover:-translate-y-1 ">
 
-                        <Image src="/Code.jpg" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
+                        <Image src="/Code.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
                         <div>
                             <h3 className="text-lg font-semibold font-sans ">VS-code Extensions</h3>
                             <h4 className="text-sm font-main text-gray-600 

@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/ICON.jpg",
-    shortcut: "/ICON.jpg",
-    apple: "/ICON.jpg",
+    icon: "/ICON.webp",
+    shortcut: "/ICON.webp",
+    apple: "/ICON.webp",
   },
 
   openGraph: {
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "Tanish Tirpathi",
     images: [
       {
-        url: "/OBG.png",
+        url: "/OBG.webp",
         width: 1200,
         height: 630,
         alt: "Tanish Tirpathi Preview",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "Tanish Tirpathi",
     description:
       "Tanish Tirpathi — A modern digital platform built by Tanish Tirpathi.",
-    images: ["/OBG.png"],
+    images: ["/OBG.webp"],
     creator: "@tanishtirpathi",
   },
 
