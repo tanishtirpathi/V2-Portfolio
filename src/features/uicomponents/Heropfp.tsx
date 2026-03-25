@@ -52,7 +52,7 @@ export default function HeroSection() {
           {/* Info */}
           <div className="pb-3 flex flex-col">
             <h1
-              className="text-2xl sm:text-3xl md:text-4xl font-serif italic flex items-center gap-2"
+              className="text-2xl sm:text-3xl md:text-4xl font-serif  italic flex items-center gap-2"
             
             >
               Tanish Tirpathi
@@ -61,7 +61,7 @@ export default function HeroSection() {
             <p
               className="text-gray-500 font-light font-mono text-xs md:text-xs lg:text-xs"
             >
-              Engineer - Polymath - creator
+              Engineer / Polymath
             </p>
           </div>
 

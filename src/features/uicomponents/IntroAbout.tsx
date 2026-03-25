@@ -12,27 +12,25 @@ export default function IntroAbout() {
                 Ya I love Building full stack things with {" "}
 
                 <span className="inline-flex items-center gap-1 rounded italic text-yellow-500 font-serif">
-                    <span className="dark:text-white text-black font-light">JavaScript</span>
+                    <span className="dark:text-white/90 text-black font-light">JavaScript</span>
                 </span>{" "}
 
                 &{" "}
 
                 <span className="inline-flex items-center gap-1 rounded  italic text-blue-500 font-serif">
-                    <span className="dark:text-white text-black font-light">TypeScript</span>
+                    <span className="dark:text-white/90 text-black font-light">TypeScript</span>
                 </span>{" "}
                 <br />
-                <span>sometime build with other languages also</span>
             </p>
             <span className="mt-2 font-sans text-black/60 dark:text-gray-400 font-semibold">
                 Mostly powered by strong
-                <span className="dark:text-white text-black text-lg font-serif italic px-1  font-light">
+                <span className="dark:text-white/90 text-black text-lg font-serif italic px-1  font-light">
                     coffee </span>
                 and stubborn
-                <span className="dark:text-white text-black text-lg font-serif italic px-1  font-light">
+                <span className="dark:text-white/90 text-black text-lg font-serif italic px-1  font-light">
                     ambition </span>
-                ☕
             </span>
-            <span className="mt-2 font-sans text-black/60 dark:text-gray-400 font-semibold block">
+            <span className="mt-5 font-sans text-black/60 dark:text-gray-400 font-semibold block">
                 I&apos;ve been here since <LiveAge /> years
             </span>
         </div>
