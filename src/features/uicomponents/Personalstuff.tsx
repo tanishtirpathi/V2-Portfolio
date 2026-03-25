@@ -11,14 +11,16 @@ export const PersonalStuff = () => {
 
 
 
-            <div className="shadow-lg rounded-md bg-gray-100 dark:bg-black/10 px-1">
+            <div className="shadow-md rounded-md bg-gray-100 dark:bg-black/10 px-1">
                 <Link href="/movies">
                     <div className="w-full px-4 py-2 bg-gray-100 
-                               dark:bg-white/10 rounded-lg 
+                               dark:bg-[#1b1b1b] rounded-lg 
+                                 border-1 border-gray-300
+                                dark:border-white/20
                                 mt-4 flex items-center gap-4 
-                                shadow-lg hover:bg-gray-200 
-                                dark:hover:bg-white/20 transition-all  
-                                duration-300 cursor-pointer hover:-translate-y-1 ">
+                                shadow-md hover:bg-gray-200 
+                                dark:hover:bg-[#2d2d2d] transition-all  
+                                duration-300 cursor-pointer ">
 
                         <Image src="/MOV.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
                         <div>
@@ -28,31 +30,35 @@ export const PersonalStuff = () => {
 
                     </div></Link>
             </div>
-            <div className="shadow-lg rounded-md bg-gray-100 dark:bg-black/10 px-1">
-            <Link href="/setup">
-                <div className="w-full px-4 py-2 bg-gray-100 
-                                dark:bg-white/10 rounded-lg 
+            <div className="shadow-md rounded-md bg-gray-100 dark:bg-black/10 px-1">
+                <Link href="/setup">
+                    <div className="w-full px-4 py-2 bg-gray-100 
+                                border-1 border-gray-300
+                                dark:border-white/20
+                                dark:bg-[#1b1b1b] rounded-lg 
                                 mt-4 flex items-center gap-4 
-                                shadow-lg hover:bg-gray-200 
-                                dark:hover:bg-white/20 transition-all  
-                                duration-300 cursor-pointer hover:-translate-y-1 ">
+                                shadow-md hover:bg-gray-200 
+                                dark:hover:bg-[#2d2d2d] transition-all  
+                                duration-300 cursor-pointer ">
 
-                    <Image src="/COD.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
-                    <div>
-                        <h3 className="text-lg font-semibold font-sans ">Coding Setup</h3>
-                        <h4 className="text-sm font-main text-gray-600 dark:text-gray-400">My current development environment</h4>
-                    </div>
+                        <Image src="/COD.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
+                        <div>
+                            <h3 className="text-lg font-semibold font-sans ">Coding Setup</h3>
+                            <h4 className="text-sm font-main text-gray-600 dark:text-gray-400">My current development environment</h4>
+                        </div>
 
-                </div></Link>
+                    </div></Link>
             </div>
-            <div className="shadow-lg rounded-md bg-gray-100 dark:bg-black/10 px-1">
+            <div className="shadow-md rounded-md bg-gray-100 dark:bg-black/10 px-1">
                 <Link href="/VScode">
                     <div className="w-full px-4 py-2 bg-gray-100 
-                               dark:bg-white/10 rounded-lg 
+                               dark:bg-[#1b1b1b] rounded-lg 
                                 mt-4 flex items-center gap-4 
-                                shadow-lg hover:bg-gray-200 
-                                dark:hover:bg-white/20 transition-all  
-                                duration-300 cursor-pointer hover:-translate-y-1 ">
+                                  border-1 border-gray-300
+                                dark:border-white/20
+                                shadow-md hover:bg-gray-200 
+                                dark:hover:bg-[#2d2d2d] transition-all  
+                                duration-300 cursor-pointer ">
 
                         <Image src="/Code.webp" className="rounded-md" alt="Personal stuff image" width={40} height={40} />
                         <div>

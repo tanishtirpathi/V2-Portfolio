@@ -92,11 +92,12 @@ export default function Navbar() {
               group
               inline-flex items-center gap-2
               px-3 py-1.5
-              rounded-full
-              bg-gradient-to-r from-neutral-800 to-neutral-700
+              rounded-md
+              bg-black/60
               text-white
               shadow-sm
-              hover:shadow-md
+              hover:shadow-md hover:bg-black/80 hover:scale-105
+              transition-transform duration-200
              
             "
           >

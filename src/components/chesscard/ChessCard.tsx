@@ -30,59 +30,60 @@ export default function ChessCard() {
   if (error) return null;
 
   return (
-  <div className="mt-10">
-     <h2 className="text-3xl font-sans text-black dark:text-gray-300 font-bold">Chess Review</h2>
+    <div className="mt-10">
+      <h2 className="text-3xl font-sans text-black dark:text-gray-300 font-bold">Chess Review</h2>
       <h4 className="text-xs text-black/70 dark:text-gray-400 font-mono mb-6">Here are some of my winning </h4>
       <a
-      href="https://www.chess.com/member/tanishtirpathi"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-4 p-4 rounded-xl border border-white dark:border-black
-       transition-all bg-[#DDDDDD] dark:bg-[#2D2D2D]  shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:bg-[#CCCCCC] dark:hover:bg-[#3A3A3A]"
-    >
-      {/* Avatar */}
-      <div className="relative w-12 h-12 shrink-0">
-        {data?.profile?.avatar ? (
-          <Image
-            src={data.profile.avatar}
-            alt="Chess.com avatar"
-            width={48}
-            height={48}
-            className="rounded-lg object-cover"
-          />
-        ) : (
-          <div className="w-12 h-12 rounded-lg bg-neutral-700 animate-pulse" />
-        )}
-      </div>
-
-      {/* Info */}
-      <div className="flex flex-col gap-0.5 min-w-0">
-        <div className="flex items-center gap-2">
-          <h3 className="font-semibold text-black dark:text-white/80 font-sans text-sm">Tanish Tirpathi</h3>
-          {data?.profile?.status === "premium" && (
-            <span className="text-xs bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded-full">
-              Premium
-            </span>
+        href="https://www.chess.com/member/tanishtirpathi"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4 p-4 rounded-xl  
+         border-1 border-gray-300 shadow-md dark:border-white/20
+       transition-all bg-gray-100  hover:bg-gray-300 dark:bg-[#181717]"
+      >
+        {/* Avatar */}
+        <div className="relative w-12 h-12 shrink-0 ">
+          {data?.profile?.avatar ? (
+            <Image
+              src={data.profile.avatar}
+              alt="Chess.com avatar"
+              width={48}
+              height={48}
+              className="rounded-lg object-cover"
+            />
+          ) : (
+            <div className="w-12 h-12 rounded-lg bg-neutral-700 animate-pulse" />
           )}
         </div>
 
-        {data ? (
-          <p className="text-xs text-black/70 dark:text-white/70">
-            ⚡ {data.stats.chess_blitz?.last?.rating ?? "—"}
-            &nbsp;·&nbsp;
-            🕐 {data.stats.chess_rapid?.last?.rating ?? "—"}
-            &nbsp;·&nbsp;
-            🔫 {data.stats.chess_bullet?.last?.rating ?? "—"}
-          </p>
-        ) : (
-          <div className="h-3 w-32 bg-neutral-700 rounded animate-pulse mt-1" />
-        )}
+        {/* Info */}
+        <div className="flex flex-col gap-0.5 min-w-0">
+          <div className="flex items-center gap-2">
+            <h3 className="font-semibold text-black dark:text-white/80 font-sans text-sm">Tanish Tirpathi</h3>
+            {data?.profile?.status === "premium" && (
+              <span className="text-xs bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded-full">
+                Premium
+              </span>
+            )}
+          </div>
 
-        <p className="text-xs text-black/70 dark:text-white/70">
-          {data ? `${data.profile.followers} followers` : ""}
-        </p>
-      </div>
-    </a>
-  </div>
+          {data ? (
+            <p className="text-xs text-black/70 dark:text-white/70">
+              ⚡ {data.stats.chess_blitz?.last?.rating ?? "—"}
+              &nbsp;·&nbsp;
+              🕐 {data.stats.chess_rapid?.last?.rating ?? "—"}
+              &nbsp;·&nbsp;
+              🔫 {data.stats.chess_bullet?.last?.rating ?? "—"}
+            </p>
+          ) : (
+            <div className="h-3 w-32 bg-neutral-700 rounded animate-pulse mt-1" />
+          )}
+
+          <p className="text-xs text-black/70 dark:text-white/70">
+            {data ? `${data.profile.followers} followers` : ""}
+          </p>
+        </div>
+      </a>
+    </div>
   );
 }
