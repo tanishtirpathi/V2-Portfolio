@@ -58,7 +58,7 @@ export default function ConnectButtons() {
                         </button>
                         <iframe
                             className="w-full aspect-video rounded-lg"
-                            src="https://www.youtube-nocookie.com/embed/LCwrRLJFqM4?rel=0&modestbranding=1"
+                            src="https://www.youtube.com/embed/5Xtz2dSKYwc?si=wgHG0kVLJMNE2LDq&rel=0&modestbranding=1&controls=0"
                             title="Introduction video"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
