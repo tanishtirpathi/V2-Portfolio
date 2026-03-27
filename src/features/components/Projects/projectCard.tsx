@@ -7,30 +7,62 @@ import { IoEarthOutline } from "react-icons/io5";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { TECH_STACK } from "@/features/data/techstack";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface ProjectCardProps {
   limit?: number;
+  typeFilter?: string;
 }
 
-export const ProjectCard = ({ limit }: ProjectCardProps) => {
+export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
+  const normalizedTypeFilter = typeFilter?.trim().toLowerCase();
+
+  const filteredProjects =
+    normalizedTypeFilter && normalizedTypeFilter !== "all"
+      ? ProjectDetail.filter((project) =>
+          project.type.some(
+            (type) => type.trim().toLowerCase() === normalizedTypeFilter,
+          ),
+        )
+      : ProjectDetail;
+
   const projectsToShow = limit
-    ? ProjectDetail.slice(0, limit)
-    : ProjectDetail;
+    ? filteredProjects.slice(0, limit)
+    : filteredProjects;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-0">
-      {projectsToShow.map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: index * 0.06 }}
-          className="group rounded-xl border border-neutral-200 dark:border-neutral-800 
+      <AnimatePresence mode="popLayout">
+        {projectsToShow.length === 0 && (
+          <motion.div
+            key="empty-state"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="col-span-full rounded-xl border border-dashed border-neutral-300 bg-neutral-100/60 px-6 py-10 text-center text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-400"
+          >
+            No projects found for this type.
+          </motion.div>
+        )}
+
+        {projectsToShow.map((project, index) => (
+          <motion.div
+            layout
+            key={project.location || project.title}
+            initial={{ opacity: 0, y: 16, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -14, scale: 0.98 }}
+            transition={{
+              layout: { type: "spring", stiffness: 420, damping: 34 },
+              duration: 0.25,
+              ease: "easeOut",
+              delay: index * 0.03,
+            }}
+            className="group rounded-xl border border-neutral-200 dark:border-neutral-800 
           bg-gray-100 dark:bg-neutral-900 overflow-hidden 
           transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-        >
+          >
           {/* Image */}
           <div className="relative w-full h-40 overflow-hidden">
             <Image
@@ -81,7 +113,7 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                   key={type}
                   className="text-xs px-2 py-0.5 rounded
                   bg-gray-100 dark:bg-gray-800  
-                  border border-gray-300 dark:border-gray-700
+                  border border-dashed  border-gray-300 dark:border-gray-700
                   text-neutral-600 dark:text-gray-300"
                 >
                   {type}
@@ -157,8 +189,9 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               </Link>
             </div>
           </div>
-        </motion.div>
-      ))}
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };

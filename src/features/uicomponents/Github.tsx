@@ -39,13 +39,13 @@ export default function GithubActivity() {
 
 
         <div className="flex flex items-center justify-center gap-x-1"> 
-          <p className=" text-sm text-black/50 font-bold dark:text-white/40 mb-1">
+          <p className=" text-xs sm:text-xs md:text-xs lg:text-sm text-black/50 font-bold dark:text-white/40 mb-1">
             Last commit was : 
           </p>
           <a
             href={data.repo.url}
             target="_blank"
-            className="text-purple-900 font-semibold  text-sm dark:text-purple-200/50"
+            className="text-purple-900 font-semibold  text-xs dark:text-purple-200/50"
           >
            {data.commit.message}
           </a>
