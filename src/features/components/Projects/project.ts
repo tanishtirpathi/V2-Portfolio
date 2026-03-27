@@ -7,6 +7,7 @@ export interface Project {
     GithubLink: string;
     status: string;
     tech: string[];
+    type: string[];
     location?: string;
 }
 export const ProjectDetail: Project[] = [
@@ -17,6 +18,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://trendup.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Trend-up-",
         status: "Completed",
+        type:["serious" , "webapp"],
         tech: ["react", "js", "nodejs", "mongodb", "tailwindcss", "shadcn-ui"],
         location: "/projects/Trendup"
     },
@@ -28,6 +30,7 @@ export const ProjectDetail: Project[] = [
         tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss", "motion", "shadcn-ui"],
         GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
         status: "Completed",
+        type:["serious" , "webapp" , "personal"],
         location: "/projects/Portfolio"
     },
     {
@@ -38,6 +41,7 @@ export const ProjectDetail: Project[] = [
         GithubLink: "https://github.com/tanishtirpathi/song-player/",
         tech: ["nextjs2", "typescript", "Base Ui", "js", "redis", "tailwindcss", "motion", "shadcn-ui"],
         status: "Completed",
+        type:["fun" , "webapp"],
         location: "/projects/Playlitr"
     }
     , {
@@ -48,6 +52,7 @@ export const ProjectDetail: Project[] = [
         GithubLink: "https://github.com/tanishtirpathi/Leetlow",
         tech: ["nextjs2", "typescript", "nodejs", "docker", "mysql", "tailwindcss"],
         status: "Building",
+        type:["serious" , "webapp"],
         location: "/projects/LeetLow"
     },
 
@@ -59,6 +64,7 @@ export const ProjectDetail: Project[] = [
         tech: ["express", "js", "tailwindcss", "html"],
         GithubLink: "https://github.com/tanishtirpathi/Mindpin",
         status: "Completed",
+        type:["Personal" , "desktopapp" , "fun"],
         location: "/projects/Mindpin"
     }, 
     {
@@ -69,6 +75,8 @@ export const ProjectDetail: Project[] = [
         tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
+        type:["serious" , "webapp"],
+
         location: "/projects/TripGuard"
     }
 ,    {
@@ -79,6 +87,7 @@ export const ProjectDetail: Project[] = [
         tech: [ "js", "nodejs",  "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/Notion_checker",
         status: "Completed",
+        type:["Personal" , "extension" , "fun"],
         location: "/projects/NotionChecker"
     }
 

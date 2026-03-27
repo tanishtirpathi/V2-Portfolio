@@ -5,9 +5,10 @@ import { ProjectDetail } from "./project";
 import { LuGithub } from "react-icons/lu";
 import { IoEarthOutline } from "react-icons/io5";
 import { HiArrowUpRight } from "react-icons/hi2";
-import { TECH_STACK } from "@/features/data/techstack"
+import { TECH_STACK } from "@/features/data/techstack";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
 interface ProjectCardProps {
   limit?: number;
 }
@@ -18,93 +19,100 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
     : ProjectDetail;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-8 px-8 md:px-1 lg:px-0  ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-0">
       {projectsToShow.map((project, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
-          className="group relative bg-[#fdfbfb] dark:bg-[#18181b] 
-      backdrop-blur-lg border border-gray-300/40 shadow-lg dark:border-white/10 
-      rounded-2xl overflow-hidden transition-all duration-150  ease-in-out 
-      hover:-translate-y-1 hover:border-white/20"
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.06 }}
+          className="group rounded-xl border border-neutral-200 dark:border-neutral-800 
+          bg-gray-100 dark:bg-neutral-900 overflow-hidden 
+          transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           {/* Image */}
-          <div className="relative w-full h-37 overflow-hidden">
+          <div className="relative w-full h-40 overflow-hidden">
             <Image
               src={project.image}
               alt={project.title}
-              width={400}
-              loading={"lazy"}
-              height={240}
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <div className="absolute inset-0 dark:bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           </div>
 
           {/* Content */}
-          <div className="p-6 flex flex-col justify-between h-[240px]">
-            {/* Top Content */}
-            <div>
-              <div className="flex items-start justify-between mb-3">
-                <h2 className="text-lg md:text-xl lg:text-3xl font-light font-serif italic tracking-tight text-black dark:text-white">
-                  {project.title}
-                </h2>
+          <div className="p-5 flex flex-col gap-2">
+            {/* Title + Actions */}
+            <div className="flex justify-between items-start">
+              <h2 className="text-lg font-medium text-neutral-900 dark:text-white">
+                {project.title}
+              </h2>
 
-                <div className="flex gap-3 text-sm md:text-lg lg:text-lg text-gray-400">
-                  <a
-                    href={project.LiveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black  dark:hover:text-white transition-colors"
-                  >
-                    <IoEarthOutline />
-                  </a>
-                  <a
-                    href={project.GithubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    <LuGithub />
-                  </a>
-
-                </div>
+              <div className="flex gap-3 text-neutral-400">
+                <a
+                  href={project.LiveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-neutral-900 dark:hover:text-white transition"
+                >
+                  <IoEarthOutline size={18} />
+                </a>
+                <a
+                  href={project.GithubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-neutral-900 dark:hover:text-white transition"
+                >
+                  <LuGithub size={18} />
+                </a>
               </div>
-
-              <p className="text-xs md:text-sm lg:text-sm font-main font-semibold text-black/70 dark:text-gray-400 leading-relaxed line-clamp-3">
-                {project.description}
-              </p>
             </div>
-            <div className="flex flex-wrap gap-3 mt-3">
+
+            {/* Description */}
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed">
+              {project.description}
+            </p>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-4">
+              {project.type.map((type) => (
+                <span
+                  key={type}
+                  className="text-xs px-2 py-0.5 rounded
+                  bg-gray-100 dark:bg-gray-800  
+                  border border-gray-300 dark:border-gray-700
+                  text-neutral-600 dark:text-gray-300"
+                >
+                  {type}
+                </span>
+              ))}
+            </div>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-3 pl-0.5">
               {project.tech.map((techKey) => {
                 const tech = TECH_STACK.find((t) => t.key === techKey);
                 if (!tech) return null;
 
                 return (
-                  <div key={tech.key} className="relative group">
-
+                  <div key={tech.key}>
                     {tech.theme ? (
                       <>
-                        {/* Light */}
                         <Image
                           src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
                           alt={tech.title}
-                          width={20}
-                          height={20}
-                          className="block dark:hidden group-hover:scale-110 transition"
+                          width={18}
+                          height={18}
+                          className="block dark:hidden opacity-80 hover:opacity-100 transition"
                           unoptimized
                         />
-
-                        {/* Dark */}
                         <Image
                           src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
                           alt={tech.title}
-                          width={20}
-                          height={20}
-                          className="hidden dark:block group-hover:scale-110 transition"
+                          width={18}
+                          height={18}
+                          className="hidden dark:block opacity-80 hover:opacity-100 transition"
                           unoptimized
                         />
                       </>
@@ -112,9 +120,9 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
                       <Image
                         src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
                         alt={tech.title}
-                        width={20}
-                        height={20}
-                        className="group-hover:scale-110 transition"
+                        width={18}
+                        height={18}
+                        className="opacity-80 hover:opacity-100 transition"
                         unoptimized
                       />
                     )}
@@ -123,38 +131,30 @@ export const ProjectCard = ({ limit }: ProjectCardProps) => {
               })}
             </div>
 
-            {/* Bottom Section */}
-            <div className="mt-2 pt-1 flex items-center justify-between">
-
-              {/* Status Badge */}
+            {/* Footer */}
+            <div className="flex items-center justify-between pt-2">
+              {/* Status */}
               <span
-                className={`text-xs px-3 py-1 rounded-full border flex items-center gap-2
-    ${project.status === "Completed"
-                    ? "bg-green-500/20 dark:bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20"
-                    : "bg-red-500/20 dark:bg-red-500/10 text-red-700 dark:text-red-400 border-red-500/20"
-                  }
-  `}
+                className={`text-xs px-2 py-1 rounded-full border font-sans font-semibold flex items-center gap-1
+                ${
+                  project.status === "Completed"
+                    ? "border-neutral-300 dark:border-green-700 text-green-600 dark:text-green-700"
+                    : "border-neutral-300 dark:border-gray-700 text-gray-500"
+                }`}
               >
-                <div
-                  className={`h-2 w-2 rounded-full animate-pulse
-      ${project.status === "Completed"
-                      ? "bg-green-700 dark:bg-green-400"
-                      : "bg-red-700 dark:bg-red-400"
-                    }
-    `}
-                ></div>
-
+                <div className="w-2 h-2 rounded-full bg-current" />
                 {project.status}
               </span>
-              {/* View Details */}
-              <button className="flex items-center gap-2 text-sm text-black/70 hover:text-black dark:text-gray-400 
-          dark:hover:text-white transition-all duration-300 group/view">
 
-                <Link href={project?.location || "/projects"}  >
-                  View Details
-                </Link>
-                <HiArrowUpRight className="transition-transform duration-300 group-hover/view:translate-x-1 group-hover/view:-translate-y-1" />
-              </button>
+              {/* CTA */}
+              <Link
+                href={project?.location || "/projects"}
+                className="flex items-center gap-1 text-sm text-neutral-600 
+                hover:text-black dark:hover:text-white transition"
+              >
+                View
+                <HiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
             </div>
           </div>
         </motion.div>
