@@ -66,7 +66,17 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type:["Personal" , "desktopapp" , "fun"],
         location: "/projects/Mindpin"
-    }, 
+    }, {
+        title: "Slappy",
+        description: "Slappy is a fun and interactive Desktop app which make weird sound when U hit your laptop.",
+        image: "/images/Project/Slappy.webp",
+        LiveLink: "https://slappy-ui.vercel.app/",
+        GithubLink: "https://github.com/tanishtirpathi/Slappyy",
+        tech: [ "js", "nodejs", "tailwindcss"],
+        status: "Completed",
+        type:["fun" , "desktopapp" , "personal"],
+        location: "/projects/Slappy"
+    },
     {
         title: "Trip Guard ",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
