@@ -20,7 +20,7 @@ export const BlogsDetails: Blogs[] = [
     },
     {
         title:"Who I am what make me ME",
-        time:"3 Min Read",
+        time:"13 Min Read",
         location:"/blog/WhoAmI"
     },
     {
