@@ -18,7 +18,11 @@ export const BlogsDetails: Blogs[] = [
         time: "4 Min Read",
         location: "/blog/OpenClaw"
     },
-    
+    {
+        title:"Who I am what make me ME",
+        time:"3 Min Read",
+        location:"/blog/WhoAmI"
+    },
     {
         title: "Learning from Raj shamani ",
         time: "15 Min Read",
