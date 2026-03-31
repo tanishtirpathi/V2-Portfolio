@@ -14,6 +14,7 @@ import Footer from "@/features/uicomponents/Footer";
 import DiagonalPattern from "@/features/components/LRBorder/Lrborder";
 import { ExperienceSection } from "@/features/uicomponents/Experence";
 import { PersonalStuff } from "@/features/uicomponents/Personalstuff";
+import BottomImage from "@/features/uicomponents/BottomImage";
 import Message from "@/components/Message/Message";
 export default function Home() {
   const GithubActivity = dynamic(
@@ -45,8 +46,10 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <ChessCard/>
         <SectionBorder className="mt-6" />
-        <BlogShow />
+        <BlogShow /> 
+        <BottomImage/>
         <Footer />
+     
       </main>
     </div>
   );

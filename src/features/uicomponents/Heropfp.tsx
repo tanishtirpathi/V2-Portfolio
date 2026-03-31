@@ -13,7 +13,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover rounded"
         />
 
         <div className="absolute inset-0 bg-black/30" />

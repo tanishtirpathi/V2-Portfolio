@@ -69,8 +69,8 @@ export default function GithubActivity() {
               colorScheme="light"
               theme={{
                 light: [
-                  "#f0ebef",
-                  "#dbd1d9",
+                  "#d6ced5",
+                  "#b39bae",
                   "#685966",
                   "#70576e",
                   "#4f3751",
@@ -90,10 +90,10 @@ export default function GithubActivity() {
               theme={{
                 dark: [
                   "#171622",
-                  "#231f37",
-                  "#3a3751",
+                  "#4c4863",
+                  "#565464",
                   "#6b6b80",
-                  "#9d9caf",
+                  "#c5c4d6",
                 ],
               }}
             />
