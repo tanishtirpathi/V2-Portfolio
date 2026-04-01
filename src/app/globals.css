@@ -242,3 +242,21 @@ body {
   }
 }
 
+
+
+.proof-marquee-track {
+					animation: proof-marquee 30s linear infinite;
+				}
+
+.proof-marquee:hover .proof-marquee-track {
+					animation-play-state: paused;
+				}
+
+@keyframes proof-marquee {
+					0% {
+						transform: translateX(0);
+					}
+					100% {
+						transform: translateX(-50%);
+					}
+				}
