@@ -12,17 +12,21 @@ export const CardDetails: Card[] = [
 
     {
         id: 1,
-        name: "Guillermo Rauch",
-        role: "CEO",
-        company: "Vercel",
+        name: "Neeraj ",
+        role: "@Neerajscript",
+        company: "X",
+        image:"/images/Proof/Neeraj.webp",
+        Link:"https://x.com/Neerajscript",
         description: "Awesome work. Loved the component architecture and that smooth slide-to-unlock interaction. Everything shipped polished and production ready.",
     }, 
     {
         id: 2,
-        name: "Sarah Chen",
-        role: "Product Designer",
-        company: "Linear",
-        description: "The UI quality is seriously impressive. The testimonial section now feels intentional, clean, and premium across desktop and mobile.",
+        name: "@Hamsini",
+        role: "content creator",
+        company: "Instargram",
+        image: "/images/Proof/hamsini.webp",
+        Link:"https://www.instagram.com/hamsinimanohar_/",
+        description: "Heyyy, really appreciate the website you redesigned for me, maybe we should get on call?",
     }
     , {
         id: 3,

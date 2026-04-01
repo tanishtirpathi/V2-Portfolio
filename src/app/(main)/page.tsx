@@ -37,21 +37,22 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <ExperienceSection />
         <ProjectShow />
-        <Proof/>
+        <SectionBorder className="mt-6" />
+        <Proof />
         <SectionBorder className="mt-6" />
         <TechStack />
         <GithubActivity />
-       <SectionBorder className="mt-6" />
+        <SectionBorder className="mt-6" />
         <Message />
         <SectionBorder className="mt-6" />
         <PersonalStuff />
         <SectionBorder className="mt-6" />
-        <ChessCard/>
+        <ChessCard />
         <SectionBorder className="mt-6" />
-        <BlogShow /> 
-        <BottomImage/>
+        <BlogShow />
+        <BottomImage />
         <Footer />
-     
+
       </main>
     </div>
   );
