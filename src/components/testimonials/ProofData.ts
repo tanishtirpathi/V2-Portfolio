@@ -24,7 +24,7 @@ export const CardDetails: Card[] = [
         name: "@Hamsini",
         role: "content creator",
         company: "Instargram",
-        image: "/images/Proof/hamsini.webp",
+        image: "/images/Proof/Hamsini.webp",
         Link:"https://www.instagram.com/hamsinimanohar_/",
         description: "Heyyy, really appreciate the website you redesigned for me, maybe we should get on call?",
     }

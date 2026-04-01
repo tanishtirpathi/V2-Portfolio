@@ -19,24 +19,21 @@ type Props = {
 
 export default function TopBar({ appTitle = "Finder" }: Props) {
   const [time, setTime] = useState("")
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(() => {
+    if (typeof window === "undefined") return false
+    return localStorage.getItem("theme") === "dark"
+  })
 
   // Theme toggle
   const toggleTheme = () => {
-    const root = document.documentElement
-    const next = !root.classList.contains("dark")
-
-    root.classList.toggle("dark", next)
-    localStorage.setItem("theme", next ? "dark" : "light")
-    setDark(next)
+    setDark((prev) => !prev)
   }
 
-  // Load saved theme
+  // Keep DOM class and local storage in sync with state
   useEffect(() => {
-    const saved = localStorage.getItem("theme") === "dark"
-    document.documentElement.classList.toggle("dark", saved)
-    setDark(saved)
-  }, [])
+    document.documentElement.classList.toggle("dark", dark)
+    localStorage.setItem("theme", dark ? "dark" : "light")
+  }, [dark])
 
   // Clock
   useEffect(() => {

@@ -4,8 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Sun, Moon } from "lucide-react"
-import { FaGithub } from "react-icons/fa"
-import { FaStar } from "react-icons/fa";
+import { GitHubStars } from "../ui/github-stars"
+import { TooltipProvider } from "../ui/tooltip"
+
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -18,6 +19,7 @@ export default function Navbar() {
     setDarkMode(!darkMode)
   }
   return (
+
     <nav
       className="
         fixed
@@ -76,38 +78,15 @@ export default function Navbar() {
           >
             Blogs
           </Link>
-   
+
           <button
             onClick={toggleTheme}
             className="p-2 rounded-md cursor-pointer"
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <a
-            href="https://github.com/tanishtirpathi/V2-Portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open GitHub profile"
-            className="
-              group
-              inline-flex items-center gap-2
-              px-3 py-1.5
-              rounded-md
-              bg-black/60
-              text-white
-              shadow-sm
-              hover:shadow-md hover:bg-black/80 hover:scale-105
-              transition-transform duration-200
-             
-            "
-          >
-            <FaGithub size={16} />
-            <FaStar
-              size={14}
-              className="text-amber-300 group-hover:text-amber-200"
-            />
-            
-          </a>
+          <TooltipProvider>
+            <div><GitHubStars repo="tanishtirpathi/V2-Portfolio" stargazersCount={2} /></div></TooltipProvider>
         </div>
 
       </div>

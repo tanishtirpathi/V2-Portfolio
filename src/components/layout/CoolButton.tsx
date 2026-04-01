@@ -3,8 +3,7 @@
 import { ButtonHTMLAttributes, FC } from "react";
 import clsx from "clsx";
 
-interface CoolButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+type CoolButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const CoolButton: FC<CoolButtonProps> = ({
   children,
