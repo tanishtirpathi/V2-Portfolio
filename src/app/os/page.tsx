@@ -190,9 +190,9 @@ export default function OSPage() {
         <section
           className="
           fixed z-30
-          rounded-xl overflow-hidden
+          rounded-md overflow-hidden
           border border-white/20
-          bg-black/15 backdrop-blur-2xl
+          bg-black/10 backdrop-blur-xl
           shadow-2xl
           "
           style={{
@@ -204,14 +204,14 @@ export default function OSPage() {
         >
           <header
             className="
-            h-10 px-4 bg-black/50 border-b border-white/10
-            flex items-center justify-between
+            h-10 px-4 bg-black/60 
+            flex items-center
+            relative
             cursor-grab active:cursor-grabbing
             "
             onMouseDown={startDragging}
           >
-            <div className="text-sm text-white/90 font-medium">{activeApp.title}</div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 z-10">
               <button
                 type="button"
                 onClick={closeWindow}
@@ -230,6 +230,10 @@ export default function OSPage() {
                 aria-label="Maximize unavailable"
                 disabled
               />
+            </div>
+
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-sm text-white/90 font-medium">{activeApp.title}</div>
             </div>
           </header>
 
