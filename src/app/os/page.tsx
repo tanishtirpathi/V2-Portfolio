@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import TopBar from "@/components/os/compo/TopBar"
 import Dock from "@/components/os/compo/Dock"
+import About from "@/components/os/compo/About"
 import Soon from "@/components/os/compo/soon"
 import { type DockApp } from "@/components/os/data/dockApps"
 import { FaHome } from "react-icons/fa"
@@ -22,26 +23,24 @@ type WindowRect = {
   height: number
 }
 
-const WINDOW_MIN_WIDTH = 560
-const WINDOW_MIN_HEIGHT = 360
+const WINDOW_WIDTH = 860
+const WINDOW_HEIGHT = 480
 
 export default function OSPage() {
   const [activeApp, setActiveApp] = useState<WindowApp | null>(null)
   const [isMinimized, setIsMinimized] = useState(false)
-  const [isMaximized, setIsMaximized] = useState(false)
   const [windowRect, setWindowRect] = useState<WindowRect>({
     x: 80,
     y: 80,
-    width: 960,
-    height: 620,
+    width: WINDOW_WIDTH,
+    height: WINDOW_HEIGHT,
   })
   const [dragState, setDragState] = useState<{ offsetX: number; offsetY: number } | null>(null)
-  const previousRectRef = useRef<WindowRect | null>(null)
 
   useEffect(() => {
     const setInitialRect = () => {
-      const width = Math.max(WINDOW_MIN_WIDTH, Math.min(1024, window.innerWidth * 0.82))
-      const height = Math.max(WINDOW_MIN_HEIGHT, Math.min(700, window.innerHeight * 0.74))
+      const width = Math.min(WINDOW_WIDTH, window.innerWidth - 24)
+      const height = Math.min(WINDOW_HEIGHT, window.innerHeight - 96)
       const x = Math.max(12, (window.innerWidth - width) / 2)
       const y = Math.max(40, (window.innerHeight - height) / 2)
       setWindowRect({ x, y, width, height })
@@ -53,7 +52,7 @@ export default function OSPage() {
   }, [])
 
   useEffect(() => {
-    if (!dragState || isMaximized) return
+    if (!dragState) return
 
     const onPointerMove = (event: MouseEvent) => {
       const maxX = Math.max(12, window.innerWidth - windowRect.width - 12)
@@ -73,10 +72,11 @@ export default function OSPage() {
       window.removeEventListener("mousemove", onPointerMove)
       window.removeEventListener("mouseup", onPointerUp)
     }
-  }, [dragState, isMaximized, windowRect.height, windowRect.width])
+  }, [dragState, windowRect.height, windowRect.width])
 
   const componentRegistry = useMemo(
     () => ({
+      about: (title: string) => <About title={title} />,
       soon: (title: string) => (
         <Soon
           title={`${title} app is opening soon`}
@@ -96,13 +96,11 @@ export default function OSPage() {
       component: app.component,
     })
     setIsMinimized(false)
-    setIsMaximized(false)
   }
 
   const closeWindow = () => {
     setActiveApp(null)
     setIsMinimized(false)
-    setIsMaximized(false)
     setDragState(null)
   }
 
@@ -116,31 +114,7 @@ export default function OSPage() {
     setIsMinimized(false)
   }
 
-  const toggleMaximizeWindow = () => {
-    if (isMaximized) {
-      const previous = previousRectRef.current
-      if (previous) {
-        setWindowRect(previous)
-      }
-      setIsMaximized(false)
-      return
-    }
-
-    previousRectRef.current = windowRect
-    setWindowRect({
-      x: 12,
-      y: 40,
-      width: Math.max(WINDOW_MIN_WIDTH, window.innerWidth - 24),
-      height: Math.max(WINDOW_MIN_HEIGHT, window.innerHeight - 96),
-    })
-    setIsMaximized(true)
-    setIsMinimized(false)
-    setDragState(null)
-  }
-
   const startDragging = (event: React.MouseEvent<HTMLElement>) => {
-    if (isMaximized) return
-
     setDragState({
       offsetX: event.clientX - windowRect.x,
       offsetY: event.clientY - windowRect.y,
@@ -149,9 +123,28 @@ export default function OSPage() {
 
   const activeComponent =
     activeApp &&
-    (componentRegistry[activeApp.component as keyof typeof componentRegistry]?.(activeApp.title) ?? (
-      <Soon title={`${activeApp.title} not found`} subtitle="No component is mapped for this app yet." />
-    ))
+    (() => {
+      const rawKey = activeApp.component || activeApp.title
+      const normalizedKey = rawKey.toLowerCase().replace(/\s+/g, "")
+
+      const registryWithAliases = {
+        ...componentRegistry,
+        aboutme: componentRegistry.about,
+      }
+
+      const resolver = registryWithAliases[normalizedKey as keyof typeof registryWithAliases]
+
+      if (resolver) {
+        return resolver(activeApp.title)
+      }
+
+      return (
+        <Soon
+          title={`${activeApp.title} app is opening soon`}
+          subtitle="This app does not have a dedicated page yet, so a placeholder is shown for now."
+        />
+      )
+    })()
 
   const appTitle = activeApp?.title ?? "Finder"
 
@@ -197,9 +190,9 @@ export default function OSPage() {
         <section
           className="
           fixed z-30
-          rounded-2xl overflow-hidden
+          rounded-xl overflow-hidden
           border border-white/20
-          bg-black/35 backdrop-blur-xl
+          bg-black/15 backdrop-blur-2xl
           shadow-2xl
           "
           style={{
@@ -233,9 +226,9 @@ export default function OSPage() {
               />
               <button
                 type="button"
-                onClick={toggleMaximizeWindow}
-                className="w-3 h-3 rounded-full bg-green-500"
-                aria-label={isMaximized ? "Restore window" : "Maximize window"}
+                className="w-3 h-3 rounded-full bg-green-500 opacity-60 cursor-not-allowed"
+                aria-label="Maximize unavailable"
+                disabled
               />
             </div>
           </header>

@@ -8,18 +8,17 @@ export default function Soon({
 	subtitle = "It will be available soon.",
 }: SoonProps) {
 	return (
-		<section className="h-full w-full p-6 md:p-8 text-white">
+		<section className="h-full w-full  text-white">
 			<div
 				className="
-				h-full rounded-2xl
+				relative h-full overflow-hidden
 				border border-white/20
-				bg-black/35 backdrop-blur-xl
-				p-6 md:p-8
-				flex flex-col justify-center
+				bg-black/10 backdrop-blur-2xl
+                text-center
+                flex flex-col items-center justify-center
 				"
 			>
-				<h2 className="text-2xl md:text-3xl font-serif italic">{title}</h2>
-				<p className="mt-3 text-sm md:text-base text-white/85 max-w-xl">{subtitle}</p>
+				<h1 className="font-main font-semibold text-5xl">Adding soon</h1>
 			</div>
 		</section>
 	)

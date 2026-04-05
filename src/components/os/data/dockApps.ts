@@ -12,19 +12,19 @@ export const dockApps: DockApp[] = [
     id: "About Me",
     label: "About Me",
     icon: "/OS/icon/skills.webp",
-    component: "soon",
+    component: "about",
   },
   {
     id: "Projects",
     label: "Projects",
     icon: "/OS/icon/Project.webp",
-    component: "soon",
+    component: "projects",
   },
   {
     id: "Blogs",
     label: "Blogs",
     icon: "/OS/icon/Notes.webp",
-    component: "soon",
+    component: "blogs",
   },
 
   { divider: true },
