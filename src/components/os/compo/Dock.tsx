@@ -3,23 +3,23 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { dockApps } from "../data/dockApps"
+import { dockApps, type DockApp } from "../data/dockApps"
 
-type DockApp = {
-  id?: string
-  label?: string
-  icon?: string
-  component?: string
-  url?: string
-  divider?: boolean
+type DockProps = {
+  onOpenComponent?: (app: DockApp) => void
 }
 
-export default function Dock() {
+export default function Dock({ onOpenComponent }: DockProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const handleClick = (app: DockApp) => {
     if (app.url) {
       window.open(app.url, "_blank")
+      return
+    }
+
+    if (app.component && onOpenComponent) {
+      onOpenComponent(app)
     }
   }
 
@@ -109,7 +109,7 @@ export default function Dock() {
           </motion.div>
         )
       })}
-      
+
     </div>
   )
 }
