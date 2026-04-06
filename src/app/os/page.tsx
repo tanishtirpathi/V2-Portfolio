@@ -9,6 +9,7 @@ import About from "@/components/os/compo/About"
 import Soon from "@/components/os/compo/soon"
 import { type DockApp } from "@/components/os/data/dockApps"
 import { FaHome } from "react-icons/fa"
+import Blogs from "@/components/os/compo/Blogs"
 
 type WindowApp = {
   id: string
@@ -77,6 +78,7 @@ export default function OSPage() {
   const componentRegistry = useMemo(
     () => ({
       about: (title: string) => <About title={title} />,
+      blogs: (title: string) => <Blogs />,
       soon: (title: string) => (
         <Soon
           title={`${title} app is opening soon`}
