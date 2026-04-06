@@ -23,15 +23,15 @@ type WindowRect = {
   height: number
 }
 
-const WINDOW_WIDTH = 860
-const WINDOW_HEIGHT = 480
+const WINDOW_WIDTH = 980
+const WINDOW_HEIGHT = 520
 
 export default function OSPage() {
   const [activeApp, setActiveApp] = useState<WindowApp | null>(null)
   const [isMinimized, setIsMinimized] = useState(false)
   const [windowRect, setWindowRect] = useState<WindowRect>({
     x: 80,
-    y: 80,
+    y: 60,
     width: WINDOW_WIDTH,
     height: WINDOW_HEIGHT,
   })
