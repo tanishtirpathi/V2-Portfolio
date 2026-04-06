@@ -30,9 +30,9 @@ export const CardDetails: Card[] = [
     }
     , {
         id: 3,
-        name: "Marcus Lee",
-        role: "Engineering Lead",
-        company: "Remote",
-        description: "Fast turnaround, thoughtful implementation, and great attention to detail. The layout and spacing made the page instantly more trustworthy."
+        name: "sunshine family ",
+        role: "Cafe owner",
+        company: "Cafe ",
+        description: "Insane work sir consumer growth is increased by 4% . love to stay connected for other work "
     }
 ]

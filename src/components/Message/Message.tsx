@@ -1,5 +1,5 @@
 "use client";
-
+import { FaTelegramPlane } from "react-icons/fa";
 import { FormEvent, useState } from "react";
 
 export default function Message() {
@@ -50,7 +50,7 @@ export default function Message() {
         <section className="message w-full max-w-2xl rounded-2xl  py-5 
              backdrop-blur-sm ">
             <h2 className="text-2xl font-bold font-sans text-black dark:text-gray-300">
-                DM me 
+                DM me
             </h2>
 
             <form onSubmit={handleSubmit} className="mt-5 space-y-3">
@@ -67,15 +67,16 @@ export default function Message() {
                 />
 
                 <div className="flex items-center gap-3 ">
+
                     <button
                         type="submit"
                         disabled={status === "sending"}
-                        className=" cursor-pointer rounded-md
+                        className=" cursor-pointer rounded-md flex items-center gap-2
                         bg-black/70 px-4 py-2 text-sm font-semibold text-white hover:bg-black 
                         transition  disabled:cursor-not-allowed 
                         disabled:opacity-60 dark:bg-white/80 dark:text-black dark:hover:bg-white "
                     >
-                        {status === "sending" ? "Sending..." : "Send"}
+                        {status === "sending" ? "Sending..." : "Send"}<FaTelegramPlane />
                     </button>
 
                     {statusText ? (
