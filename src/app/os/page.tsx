@@ -176,18 +176,7 @@ export default function OSPage() {
 
       <TopBar appTitle={appTitle} />
 
-      {!activeApp && (
-        <h1
-          className="
-          text-3xl font-serif italic font-light text-center px-6
-          dark:text-white dark:bg-black/90
-          rounded-md px-4 py-3 bg-white/90 text-black
-          "
-        >
-          Click any dock app icon to open it.
-        </h1>
-      )}
-
+    
       {activeApp && !isMinimized && (
         <section
           className="
