@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Bluetooth, Moon, Sun, Wifi } from "lucide-react"
 import { menuData } from "@/components/os/data/Topmenu"
@@ -72,7 +72,7 @@ export default function TopBar({ appTitle = "Finder" }: Props) {
       {/* LEFT */}
       <div className="flex items-center gap-2 text-xs font-medium">
 
-        <div className="font-light font-serif italic text-lg px-2">Tanish</div>
+        <div className="font-light font-serif italic text-lg px-2"><Link href="/"> Tanish </Link></div>
 
         {menuData.map((menu) => (
           <DropdownMenu key={menu.title}>
