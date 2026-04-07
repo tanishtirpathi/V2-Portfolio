@@ -111,13 +111,12 @@ export default function About({ title = 'About Me' }: AboutProps) {
 				className="
 				relative h-full overflow-y-auto
 				border border-white/15
-				bg-black/90 backdrop-blur-xl
+				bg-black/60 backdrop-blur-xl
 				p-5 md:p-8
 				"
 			>
 				<div className='pointer-events-none absolute inset-0'>
 					<div className='absolute -left-24 top-24 h-60 w-60 rounded-full bg-red-500/15 blur-3xl' />
-					<div className='absolute right-0 top-0 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl' />
 					<div className='absolute bottom-8 right-10 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl' />
 				</div>
 

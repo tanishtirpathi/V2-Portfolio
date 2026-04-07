@@ -14,6 +14,13 @@ export const dockApps: DockApp[] = [
     icon: "/OS/icon/skills.webp",
     component: "about",
   },
+
+  {
+    id:"Google", 
+    label: "Google",
+    icon: "/OS/icon/Google.webp",
+    component: "google",
+  },
   {
     id: "Projects",
     label: "Projects",

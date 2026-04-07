@@ -18,7 +18,8 @@ export default function Soon({
                 flex flex-col items-center justify-center
 				"
 			>
-				<h1 className="font-main font-semibold text-5xl">Adding soon</h1>
+				<h1 className="font-main font-semibold text-3xl md:text-5xl">{title}</h1>
+				<p className="mt-4 text-white/80 text-sm md:text-base max-w-xl px-6">{subtitle}</p>
 			</div>
 		</section>
 	)

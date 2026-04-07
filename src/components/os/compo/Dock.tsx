@@ -11,6 +11,40 @@ type DockProps = {
 
 export default function Dock({ onOpenComponent }: DockProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [brokenIcons, setBrokenIcons] = useState<Record<string, boolean>>({})
+
+  const getAppKey = (app: DockApp, index: number) => String(app.id ?? app.label ?? app.component ?? index)
+
+  const renderFallbackIcon = (app: DockApp) => {
+    const label = app.label ?? "App"
+    return (
+      <span className="text-black dark:text-white text-lg font-bold select-none">
+        {label.charAt(0).toUpperCase()}
+      </span>
+    )
+  }
+
+  const renderAppIcon = (app: DockApp, index: number) => {
+    const key = getAppKey(app, index)
+
+    // Google icon is forced as text to avoid invisible/broken asset rendering.
+
+
+    if (!app.icon || brokenIcons[key]) {
+      return renderFallbackIcon(app)
+    }
+
+    return (
+      <Image
+        src={app.icon}
+        alt={app.label ?? "Dock App"}
+        width={42}
+        height={42}
+        className="object-cover rounded-md"
+        onError={() => setBrokenIcons((prev) => ({ ...prev, [key]: true }))}
+      />
+    )
+  }
 
   const handleClick = (app: DockApp) => {
     if (app.url) {
@@ -63,10 +97,11 @@ export default function Dock({ onOpenComponent }: DockProps) {
         }
 
         const isHovered = hoveredIndex === index
+        const appKey = getAppKey(app, index)
 
         return (
           <motion.div
-            key={app.id ?? index}
+            key={appKey}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handleClick(app)}
@@ -96,15 +131,7 @@ export default function Dock({ onOpenComponent }: DockProps) {
               flex items-center justify-center
               "
             >
-              {app.icon && (
-                <Image
-                  src={app.icon}
-                  alt={app.label ?? "Dock App"}
-                  width={42}
-                  height={42}
-                  className="object-contain rounded-md"
-                />
-              )}
+              {renderAppIcon(app, index)}
             </div>
           </motion.div>
         )
