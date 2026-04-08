@@ -11,6 +11,7 @@ import { type DockApp } from "@/components/os/data/dockApps"
 import { FaHome } from "react-icons/fa"
 import Blogs from "@/components/os/compo/Blogs"
 import Google from "@/components/os/compo/Google"
+import Project from "@/components/os/compo/Project"
 
 type WindowApp = {
   id: string
@@ -79,6 +80,7 @@ export default function OSPage() {
   const componentRegistry = useMemo(
     () => ({
       about: (title: string) => <About title={title} />,
+      projects: (title: string) => <Project />,
       blogs: (title: string) => <Blogs />,
       google: (title: string) => <Google />,
       soon: (title: string) => (

@@ -35,6 +35,10 @@ export const dockApps: DockApp[] = [
   },
 
   { divider: true },
+{    label: "Spotify",
+    icon: "/OS/icon/Spotify.webp",
+    url: "https://open.spotify.com/user/tanishtirpathi"
+  },
 
   {
     label: "GitHub",
