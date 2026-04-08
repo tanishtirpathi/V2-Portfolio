@@ -16,6 +16,7 @@ import { ExperienceSection } from "@/features/uicomponents/Experence";
 import { PersonalStuff } from "@/features/uicomponents/Personalstuff";
 import BottomImage from "@/features/uicomponents/BottomImage";
 import Message from "@/components/Message/Message";
+import CurrentlyBuilding from "@/components/currentBuilding/CurrentlyBuilding";
 import Proof from "@/components/testimonials/ProofCard";
 export default function Home() {
   const GithubActivity = dynamic(
@@ -42,6 +43,8 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <TechStack />
         <GithubActivity />
+        <SectionBorder className="mt-6" />
+        <CurrentlyBuilding/>
         <SectionBorder className="mt-6" />
         <Message />
         <SectionBorder className="mt-6" />
