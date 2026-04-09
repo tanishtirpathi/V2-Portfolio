@@ -43,7 +43,7 @@ export const socialLinks = [
     title: "YouTube"
   },
   {
-    href: "https://instagram.com/tanish.speaks",
+    href: "https://instagram.com/tanish.tirpathi0",
     icon: FaInstagram,
     color: "hover:text-pink-500",
     title: "Instagram"

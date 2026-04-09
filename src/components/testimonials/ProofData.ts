@@ -33,6 +33,8 @@ export const CardDetails: Card[] = [
         name: "sunshine family ",
         role: "Cafe owner",
         company: "Cafe ",
+        image: "/images/Proof/cafe.webp",
+        Link:"https://maps.app.goo.gl/G2DN8315XT98tXcPA",
         description: "Insane work sir consumer growth is increased by 4% . love to stay connected for other work "
     }
 ]
