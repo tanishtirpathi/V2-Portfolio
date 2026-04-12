@@ -9,7 +9,7 @@ export interface CurrentlyBuildingProps {
 export const BuildingDetail: CurrentlyBuildingProps[] = [
     {
         buildingName: "AI-Interviewer",
-        progress: 20,
+        progress: 60,
         description: "An AI-powered interview platform that simulates real-world job interviews and provides instant feedback to help users improve their performance.",
         imageUrl: "/images/Building/AI-Interviewer.webp",
         code: "https://github.com/tanishtirpathi/GitRoast"

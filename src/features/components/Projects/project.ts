@@ -43,7 +43,17 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type:["fun" , "webapp"],
         location: "/projects/Playlitr"
-    }
+    },{
+        title: "AI Interview Platform",
+        description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
+        image: "/images/Project/AInterview.webp",
+        LiveLink: "#",
+        GithubLink: "https://github.com/tanishtirpathi/GitRoast",
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb" ,"js", "tailwindcss"],
+        status: "Building",
+        type:["serious" , "webapp"],
+        location: "/projects/AIInterview"
+    },
     , {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
