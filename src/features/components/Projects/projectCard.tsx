@@ -31,7 +31,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
     : filteredProjects;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-0">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-12 md:px-0">
       <AnimatePresence mode="popLayout">
         {projectsToShow.length === 0 && (
           <motion.div
@@ -64,7 +64,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
           transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
           {/* Image */}
-          <div className="relative w-full h-40 overflow-hidden">
+          <div className="relative w-full h-30 overflow-hidden">
             <Image
               src={project.image}
               alt={project.title}
@@ -77,7 +77,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
           <div className="p-5 flex flex-col gap-2">
             {/* Title + Actions */}
             <div className="flex justify-between items-start">
-              <h2 className="text-lg font-medium text-neutral-900 dark:text-white">
+              <h2 className="text-sm md:text-lg lg:text-lg font-medium text-neutral-900 dark:text-white">
                 {project.title}
               </h2>
 
@@ -102,7 +102,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
             </div>
 
             {/* Description */}
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-1 leading-relaxed">
               {project.description}
             </p>
 
@@ -111,7 +111,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
               {project.type.map((type) => (
                 <span
                   key={type}
-                  className="text-xs px-2 py-0.5 rounded
+                  className="text-[8px] md:text-xs lg:text-sm px-2 py-0.5 rounded
                   bg-gray-100 dark:bg-gray-800  
                   border border-dashed  border-gray-300 dark:border-gray-700
                   text-neutral-600 dark:text-gray-300"
@@ -167,21 +167,21 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
             <div className="flex items-center justify-between pt-2">
               {/* Status */}
               <span
-                className={`text-xs px-2 py-1 rounded-full border font-sans font-semibold flex items-center gap-1
+                className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full border font-sans font-semibold flex items-center gap-0.5 sm:gap-1
                 ${
                   project.status === "Completed"
                     ? "border-neutral-300 dark:border-green-700 text-green-600 dark:text-green-700"
                     : "border-neutral-300 dark:border-gray-700 text-gray-500"
                 }`}
               >
-                <div className="w-2 h-2 rounded-full bg-current" />
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-current" />
                 {project.status}
               </span>
 
               {/* CTA */}
               <Link
                 href={project?.location || "/projects"}
-                className="flex items-center gap-1 text-sm text-neutral-600 
+                className="flex items-center gap-1 text-xs md:text-xs lg:text-sm text-neutral-600 
                 hover:text-black dark:hover:text-white transition"
               >
                 View

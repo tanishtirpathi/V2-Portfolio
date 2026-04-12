@@ -52,8 +52,8 @@ export const ProjectDetail: Project[] = [
         tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb" ,"js", "tailwindcss"],
         status: "Building",
         type:["serious" , "webapp"],
-        location: "/projects/AIInterview"
-    },
+        location: "/projects/AInterview"
+    }
     , {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
