@@ -34,7 +34,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-12 md:px-0">
       <AnimatePresence mode="popLayout">
         {projectsToShow.length === 0 && (
-          <motion.div
+          <motion.div 
             key="empty-state"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
                 hover:text-black dark:hover:text-white transition"
               >
                 View
-                <HiArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <HiArrowUpRight className="transition-transform group-hover:translate-x-1 " />
               </Link>
             </div>
           </div>

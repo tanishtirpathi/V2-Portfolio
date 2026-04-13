@@ -1,22 +1,56 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Sun, Moon } from "lucide-react"
 import { GitHubStars } from "../ui/github-stars"
 import { TooltipProvider } from "../ui/tooltip"
 
+type ThemePreference = "light" | "dark" | "system"
+
+const resolveDark = (theme: ThemePreference) => {
+  if (theme === "dark") return true
+  if (theme === "light") return false
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+}
+
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof document === "undefined") return false
-    return document.documentElement.classList.contains("dark")
-  })
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)")
+    const stored = localStorage.getItem("theme")
+    const currentTheme: ThemePreference =
+      stored === "light" || stored === "dark" || stored === "system"
+        ? stored
+        : "system"
+
+    const applyTheme = (theme: ThemePreference) => {
+      const isDark = resolveDark(theme)
+      document.documentElement.classList.toggle("dark", isDark)
+      setDarkMode(isDark)
+    }
+
+    applyTheme(currentTheme)
+
+    const handleSystemChange = () => {
+      if ((localStorage.getItem("theme") ?? "system") === "system") {
+        applyTheme("system")
+      }
+    }
+
+    media.addEventListener("change", handleSystemChange)
+    return () => media.removeEventListener("change", handleSystemChange)
+  }, [])
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark")
-    setDarkMode(!darkMode)
+    const nextTheme: ThemePreference = darkMode ? "light" : "dark"
+    localStorage.setItem("theme", nextTheme)
+    const isDark = resolveDark(nextTheme)
+    document.documentElement.classList.toggle("dark", isDark)
+    setDarkMode(isDark)
   }
   return (
 
@@ -28,13 +62,16 @@ export default function Navbar() {
         lg:top-2
         w-full md:w-4/5 lg:w-1/2
         z-50
+        border
+        border-transparent
+        dark:border-white/10
         backdrop-blur-lg
         bg-white/10
         dark:bg-black/20
-        dark:border-neutral-800
         md:rounded-lg
         rounded-none
         lg:rounded-lg
+        shadow-md
       "
     >
       <div className="max-w-3xl mx-auto font-mono font-semibold flex justify-between items-center py-2 px-4 text-sm">

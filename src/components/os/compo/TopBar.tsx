@@ -17,23 +17,53 @@ type Props = {
   setStage?: (stage: string) => void
 }
 
+type ThemePreference = "light" | "dark" | "system"
+
+const resolveDark = (theme: ThemePreference) => {
+  if (theme === "dark") return true
+  if (theme === "light") return false
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+}
+
 export default function TopBar({ appTitle = "Finder" }: Props) {
   const [time, setTime] = useState("")
-  const [dark, setDark] = useState(() => {
-    if (typeof window === "undefined") return false
-    return localStorage.getItem("theme") === "dark"
-  })
+  const [dark, setDark] = useState(false)
 
   // Theme toggle
   const toggleTheme = () => {
-    setDark((prev) => !prev)
+    const nextTheme: ThemePreference = dark ? "light" : "dark"
+    localStorage.setItem("theme", nextTheme)
+    const isDark = resolveDark(nextTheme)
+    document.documentElement.classList.toggle("dark", isDark)
+    setDark(isDark)
   }
 
-  // Keep DOM class and local storage in sync with state
+  // Initialize from saved theme (fallback: system) and keep in sync with OS changes.
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark)
-    localStorage.setItem("theme", dark ? "dark" : "light")
-  }, [dark])
+    const media = window.matchMedia("(prefers-color-scheme: dark)")
+    const stored = localStorage.getItem("theme")
+    const currentTheme: ThemePreference =
+      stored === "light" || stored === "dark" || stored === "system"
+        ? stored
+        : "system"
+
+    const applyTheme = (theme: ThemePreference) => {
+      const isDark = resolveDark(theme)
+      document.documentElement.classList.toggle("dark", isDark)
+      setDark(isDark)
+    }
+
+    applyTheme(currentTheme)
+
+    const handleSystemChange = () => {
+      if ((localStorage.getItem("theme") ?? "system") === "system") {
+        applyTheme("system")
+      }
+    }
+
+    media.addEventListener("change", handleSystemChange)
+    return () => media.removeEventListener("change", handleSystemChange)
+  }, [])
 
   // Clock
   useEffect(() => {

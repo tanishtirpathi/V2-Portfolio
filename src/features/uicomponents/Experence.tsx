@@ -10,7 +10,6 @@ export const ExperienceSection = () => {
             </div>
             {dataExperence.map((exp) => (
                 <ExperienceCard
-                    image={exp.image}
                     key={exp.id}
                     title={exp.title}
                     company={exp.company}

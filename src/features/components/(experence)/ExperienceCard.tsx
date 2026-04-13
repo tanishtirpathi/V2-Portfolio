@@ -1,17 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { motion } from "framer-motion"
 export const ExperienceCard = ({
-    image,
     title,
     company,
     startDate,
     description,
     Technologies,
 }: {
-    image: string
     title: string
     company: string
     startDate: string
@@ -32,9 +29,8 @@ export const ExperienceCard = ({
             {/* Header */}
             <div className="flex justify-between items-start mb-3 ">
                 <div className="flex items-center justify-center">
-                    <Image src={image} alt="Experience Image" width={40} height={40} className="rounded-md mr-3" />
                     <div>
-                        <h3 className="text-base font-serif font-light text-black/80 dark:text-white 
+                        <h3 className="text-base font-main font-bold text-black/80 dark:text-white 
                         group-hover:text-black transition-colors duration-300">
                             {title}
                         </h3>
