@@ -45,7 +45,7 @@ export function TechStack() {
                     group-hover:translate-y-0
                     group-hover:scale-100
                     transition-all duration-200
-                    font-bold font-sans
+                    font-semibold font-main
                   "
             >
               {tech.title}

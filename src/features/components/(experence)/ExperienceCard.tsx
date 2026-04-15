@@ -61,7 +61,7 @@ export const ExperienceCard = ({
             {isOpen && (
                 <>
                     {/* Description */}
-                    <p className="text-xs sm:text-xs md:text-sm lg:text-sm text-black/60 dark:text-gray-400 font-sans leading-relaxed mb-4">
+                    <p className="text-xs sm:text-xs md:text-sm lg:text-sm text-black/60 dark:text-white/80 font-main mt-10 leading-relaxed mb-4">
                         {description}
                     </p>
 

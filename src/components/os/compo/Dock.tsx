@@ -75,7 +75,7 @@ export default function Dock({ onOpenComponent }: DockProps) {
           className="
           absolute -top-12 left-1/2 -translate-x-1/2
           px-4 py-1 rounded-md
-         bg-white/40 dark:bg-black/70 text-black dark:text-white
+          bg-white/40 dark:bg-black/70 text-black dark:text-white
           text-sm font-medium
           backdrop-blur-xl
           shadow-xl font-sans font-semibold
