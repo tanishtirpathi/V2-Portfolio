@@ -38,8 +38,7 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <ExperienceSection />
         <ProjectShow />
-        <SectionBorder className="mt-6" />
-        <Proof />
+       
         <SectionBorder className="mt-6" />
         <TechStack />
         <GithubActivity />
@@ -50,7 +49,9 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <PersonalStuff />
         <SectionBorder className="mt-6" />
-        <ChessCard />
+        <ChessCard /> 
+        <SectionBorder className="mt-6" />
+        <Proof />
         <SectionBorder className="mt-6" />
         <BlogShow />
         <BottomImage />

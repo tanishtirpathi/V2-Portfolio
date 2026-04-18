@@ -14,15 +14,13 @@ export const ProofCard = () => {
 				</p>
 			</div>
 
-
-			<div className="proof-marquee overflow-hidden pb-3">
-				<div className="proof-marquee-track flex w-max gap-4">
-					{[...CardDetails, ...CardDetails].map((card, index) => {
+			<div className="columns-1 gap-4 pb-3 sm:columns-2 lg:columns-3">
+				{CardDetails.map((card) => {
 						const content = (
-							<article className="flex h-full min-h-[170px] flex-col justify-between rounded-2xl border 
+							<article className="mb-4 break-inside-avoid-column flex h-fit min-h-[170px] flex-col justify-between rounded-2xl border 
 							border-slate-300/40 bg-slate-100/45 p-4 transition-all duration-200 hover:border-slate-300 
 							hover:shadow-md dark:border-zinc-700/20 dark:bg-zinc-900/30 shadow-sm">
-								<p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-main">
+								<p className="text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-main ">
 									{card.description}
 								</p>
 
@@ -59,8 +57,8 @@ export const ProofCard = () => {
 						if (!card.Link) {
 							return (
 								<div
-									key={`${card.id}-${index}`}
-									className="h-full w-[320px] sm:w-[340px] shrink-0"
+									key={card.id}
+									className="w-full"
 								>
 									{content}
 								</div>
@@ -69,17 +67,16 @@ export const ProofCard = () => {
 
 						return (
 							<a
-								key={`${card.id}-${index}`}
+								key={card.id}
 								href={card.Link}
 								target="_blank"
 								rel="noreferrer"
-								className="block h-full w-[320px] sm:w-[340px] shrink-0"
+								className="block w-full"
 							>
 								{content}
 							</a>
 						);
-					})}
-				</div>
+				})}
 			</div>
 		</section>
 	);

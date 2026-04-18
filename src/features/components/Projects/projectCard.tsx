@@ -106,7 +106,7 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
               {project.description}
             </p>
 
-            {/* Tags */}
+            {/* Tags
             <div className="flex flex-wrap gap-4">
               {project.type.map((type) => (
                 <span
@@ -119,10 +119,10 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
                   {type}
                 </span>
               ))}
-            </div>
+            </div> */}
 
             {/* Tech Stack */}
-            <div className="flex flex-wrap gap-3 pl-0.5">
+            <div className="flex flex-wrap gap-3 pl-0.5 py-2">
               {project.tech.map((techKey) => {
                 const tech = TECH_STACK.find((t) => t.key === techKey);
                 if (!tech) return null;
