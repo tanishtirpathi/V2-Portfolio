@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { PiCoffeeBold } from "react-icons/pi";
 
 export default function HeroSection() {
   return (
@@ -47,6 +48,36 @@ export default function HeroSection() {
               priority
               className="rounded-full object-cover"
             />
+          
+            <div className="h-6 w-6 rounded-full border-1 cursor-pointer  
+            flex items-center justify-center bg-black bottom-4 absolute right-[1] 
+            border-black text-white group dark:bg-white/70 dark:border-white/80 dark:text-black" > 
+          
+          
+          <PiCoffeeBold />
+          
+         
+            <span
+              className="
+                absolute -top-8 left-15 -translate-x-1/2
+                text-xs
+                bg-black/80 text-white
+                font-bold
+                dark:bg-white dark:text-black
+                px-2 py-1
+                rounded
+                whitespace-nowrap
+                pointer-events-none
+                opacity-0 translate-y-2 scale-90
+                group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
+                transition-all duration-200
+              "
+            >
+              Had 3 cup today of coffee 
+            </span>
+            </div>
+          
+          
           </div>
 
           {/* Info */}
