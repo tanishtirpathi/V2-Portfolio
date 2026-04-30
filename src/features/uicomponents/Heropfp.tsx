@@ -50,8 +50,8 @@ export default function HeroSection() {
             />
           
             <div className="h-6 w-6 rounded-full border-1 cursor-pointer  
-            flex items-center justify-center bg-black bottom-4 absolute right-[1] 
-            border-black text-white group dark:bg-white/70 dark:border-white/80 dark:text-black" > 
+            flex items-center justify-center bg-[#fff7ab] bottom-4 absolute right-[1] 
+            border-[#ffd4ab] text-[#965500] group dark:bg-[#ac3b07] dark:border-[#ffd4ab] dark:text-[#fff7ab]" > 
           
           
           <PiCoffeeBold />
@@ -59,13 +59,13 @@ export default function HeroSection() {
          
             <span
               className="
-                absolute -top-8 left-15 -translate-x-1/2
+                absolute -top-8 left-1/2 -translate-x-1/2
                 text-xs
-                bg-black/80 text-white
+                bg-black/90 text-[#fff7ab]
                 font-bold
-                dark:bg-white dark:text-black
+                dark:bg-[#ffdecf] dark:text-[#b65800]
                 px-2 py-1
-                rounded
+                rounded-md
                 whitespace-nowrap
                 pointer-events-none
                 opacity-0 translate-y-2 scale-90
@@ -73,7 +73,7 @@ export default function HeroSection() {
                 transition-all duration-200
               "
             >
-              Had 3 cup today of coffee 
+               3 Cup today ☕ 
             </span>
             </div>
           
