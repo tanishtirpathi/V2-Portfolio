@@ -18,7 +18,7 @@ export const ProjectDetail: Project[] = [
         LiveLink: "https://trendup.tanishtirpathi.me",
         GithubLink: "https://github.com/tanishtirpathi/Trend-up-",
         status: "Completed",
-        type:["serious" , "webapp"],
+        type: ["serious", "webapp"],
         tech: ["react", "js", "nodejs", "mongodb", "tailwindcss", "shadcn-ui"],
         location: "/projects/Trendup"
     },
@@ -30,8 +30,18 @@ export const ProjectDetail: Project[] = [
         tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss", "motion", "shadcn-ui"],
         GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
         status: "Completed",
-        type:["serious" , "webapp" , "personal"],
+        type: ["serious", "webapp", "personal"],
         location: "/projects/Portfolio"
+    }, , {
+        title: "Leetlow",
+        description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
+        image: "/images/Project/LeetLow.webp",
+        LiveLink: "#",
+        GithubLink: "https://github.com/tanishtirpathi/Leetlow",
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mysql", "tailwindcss"],
+        status: "Building",
+        type: ["serious", "webapp"],
+        location: "/projects/LeetLow"
     },
     {
         title: "Playlitr",
@@ -41,30 +51,32 @@ export const ProjectDetail: Project[] = [
         GithubLink: "https://github.com/tanishtirpathi/song-player/",
         tech: ["nextjs2", "typescript", "Base Ui", "js", "redis", "tailwindcss", "motion", "shadcn-ui"],
         status: "Completed",
-        type:["fun" , "webapp"],
+        type: ["fun", "webapp"],
         location: "/projects/Playlitr"
-    },{
+    }, {
+        title: "Trip Guard ",
+        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
+        image: "/images/Project/TripGuard.webp",
+        LiveLink: "https://trip-guard.vercel.app/",
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
+        status: "Completed",
+        type: ["serious", "webapp"],
+
+        location: "/projects/TripGuard"
+    }
+    , {
         title: "AI Interview Platform",
         description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
         image: "/images/Project/AInterview.webp",
         LiveLink: "#",
         GithubLink: "https://github.com/tanishtirpathi/GitRoast",
-        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb" ,"js", "tailwindcss"],
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb", "js", "tailwindcss"],
         status: "Building",
-        type:["serious" , "webapp"],
+        type: ["serious", "webapp"],
         location: "/projects/AInterview"
     }
-    , {
-        title: "Leetlow",
-        description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
-        image: "/images/Project/LeetLow.webp",
-        LiveLink: "#",
-        GithubLink: "https://github.com/tanishtirpathi/Leetlow",
-        tech: ["nextjs2", "typescript", "nodejs", "docker", "mysql", "tailwindcss"],
-        status: "Building",
-        type:["serious" , "webapp"],
-        location: "/projects/LeetLow"
-    },
+
 
     {
         title: "MindPin",
@@ -74,7 +86,7 @@ export const ProjectDetail: Project[] = [
         tech: ["express", "js", "tailwindcss", "html"],
         GithubLink: "https://github.com/tanishtirpathi/Mindpin",
         status: "Completed",
-        type:["Personal" , "desktopapp" , "fun"],
+        type: ["Personal", "desktopapp", "fun"],
         location: "/projects/Mindpin"
     }, {
         title: "Slappy",
@@ -82,32 +94,20 @@ export const ProjectDetail: Project[] = [
         image: "/images/Project/Slappy.webp",
         LiveLink: "https://slappy.tanishtirpathi0.workers.dev/",
         GithubLink: "https://github.com/tanishtirpathi/Slappyy",
-        tech: [ "js", "nodejs", "tailwindcss"],
+        tech: ["js", "nodejs", "tailwindcss"],
         status: "Completed",
-        type:["fun" , "desktopapp" , "personal"],
+        type: ["fun", "desktopapp", "personal"],
         location: "/projects/Slappy"
     },
     {
-        title: "Trip Guard ",
-        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/TripGuard.webp",
-        LiveLink: "https://trip-guard.vercel.app/",
-        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
-        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
-        status: "Completed",
-        type:["serious" , "webapp"],
-
-        location: "/projects/TripGuard"
-    }
-,    {
         title: "Notion-Cheker ",
         description: "It is a system which go to my notion speicfic dashboard and get all data and send it to my telegram every time it change and also real time it update on my extension of browsers ",
         image: "/images/Project/NotionChecker.webp",
         LiveLink: "https://github.com/tanishtirpathi/Notion_checker/tree/main/extension",
-        tech: [ "js", "nodejs",  "tailwindcss"],
+        tech: ["js", "nodejs", "tailwindcss"],
         GithubLink: "https://github.com/tanishtirpathi/Notion_checker",
         status: "Completed",
-        type:["Personal" , "extension" , "fun"],
+        type: ["Personal", "extension", "fun"],
         location: "/projects/NotionChecker"
     }
 
