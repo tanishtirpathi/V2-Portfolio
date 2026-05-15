@@ -20,7 +20,7 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["serious", "webapp"],
         tech: ["react", "js", "nodejs", "mongodb", "tailwindcss", "shadcn-ui"],
-        location: "/projects/Trendup"
+        location: "/projects/Trendup",
     },
     {
         title: "Portfolio Website",
@@ -32,7 +32,7 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["serious", "webapp", "personal"],
         location: "/projects/Portfolio"
-    }, , {
+    },  {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
         image: "/images/Project/LeetLow.webp",
@@ -62,7 +62,6 @@ export const ProjectDetail: Project[] = [
         GithubLink: "https://github.com/tanishtirpathi/TripGuard",
         status: "Completed",
         type: ["serious", "webapp"],
-
         location: "/projects/TripGuard"
     }
     , {
@@ -75,9 +74,7 @@ export const ProjectDetail: Project[] = [
         status: "Building",
         type: ["serious", "webapp"],
         location: "/projects/AInterview"
-    }
-
-
+    },
     {
         title: "MindPin",
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
