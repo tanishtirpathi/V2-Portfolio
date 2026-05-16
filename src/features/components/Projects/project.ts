@@ -43,17 +43,7 @@ export const ProjectDetail: Project[] = [
         type: ["serious", "webapp"],
         location: "/projects/LeetLow"
     },
-    {
-        title: "Playlitr",
-        description: "Playlitr is a song-playing website where you can listen to music without ads or sign-up.",
-        image: "/images/Project/Playlitr.webp",
-        LiveLink: "https://playlitr.tanishtirpathi.me",
-        GithubLink: "https://github.com/tanishtirpathi/song-player/",
-        tech: ["nextjs2", "typescript", "Base Ui", "js", "redis", "tailwindcss", "motion", "shadcn-ui"],
-        status: "Completed",
-        type: ["fun", "webapp"],
-        location: "/projects/Playlitr"
-    }, {
+   {
         title: "Trip Guard ",
         description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
         image: "/images/Project/TripGuard.webp",
@@ -106,6 +96,16 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["Personal", "extension", "fun"],
         location: "/projects/NotionChecker"
+    }, {
+        title: "Playlitr",
+        description: "Playlitr is a song-playing website where you can listen to music without ads or sign-up.",
+        image: "/images/Project/Playlitr.webp",
+        LiveLink: "https://playlitr.tanishtirpathi.me",
+        GithubLink: "https://github.com/tanishtirpathi/song-player/",
+        tech: ["nextjs2", "typescript", "Base Ui", "js", "redis", "tailwindcss", "motion", "shadcn-ui"],
+        status: "Completed",
+        type: ["fun", "webapp"],
+        location: "/projects/Playlitr"
     }
 
 
