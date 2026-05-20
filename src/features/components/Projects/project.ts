@@ -54,18 +54,7 @@ export const ProjectDetail: Project[] = [
         type: ["serious", "webapp"],
         location: "/projects/TripGuard"
     }
-    , {
-        title: "AI Interview Platform",
-        description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
-        image: "/images/Project/AInterview.webp",
-        LiveLink: "#",
-        GithubLink: "https://github.com/tanishtirpathi/GitRoast",
-        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb", "js", "tailwindcss"],
-        status: "Building",
-        type: ["serious", "webapp"],
-        location: "/projects/AInterview"
-    },
-    {
+    ,  {
         title: "MindPin",
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
         image: "/images/Project/Mindpin.webp",
@@ -85,7 +74,18 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["fun", "desktopapp", "personal"],
         location: "/projects/Slappy"
+    }, {
+        title: "AI Interview Platform",
+        description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
+        image: "/images/Project/AInterview.webp",
+        LiveLink: "#",
+        GithubLink: "https://github.com/tanishtirpathi/GitRoast",
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb", "js", "tailwindcss"],
+        status: "Building",
+        type: ["serious", "webapp"],
+        location: "/projects/AInterview"
     },
+  
     {
         title: "Notion-Cheker ",
         description: "It is a system which go to my notion speicfic dashboard and get all data and send it to my telegram every time it change and also real time it update on my extension of browsers ",

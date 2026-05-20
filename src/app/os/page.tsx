@@ -168,7 +168,7 @@ export default function OSPage() {
 
       {/* DARK MODE */}
       <Image
-        src="/OS/bgdark.webp"
+        src="/OS/dark.webp"
         alt="OS background dark"
         fill
         priority

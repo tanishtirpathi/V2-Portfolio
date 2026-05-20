@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="relative w-full h-[200px] sm:h-[180px] md:h-[220px]">
         <Image
-          src="/images/bg.webp"
+          src="/images/bgoftop.webp"
           alt="Background banner"
           fill
           priority
