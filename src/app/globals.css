@@ -6,7 +6,6 @@
   color: black;
 }
 
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -244,8 +243,6 @@ body {
   }
 }
 
-
-
 .proof-marquee-track {
 					animation: proof-marquee 30s linear infinite;
 				}
@@ -262,3 +259,4 @@ body {
 						transform: translateX(-50%);
 					}
 				}
+

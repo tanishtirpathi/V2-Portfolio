@@ -11,7 +11,18 @@ export interface Project {
     location?: string;
 }
 export const ProjectDetail: Project[] = [
-    {
+      {
+        title: "Fine Guard",
+        description: "A fine management system born from the frustration of a 9-hour queue. Built with Next.js and integrated backend, it allows teachers to manage fines and students to pay online with full transparency.",
+        image: "/images/Project/fineguard.webp",
+        LiveLink: "https://fine.tanishtirpathi.me/",
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/Fine-system",
+        status: "Completed",
+        type: ["serious", "webapp"],
+        location: "/projects/fineguard"
+
+    }, {
         title: "Trend-Up",
         description: "It is a Real time chat application with auto chat deletion feature and also It has currently 30+ user active ",
         image: "/images/Project/Trendup.webp",
@@ -32,7 +43,19 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["serious", "webapp", "personal"],
         location: "/projects/Portfolio"
-    },  {
+    },
+    {
+        title: "Trip Guard ",
+        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
+        image: "/images/Project/TripGuard.webp",
+        LiveLink: "https://trip-guard.vercel.app/",
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],  
+        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
+        status: "Completed",
+        type: ["serious", "webapp"],
+        location: "/projects/TripGuard"
+    },
+  {
         title: "Leetlow",
         description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
         image: "/images/Project/LeetLow.webp",
@@ -42,19 +65,8 @@ export const ProjectDetail: Project[] = [
         status: "Building",
         type: ["serious", "webapp"],
         location: "/projects/LeetLow"
-    },
-   {
-        title: "Trip Guard ",
-        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/TripGuard.webp",
-        LiveLink: "https://trip-guard.vercel.app/",
-        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
-        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
-        status: "Completed",
-        type: ["serious", "webapp"],
-        location: "/projects/TripGuard"
     }
-    ,  {
+    , {
         title: "MindPin",
         description: "Its also a Mind blowing desktop application which is just a kind sticky note type but it goes transparent when u are not using it. 200+ user actively using this ",
         image: "/images/Project/Mindpin.webp",
@@ -85,7 +97,7 @@ export const ProjectDetail: Project[] = [
         type: ["serious", "webapp"],
         location: "/projects/AInterview"
     },
-  
+
     {
         title: "Notion-Cheker ",
         description: "It is a system which go to my notion speicfic dashboard and get all data and send it to my telegram every time it change and also real time it update on my extension of browsers ",

@@ -1,9 +1,5 @@
 "use client"
 
-import LiveAge from "@/features/components/Age/Liveage";
-
-
-
 export default function IntroAbout() {
     return (
         <div className="px-2 mt-6 max-w-3xl mb-4">
@@ -29,9 +25,6 @@ export default function IntroAbout() {
                 and stubborn
                 <span className="dark:text-white/90 text-black  text-sm md:text-lg font-serif italic px-1  font-light">
                     ambition </span>
-            </span>
-            <span className="mt-5 font-sans text-black/60 dark:text-gray-400 font-main block  text-sm md:text-lg">
-                I&apos;ve been here since <LiveAge /> years
             </span>
         </div>
     )
