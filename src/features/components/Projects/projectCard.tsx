@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import { ProjectDetail } from "./project";
-import { LuGithub } from "react-icons/lu";
-import { IoEarthOutline } from "react-icons/io5";
-import { HiArrowUpRight } from "react-icons/hi2";
-import { TECH_STACK } from "@/features/data/techstack";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 interface ProjectCardProps {
   limit?: number;
@@ -15,6 +12,9 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
   const normalizedTypeFilter = typeFilter?.trim().toLowerCase();
 
   const filteredProjects =
@@ -30,8 +30,24 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
     ? filteredProjects.slice(0, limit)
     : filteredProjects;
 
+  const handleMouseEnter = (projectId: string) => {
+    setHoveredProject(projectId);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredProject(null);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-12 md:px-0">
+    <div className="flex flex-col gap-6 px-12 md:px-0">
       <AnimatePresence mode="popLayout">
         {projectsToShow.length === 0 && (
           <motion.div 
@@ -40,157 +56,90 @@ export const ProjectCard = ({ limit, typeFilter }: ProjectCardProps) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="col-span-full rounded-xl border border-dashed border-neutral-300 bg-neutral-100/60 px-6 py-10 text-center text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-400"
+            className="rounded-xl border border-dashed border-neutral-300 bg-neutral-100/60 px-2 py-10
+             text-center text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-400"
           >
             No projects found for this type.
           </motion.div>
         )}
 
-        {projectsToShow.map((project, index) => (
-          <motion.div
-            layout
-            key={project.location || project.title}
-            initial={{ opacity: 0, y: 16, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -14, scale: 0.98 }}
-            transition={{
-              layout: { type: "spring", stiffness: 420, damping: 34 },
-              duration: 0.25,
-              ease: "easeOut",
-              delay: index * 0.03,
-            }}
-            className="group rounded-xl border border-neutral-200 dark:border-neutral-800 
-          bg-gray-100 dark:bg-neutral-900 overflow-hidden 
-          transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-          {/* Image */}
-          <div className="relative w-full h-30 overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-            />
-          </div>
+        {projectsToShow.map((project, index) => {
+          const isHovered = hoveredProject === project.location;
+          const isOtherHovered = hoveredProject !== null && !isHovered;
 
-          {/* Content */}
-          <div className="p-5 flex flex-col gap-2">
-            {/* Title + Actions */}
-            <div className="flex justify-between items-start">
-              <h2 className="text-sm md:text-lg lg:text-lg font-medium text-neutral-900 dark:text-white">
-                {project.title}
-              </h2>
-
-              <div className="flex gap-3 text-neutral-400">
-                <a
-                  href={project.LiveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-900 dark:hover:text-white transition"
+          return (
+            <motion.div
+              layout
+              key={project.location || project.title}
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -14, scale: 0.98 }}
+              transition={{
+                layout: { type: "spring", stiffness: 420, damping: 34 },
+                duration: 0.25,
+                ease: "easeOut",
+                delay: index * 0.03,
+              }}
+              onMouseEnter={() => handleMouseEnter(project.location || project.title)}
+              onMouseLeave={handleMouseLeave}
+              onMouseMove={handleMouseMove}
+              className={`group relative border-b border-neutral-200 dark:border-neutral-800 
+              bg-transparent overflow-visible transition-all duration-300 cursor-pointer ${
+                isOtherHovered ? "blur-sm opacity-50" : ""
+              }`}
+            >
+              {/* Floating Image on Hover */}
+              {isHovered && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-0 left-0 w-80 h-44 pointer-events-none z-50"
+                  style={{
+                    x: mousePos.x + 30,
+                    y: mousePos.y - 160,
+                  }}
                 >
-                  <IoEarthOutline size={18} />
-                </a>
-                <a
-                  href={project.GithubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-neutral-900 dark:hover:text-white transition"
-                >
-                  <LuGithub size={18} />
-                </a>
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-1 leading-relaxed">
-              {project.description}
-            </p>
-
-            {/* Tags
-            <div className="flex flex-wrap gap-4">
-              {project.type.map((type) => (
-                <span
-                  key={type}
-                  className="text-[8px] md:text-xs lg:text-sm px-2 py-0.5 rounded
-                  bg-gray-100 dark:bg-gray-800  
-                  border border-dashed  border-gray-300 dark:border-gray-700
-                  text-neutral-600 dark:text-gray-300"
-                >
-                  {type}
-                </span>
-              ))}
-            </div> */}
-
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-3 pl-0.5 py-2">
-              {project.tech.map((techKey) => {
-                const tech = TECH_STACK.find((t) => t.key === techKey);
-                if (!tech) return null;
-
-                return (
-                  <div key={tech.key}>
-                    {tech.theme ? (
-                      <>
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                          alt={tech.title}
-                          width={18}
-                          height={18}
-                          className="block dark:hidden opacity-80 hover:opacity-100 transition"
-                          unoptimized
-                        />
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                          alt={tech.title}
-                          width={18}
-                          height={18}
-                          className="hidden dark:block opacity-80 hover:opacity-100 transition"
-                          unoptimized
-                        />
-                      </>
-                    ) : (
-                      <Image
-                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
-                        alt={tech.title}
-                        width={18}
-                        height={18}
-                        className="opacity-80 hover:opacity-100 transition"
-                        unoptimized
-                      />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Footer */}
-            <div className="flex items-center justify-between pt-2">
-              {/* Status */}
-              <span
-                className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full border font-sans font-semibold flex items-center gap-0.5 sm:gap-1
-                ${
-                  project.status === "Completed"
-                    ? "border-neutral-300 dark:border-green-700 text-green-600 dark:text-green-700"
-                    : "border-neutral-300 dark:border-gray-700 text-gray-500"
-                }`}
-              >
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-current" />
-                {project.status}
-              </span>
-
-              {/* CTA */}
-              <Link
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover rounded-lg shadow-lg "
+                  />
+                </motion.div>
+              )}
+         
+              {/* Content */}
+              <Link 
                 href={project?.location || "/projects"}
-                className="flex items-center gap-1 text-xs md:text-xs lg:text-sm text-neutral-600 
-                hover:text-black dark:hover:text-white transition"
+                className="relative z-10 block py-6 px-3 min-h-24 flex flex-col justify-between"
               >
-                View
-                <HiArrowUpRight className="transition-transform group-hover:translate-x-1 " />
+                {/* Title with Status Dot */}
+                <div className="flex items-center gap-3">
+                  
+                  <h2 className="text-lg md:text-xl font-medium text-neutral-900 dark:text-white
+                    transition-colors font-serif italic">
+                    {project.title}
+                  </h2>
+                  <div
+                    className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                      project.status === "Completed"
+                        ? "bg-green-500"
+                        : "bg-red-500"
+                    }`}
+                  />
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 transition-colors 
+                leading-relaxed line-clamp-1">
+                  {project.description}
+                </p>
               </Link>
-            </div>
-          </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </AnimatePresence>
     </div>
   );

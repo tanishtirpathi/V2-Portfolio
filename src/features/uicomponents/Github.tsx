@@ -87,9 +87,11 @@ export default function GithubActivity() {
 
         <div className="relative group">
           {/* Subtle decorative glow */}
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+          <div className="absolute -inset-0.5
+          opacity-0 transition duration-500" />
           
-          <div className="relative overflow-x-auto p-6 bg-white/40 dark:bg-[#121214] backdrop-blur-md border border-black/10 dark:border-white/10 rounded-xl shadow-sm">
+          <div className="relative overflow-x-auto p-6 bg-transparent  
+          ">
             {loading ? skeleton : (
               <a
                 href="https://github.com/tanishtirpathi"
