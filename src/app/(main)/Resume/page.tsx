@@ -20,7 +20,7 @@ export default function Home() {
         <div className="relative w-full h-[700px] rounded-lg overflow-hidden border">
           <div className="mx-auto max-w-2xl">
             <iframe
-              src="https://drive.google.com/file/d/1V5Sx4a7f4NAJRqR3DA7FpDdbpiJPBHyz/preview"
+              src="https://drive.google.com/file/d/1B5LVgzsEgUfE4WsZuihHuPNB2Zqqwggg/preview"
               className="min-h-screen w-full"
             ></iframe>
           </div>
