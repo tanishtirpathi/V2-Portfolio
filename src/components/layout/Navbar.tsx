@@ -97,10 +97,10 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/projects"
+            href="/content"
             className="opacity-70 hover:opacity-100 hover:underline"
           >
-            Projects
+            Content
           </Link>
           <Link
             href="/Resume"

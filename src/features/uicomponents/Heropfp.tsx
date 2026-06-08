@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="relative w-full h-[200px] sm:h-[180px] md:h-[220px] overflow-hidden rounded">
         <Image
-          src="/images/bgoftop.webp"
+          src="/images/bgtop.webp"
           alt="Background banner"
           fill
           priority
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
         {/* Text */}
         <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
-          <span className="text-black dark:text-white 
+          <span className="text-white drop-shadow-xl
           font-serif italic text-sm sm:text-base md:text-lg tracking-widest drop-shadow-xl">
             I am not saying I am best, but let’s just say the bar is high
           </span>
@@ -46,7 +46,7 @@ export default function HeroSection() {
 
           >
             <Image
-              src="/images/pfp.webp"
+              src="/images/pfptwo.webp"
               alt="Tanish Tirpathi"
               fill
               priority
@@ -54,31 +54,31 @@ export default function HeroSection() {
             />
 
             <div className="h-6 w-6 rounded-full border-1 cursor-pointer  
-            flex items-center justify-center bg-[#fff7ab] bottom-4 absolute right-[1] 
-            border-[#ffd4ab] text-[#965500] group dark:bg-[#ac3b07] dark:border-[#ffd4ab] dark:text-[#fff7ab]" >
+            flex items-center justify-center bg-[#e3f2fd] bottom-4 absolute right-[1] 
+            border-[#64b5f6] text-[#0d47a1] group dark:bg-[#1565c0] dark:border-[#64b5f6] dark:text-[#e3f2fd]" >
 
 
               <PiCoffeeBold />
 
 
-              <span
-                className="
-                absolute -top-8 left-1/2 -translate-x-1/2
-                text-xs
-                bg-black/90 text-[#fff7ab]
-                font-bold
-                dark:bg-[#ffdecf] dark:text-[#b65800]
-                px-2 py-1
-                rounded-md
-                whitespace-nowrap
-                pointer-events-none
-                opacity-0 translate-y-2 scale-90
-                group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-                transition-all duration-200
-              "
-              >
-                3 Cup today ☕
-              </span>
+                <span
+                  className="
+                  absolute -top-8 left-1/2 -translate-x-1/2
+                  text-xs
+                  bg-[#0d47a1] text-[#e3f2fd]
+                  font-bold
+                  dark:bg-[#e3f2fd] dark:text-[#0d47a1]
+                  px-2 py-1
+                  rounded-md
+                  whitespace-nowrap
+                  pointer-events-none
+                  opacity-0 translate-y-2 scale-90
+                  group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
+                  transition-all duration-200
+                "
+                >
+                  3 Cup today ☕
+                </span>
             </div>
 
 

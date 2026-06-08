@@ -36,13 +36,12 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <ConnectButtons />
         <SectionBorder className="mt-6" />
-        <ExperienceSection />
         <ProjectShow />
-
         <SectionBorder className="mt-6" />
         <TechStack />
         <GithubActivity />
         <SectionBorder className="mt-6" />
+          <ExperienceSection />
         <Message />
         <SectionBorder className="mt-6" />
         <BlogShow />

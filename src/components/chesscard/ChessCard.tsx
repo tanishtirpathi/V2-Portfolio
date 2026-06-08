@@ -37,7 +37,7 @@ export default function ChessCard() {
         href="https://www.chess.com/member/tanishtirpathi"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-4 p-4 rounded-xl  
+        className="flex items-center gap-4 px-4 py-2 rounded-lg
          border-1 border-gray-300 shadow-md dark:border-white/20
        transition-all bg-gray-100  hover:bg-gray-300 dark:bg-[#181717]"
       >
