@@ -65,8 +65,8 @@ export default function GithubActivity() {
               >
                 <div className="flex items-center gap-2 shrink-0">
                   <div className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                   </div>
                   <span className="text-[10px] uppercase tracking-wider font-bold text-black/40 dark:text-white/40">Latest</span>
                 </div>
@@ -74,7 +74,7 @@ export default function GithubActivity() {
                 <a
                   href={data.repo.url}
                   target="_blank"
-                  className="group flex items-center gap-2 text-xs font-medium text-purple-900 dark:text-purple-300 hover:underline underline-offset-4"
+                  className="group flex items-center gap-2 text-xs font-medium text-blue-300 dark:text-blue-300 hover:underline underline-offset-4"
                 >
                   <GitCommit className="w-3 h-3" />
                   <span className="truncate max-w-[150px] sm:max-w-[250px]">{data.commit.message}</span>
@@ -108,7 +108,7 @@ export default function GithubActivity() {
                     fontSize={10}
                     colorScheme="light"
                     theme={{
-                      light: ["#e5e7eb", "#d6ced5", "#b39bae", "#70576e", "#4f3751"],
+                      light: ["#e1e4f0", "#b1c5d1", "#b4d1ec", "#1182ece7", "#0b54b4fd"],
                     }}
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function GithubActivity() {
                     fontSize={10}
                     colorScheme="dark"
                     theme={{
-                      dark: ["#1c1c21", "#4c4863", "#565464", "#6b6b80", "#c5c4d6"],
+                      dark: ["#1b1c1f", "#203a52", "#6682ac", "#407c86", "#c4d4d6"],
                     }}
                   />
                 </div>
