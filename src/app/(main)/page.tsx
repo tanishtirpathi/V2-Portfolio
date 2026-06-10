@@ -16,6 +16,7 @@ import { ExperienceSection } from "@/features/uicomponents/Experence";
 import { PersonalStuff } from "@/features/uicomponents/Personalstuff";
 import BottomImage from "@/features/uicomponents/BottomImage";
 import Message from "@/components/Message/Message";
+import AIAgent from "@/components/aiAgent/agent";
 // import CurrentlyBuilding from "@/components/currentBuilding/CurrentlyBuilding";
 import Proof from "@/components/testimonials/ProofCard";
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <BottomImage />
         <Footer />
+        <AIAgent />
 
       </main>
     </div>
