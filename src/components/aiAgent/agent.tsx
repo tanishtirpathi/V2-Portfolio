@@ -5,7 +5,7 @@ import {
   Send,
   X,
   Loader,
-  Sparkles,
+  Brain,
   Copy,
   Check,
 } from "lucide-react";
@@ -123,14 +123,17 @@ export default function AIAgent() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 text-white flex items-center justify-center"
+        className="fixed bottom-8 right-8 z-40 w-14 h-14 
+        rounded-full bg-blue-500 text-white flex items-center justify-center"
       >
-        {isOpen ? <X size={24} /> : <Sparkles size={24} />}
+        {isOpen ? <X size={24} /> : <Brain size={24} />}
       </button>
 
       {/* Chat */}
       {isOpen && (
-        <div className="fixed bottom-24 right-8 z-40 w-96 h-[600px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed bottom-24 right-8 z-40 w-66 h-[400px]
+         bg-white dark:bg-black/90 rounded-2xl shadow-2xl flex flex-col
+          overflow-hidden dark:shadow-white/20 dark:border dark:border-white/20 ">
           
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -150,28 +153,13 @@ export default function AIAgent() {
                 }`}
               >
                 <div
-                  className={`px-4 py-2 rounded-xl max-w-xs text-sm ${
+                  className={`px-4 py-2 rounded-xl max-w-xs text-xs font-main ${
                     message.type === "user"
                       ? "bg-blue-500 text-white"
                       : "bg-gray-100 dark:bg-slate-800"
                   }`}
                 >
                   <p>{message.content}</p>
-
-                  {/* Copy */}
-                  {message.type === "assistant" && (
-                    <button
-                      onClick={() =>
-                        copyToClipboard(message.content, message.id)
-                      }
-                    >
-                      {copiedId === message.id ? (
-                        <Check size={14} />
-                      ) : (
-                        <Copy size={14} />
-                      )}
-                    </button>
-                  )}
 
                   {/* ✅ FIX: hydration-safe timestamp */}
                   <div className="text-[10px] opacity-60 mt-1">
