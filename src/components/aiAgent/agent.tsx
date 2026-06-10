@@ -138,8 +138,9 @@ export default function AIAgent() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 && (
+                
               <p className="text-center text-sm text-gray-500">
-                Ask anything about me 🚀
+                Ask anything about Me dude 💯
               </p>
             )}
 
@@ -189,7 +190,7 @@ export default function AIAgent() {
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t flex gap-2">
+          <div className="p-3  flex gap-2">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
