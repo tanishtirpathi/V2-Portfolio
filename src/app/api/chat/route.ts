@@ -74,7 +74,7 @@ ${context || "No context available in the database."}
 
 ---
 
-Please provide a helpful and concise answer.`;
+Please provide a helpful and concise answer. and make sure to answer in short as much as u can `;
 
     console.log("✨ Sending prompt to OpenRouter with reasoning...");
 
