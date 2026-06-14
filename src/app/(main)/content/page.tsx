@@ -1,6 +1,8 @@
 "use client";
 
+import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ShortFormContent } from "@/features/uicomponents/ShortFormContent";
+import { Link } from "lucide-react";
 
 export default function ContentPage() {
     return (
@@ -17,8 +19,21 @@ export default function ContentPage() {
                     <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl leading-relaxed">
                         check the latest edits of my content    from instagram and the x        </p>
                 </div>
+                <div className="flex flex-col items-center justify-center mb-8">
+    <RainbowButton variant="outline">
+        <a
+            href="https://www.instagram.com/p/DZiyt76zEH5/"
+            target="_blank"
+            className="font-main font-semibold flex items-center gap-2"
+        >
+         Other videos
+        </a>
+    </RainbowButton>
 
-                {/* Content Grid */}
+    <p className="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">
+      click button to view other instagram videos 
+    </p>
+</div>
                 <ShortFormContent />
             </div>
         </main>
