@@ -122,6 +122,7 @@ Please provide a helpful and concise answer. and make sure to answer in short as
     }
 
     const llmData = await llmResponse.json();
+    console.log("✅ Received response from OpenRouter:", llmData);
 
     if (!llmData.choices || !llmData.choices[0] || !llmData.choices[0].message) {
       throw new Error("Invalid response structure from OpenRouter");
@@ -138,7 +139,7 @@ Please provide a helpful and concise answer. and make sure to answer in short as
       payload: item.payload || {},
     }));
 
-    console.log("✅ Response generated successfully with reasoning");
+    console.log("✅ Response generated successfully with reasoning" , aiResponse);
     console.log("🧠 Reasoning Details:", reasoningDetails);
 
     return NextResponse.json({

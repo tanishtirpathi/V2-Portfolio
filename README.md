@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://tanishtirpathi.me" target="_blank">
-    <img src="./public/OGB.png" alt="Portfolio Preview" />
+    <img src="./public/OG.png" alt="Portfolio Preview" />
   </a>
 </p>
 
