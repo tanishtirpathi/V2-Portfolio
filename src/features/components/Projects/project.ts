@@ -39,7 +39,7 @@ export const ProjectDetail: Project[] = [
         image: "/images/Project/Portfolio.webp",
         LiveLink: "https://tanishtirpathi.me",
         tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss", "motion", "shadcn-ui"],
-        GithubLink: "https://github.com/tanishtirpathi/v2-PortfolioS",
+        GithubLink: "https://github.com/tanishtirpathi/v2-Portfolio",
         status: "Completed",
         type: ["serious", "webapp", "personal"],
         location: "/projects/Portfolio"

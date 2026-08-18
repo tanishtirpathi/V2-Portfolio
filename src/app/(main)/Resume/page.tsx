@@ -20,7 +20,7 @@ export default function Home() {
         <div className="relative w-full h-[700px] rounded-lg overflow-hidden border">
           <div className="mx-auto max-w-2xl">
             <iframe
-              src="https://drive.google.com/file/d/1ItQfblCng60un3uYfpz0aoDk8V4naVQR/preview"
+              src="https://drive.google.com/file/d/1FSeqmiqV_3v2__S6SO1dWHV2Z3LshJv1/preview"
               className="min-h-screen w-full"
             ></iframe>
           </div>
@@ -28,7 +28,7 @@ export default function Home() {
 
         <div className="flex justify-center mt-6">
           <a
-            href="https://drive.google.com/uc?export=download&id=1ItQfblCng60un3uYfpz0aoDk8V4naVQR"
+            href="https://drive.google.com/uc?export=download&id=1FSeqmiqV_3v2__S6SO1dWHV2Z3LshJv1"
             className="px-6 py-3 rounded-lg border border-black hover:bg-black hover:text-white transition"
           >
             Download Resume
