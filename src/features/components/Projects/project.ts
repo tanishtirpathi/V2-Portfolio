@@ -11,17 +11,16 @@ export interface Project {
     location?: string;
 }
 export const ProjectDetail: Project[] = [
-      {
-        title: "Fine Guard",
+    {
+        title: "Snoopr",
         description: "A fine management system born from the frustration of a 9-hour queue. Built with Next.js and integrated backend, it allows teachers to manage fines and students to pay online with full transparency.",
-        image: "/images/Project/fineguard.webp",
-        LiveLink: "https://fine.tanishtirpathi.me/",
-        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
-        GithubLink: "https://github.com/tanishtirpathi/Fine-system",
-        status: "Completed",
+        image: "/images/Project/Snoopr.webp",
+        LiveLink: "https://tanishtirpathi.me/",
+        tech: ["nextjs2", "typescript", "nodejs", "prisma", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi",
+        status: "Building",
         type: ["serious", "webapp"],
-        location: "/projects/fineguard"
-
+        location: "/projects/Snoopr"
     }, {
         title: "Trend-Up",
         description: "It is a Real time chat application with auto chat deletion feature and also It has currently 30+ user active ",
@@ -34,6 +33,28 @@ export const ProjectDetail: Project[] = [
         location: "/projects/Trendup",
     },
     {
+        title: "Fine Guard",
+        description: "A fine management system born from the frustration of a 9-hour queue. Built with Next.js and integrated backend, it allows teachers to manage fines and students to pay online with full transparency.",
+        image: "/images/Project/fineguard.webp",
+        LiveLink: "https://fine.tanishtirpathi.me/",
+        tech: ["nextjs2", "typescript", "nodejs", "mongodb", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/Fine-system",
+        status: "Completed",
+        type: ["serious", "webapp"],
+        location: "/projects/fineguard"
+
+    }, {
+        title: "Trip Guard ",
+        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
+        image: "/images/Project/TripGuard.webp",
+        LiveLink: "https://trip-guard.vercel.app/",
+        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],
+        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
+        status: "Completed",
+        type: ["serious", "webapp"],
+        location: "/projects/TripGuard"
+    },
+    {
         title: "Portfolio Website",
         description: "This is my personal portfolio website where I showcase my projects, experience, blogs, and tech stack with a modern, responsive design built using Next.js and TypeScript.",
         image: "/images/Project/Portfolio.webp",
@@ -43,28 +64,6 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["serious", "webapp", "personal"],
         location: "/projects/Portfolio"
-    },
-    {
-        title: "Trip Guard ",
-        description: "It is a travel safety website for tourist and also It has complaint feature . This project is mainly made for SIH which make us win SIH 2025 Internal Hackathon",
-        image: "/images/Project/TripGuard.webp",
-        LiveLink: "https://trip-guard.vercel.app/",
-        tech: ["react", "js", "nodejs", "mongodb", "tailwindcss"],  
-        GithubLink: "https://github.com/tanishtirpathi/TripGuard",
-        status: "Completed",
-        type: ["serious", "webapp"],
-        location: "/projects/TripGuard"
-    },
-  {
-        title: "Leetlow",
-        description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
-        image: "/images/Project/LeetLow.webp",
-        LiveLink: "#",
-        GithubLink: "https://github.com/tanishtirpathi/Leetlow",
-        tech: ["nextjs2", "typescript", "nodejs", "docker", "mysql", "tailwindcss"],
-        status: "Building",
-        type: ["serious", "webapp"],
-        location: "/projects/LeetLow"
     }
     , {
         title: "MindPin",
@@ -86,18 +85,7 @@ export const ProjectDetail: Project[] = [
         status: "Completed",
         type: ["fun", "desktopapp", "personal"],
         location: "/projects/Slappy"
-    }, {
-        title: "AI Interview Platform",
-        description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
-        image: "/images/Project/AInterview.webp",
-        LiveLink: "#",
-        GithubLink: "https://github.com/tanishtirpathi/GitRoast",
-        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb", "js", "tailwindcss"],
-        status: "Building",
-        type: ["serious", "webapp"],
-        location: "/projects/AInterview"
     },
-
     {
         title: "Notion-Cheker ",
         description: "It is a system which go to my notion speicfic dashboard and get all data and send it to my telegram every time it change and also real time it update on my extension of browsers ",
@@ -119,7 +107,29 @@ export const ProjectDetail: Project[] = [
         type: ["fun", "webapp"],
         location: "/projects/Playlitr"
     }
+, {
+        title: "AI Interview Platform",
+        description: "It is an AI Interview platform where you can practice interview question and also it has a feature of mock interview where you can give interview to AI and it will give you feedback on your performance.",
+        image: "/images/Project/AInterview.webp",
+        LiveLink: "#",
+        GithubLink: "https://github.com/tanishtirpathi/GitRoast",
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mongodb", "js", "tailwindcss"],
+        status: "Building",
+        type: ["serious", "webapp"],
+        location: "/projects/AInterview"
+    },
 
+    {
+        title: "Leetlow",
+        description: "Leetlow is a basicllay code exicution platform where u can practice 1000 of questoins [DSA] and sort by companies ",
+        image: "/images/Project/LeetLow.webp",
+        LiveLink: "#",
+        GithubLink: "https://github.com/tanishtirpathi/Leetlow",
+        tech: ["nextjs2", "typescript", "nodejs", "docker", "mysql", "tailwindcss"],
+        status: "Building",
+        type: ["serious", "webapp"],
+        location: "/projects/LeetLow"
+    }
 
 ]
 

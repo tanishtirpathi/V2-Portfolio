@@ -1,0 +1,108 @@
+# Snoopr
+
+#### A distributed website-monitoring platform that watches your links around the clock and emails you the moment something changes.
+
+---
+
+## Overview
+
+Snoopr is a backend-heavy monitoring tool built for people who need to know when a page changes and don't want to keep refreshing it themselves.
+
+A user logs in, adds a website link, and Snoopr takes it from there — polling the page on a schedule, diffing the content against the last known snapshot, and firing off an email the instant something is different.
+
+Under the hood it's less "CRUD app" and more "small distributed system": job queues, workers, load-balanced services, and a payment layer, all built to survive failure and scale horizontally rather than just work on one machine.
+
+---
+ 
+## Tech Stack
+ 
+`Node.js` `Express` `React` `TypeScript` `PostgreSQL` `Redis` `BullMQ` `Docker` `Nginx` `Stripe` `JWT` `Nodemailer`
+ 
+---
+ 
+## Why I Built This
+
+I wanted a project that forced me out of "build an API, connect a database" territory and into actual system design — queues, workers, retries, idempotency, horizontal scaling.
+
+Website change monitoring was the perfect excuse: it's a problem that *needs* background processing (you can't check thousands of URLs inside a request-response cycle), it needs to be fault-tolerant (a failed check for one user shouldn't block anyone else), and it needs to scale independently on the ingestion side vs. the checking side.
+
+So Snoopr became my sandbox for learning how real distributed systems are put together, not just how to call `setInterval`.
+
+---
+
+## Features
+
+- User authentication (signup / login, JWT-based sessions)
+- Add, edit, and remove monitored website links per user
+- Continuous background monitoring on a configurable interval
+- Content diffing to detect real changes (not just noise like timestamps)
+- Instant email alerts when a tracked page changes
+- Subscription-based plans via Stripe (free tier + paid tiers with more links / faster checks)
+- Dashboard showing link status, last checked time, and change history
+
+---
+
+## System Design
+
+### High-Level Architecture
+
+Snoopr is split into independent services rather than one monolith, so each piece can scale on its own:
+
+- **API Service** — handles auth, link CRUD, billing webhooks, and dashboard data. Stateless, so it can run behind a load balancer.
+- **Scheduler** — periodically enqueues a "check this URL" job for every active link based on its polling interval.
+- **Worker Pool** — a horizontally scalable fleet of BullMQ workers that actually fetch pages, diff content, and trigger notifications.
+- **Notification Service** — consumes "change detected" events and sends email via a dedicated queue, decoupled from the workers doing the fetching.
+
+```
+Client → Load Balancer → API instances (N) ─┐
+                                             ├─→ Postgres (users, links, snapshots)
+Scheduler ─→ Redis (BullMQ queue) ─→ Workers (N) ─→ Notification Queue → Email
+                                             └─→ Stripe (billing events via webhook)
+```
+
+### Queues & Background Jobs — Redis + BullMQ
+
+- Every monitoring check is a **job**, not a live request — this decouples "how many links exist" from "how fast the app responds."
+- BullMQ handles retries with exponential backoff for failed fetches (a site being down for 30 seconds shouldn't count as "changed" or spam the user).
+- Jobs are **idempotent** — re-running a check job never double-sends an email, even if a worker crashes mid-job and BullMQ retries it.
+- Rate-limited queues per domain prevent Snoopr from hammering a single website with too many concurrent checks.
+- A separate low-priority queue handles email delivery, so a slow SMTP provider never backs up the monitoring pipeline.
+
+### Distributed System & Scaling
+
+- **Stateless API layer** behind a load balancer (Nginx) — any instance can handle any request, so scaling is just adding more containers.
+- **Workers scale independently from the API** — during high load (thousands of links to check), you scale worker replicas without touching the web tier at all.
+- **Redis as the shared coordination layer** — queue state lives in Redis, not in-memory, so any worker in the fleet can pick up any job. No sticky sessions, no single point of failure on the compute side.
+- **Postgres as the source of truth** for users, links, and content snapshots, with the queue layer treated as ephemeral/replayable state.
+- Everything is containerized with **Docker**, so the API, workers, and scheduler are separately deployable and independently scalable units, not one big process.
+
+### Payments — Stripe
+
+- Stripe Checkout for subscription upgrades, with webhook handling for `subscription.created`, `invoice.paid`, and `subscription.deleted` events.
+- Plan limits (number of links, minimum check interval) are enforced at the job-enqueue step, not just in the UI — so a downgraded user's excess links simply stop getting scheduled.
+
+---
+
+## Problems Solved
+
+- **"How do you check thousands of URLs without blocking your API?"** → Move it off the request path entirely with a queue-based worker model.
+- **"What happens when a check fails or a worker dies mid-job?"** → BullMQ retries + idempotent job design so nothing gets lost or double-sent.
+- **"How do you avoid false-positive change alerts?"** → Content diffing that ignores volatile noise (timestamps, ad blocks, tracking pixels) and only flags meaningful changes.
+- **"How do you scale monitoring without scaling the whole app?"** → Split workers from the API so compute-heavy checking scales independently of user traffic.
+- **"How do you tie usage limits to billing without manual checks?"** → Enforce plan limits at the scheduling layer, driven directly by Stripe subscription state.
+
+---
+
+## Current Update
+
+- Core monitoring pipeline (scheduler → queue → worker → diff → email) is live and stable
+- Stripe billing integrated with working webhook handling
+- Dashboard shows real-time link status and last-checked timestamps
+- Load testing the worker pool to find the right concurrency settings
+
+## Future Plans
+
+- Multi-channel alerts (Slack, Discord, webhooks) in addition to email
+- Visual diff view showing exactly what changed on the page
+- Per-user rate limiting and smarter adaptive polling (check less-active sites less often)
+- Add a status/uptime view alongside content-change monitoring
