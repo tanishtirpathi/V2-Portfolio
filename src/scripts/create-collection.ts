@@ -4,20 +4,36 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new QdrantClient({
-  url: process.env.QDRABT_API_URL!,
-  apiKey: process.env.QDRABT_API_KEY!,
+  url: process.env.QDRANT_API_URL!,
+  apiKey: process.env.QDRANT_API_KEY!,
   checkCompatibility: false,
 });
 
 async function create() {
-  await client.createCollection("portfolio", {
+  const collectionName = "portfolio";
+
+  const collections = await client.getCollections();
+
+  const exists = collections.collections.some(
+    (collection) => collection.name === collectionName
+  );
+
+  if (exists) {
+    console.log(`✅ Collection "${collectionName}" already exists`);
+    return;
+  }
+
+  await client.createCollection(collectionName, {
     vectors: {
       size: 384,
       distance: "Cosine",
     },
   });
 
-  console.log("Collection created 🚀");
+  console.log(`🚀 Collection "${collectionName}" created`);
 }
 
-create();
+create().catch((error) => {
+  console.error("❌ Failed to create collection:", error);
+  process.exit(1);
+});

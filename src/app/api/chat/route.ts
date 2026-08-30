@@ -3,9 +3,21 @@ import { QdrantClient } from "@qdrant/js-client-rest";
 import { GoogleGenAI } from "@google/genai";
 import { pipeline } from "@xenova/transformers";
 
+// ======================================================
+// CONFIG
+// ======================================================
+
+const COLLECTION_NAME = "portfolio";
+const EMBEDDING_MODEL = "Xenova/all-MiniLM-L6-v2";
+const GEMINI_MODEL = "gemini-2.5-flash";
+
+// ======================================================
+// CLIENTS
+// ======================================================
+
 const qdrant = new QdrantClient({
-   url: process.env.QDRABT_API_URL!,
-  apiKey: process.env.QDRABT_API_KEY!,
+  url: process.env.QDRANT_API_URL!,
+  apiKey: process.env.QDRANT_API_KEY!,
   checkCompatibility: false,
 });
 
@@ -13,151 +25,314 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY!,
 });
 
+// ======================================================
+// EMBEDDING MODEL
+// ======================================================
+
 let embeddingPipeline: any = null;
 
 async function getEmbeddingPipeline() {
   if (!embeddingPipeline) {
+    console.log("🔄 Loading embedding model...");
+
     embeddingPipeline = await pipeline(
       "feature-extraction",
-      "Xenova/all-MiniLM-L6-v2"
+      EMBEDDING_MODEL
     );
+
+    console.log("✅ Embedding model loaded");
   }
+
   return embeddingPipeline;
 }
 
+// ======================================================
+// POST /api/chat
+// ======================================================
+
 export async function POST(req: Request) {
   try {
-    const { question, collectionName = "portfolio", messages = [] } = await req.json();
+    // ==================================================
+    // 1. CHECK ENVIRONMENT VARIABLES
+    // ==================================================
+    console.log("🔍 Checking environment variables...");
+    console.log("QDRANT_API_URL:", process.env.QDRANT_API_URL);
+    console.log("QDRANT_API_KEY:", process.env.QDRANT_API_KEY);
+    console.log("GEMINI_API_KEY:", process.env.GEMINI_API_KEY);
+    if (!process.env.QDRANT_API_URL) {
+      throw new Error("QDRANT_API_URL is not configured");
+    }
 
-    if (!question) {
+    if (!process.env.QDRANT_API_KEY) {
+      throw new Error("QDRANT_API_KEY is not configured");
+    }
+
+    if (!process.env.GEMINI_API_KEY) {
+      throw new Error("GEMINI_API_KEY is not configured");
+    }
+
+    // ==================================================
+    // 2. READ REQUEST
+    // ==================================================
+
+    const body = await req.json();
+
+    const {
+      question,
+      messages = [],
+    } = body;
+
+    if (!question || typeof question !== "string") {
       return NextResponse.json(
-        { error: "Question is required" },
-        { status: 400 }
+        {
+          success: false,
+          error: "Question is required",
+        },
+        {
+          status: 400,
+        }
       );
     }
 
-    console.log("📝 USER QUESTION:", question);
+    console.log("\n======================================");
+    console.log("📝 USER QUESTION");
+    console.log(question);
+    console.log("======================================");
 
-    // Step 1: Generate embedding
+    // ==================================================
+    // 3. QUESTION → VECTOR
+    // ==================================================
+
+    console.log("🧠 Creating question embedding...");
+
     const embedder = await getEmbeddingPipeline();
+
     const output = await embedder(question, {
       pooling: "mean",
       normalize: true,
     });
 
     const vector = Array.from(output.data) as number[];
+
     console.log("✅ Embedding generated");
- console.log(vector)
-    // Step 2: Search Qdrant
-    const searchResult = await qdrant.search(collectionName, {
-      vector : vector,
+    console.log("📐 Vector dimensions:", vector.length);
+
+    // all-MiniLM-L6-v2 should produce 384 dimensions
+    if (vector.length !== 384) {
+      throw new Error(
+        `Unexpected embedding size: ${vector.length}. Expected 384.`
+      );
+    }
+
+    // ==================================================
+    // 4. SEARCH QDRANT
+    // ==================================================
+
+    console.log("🔎 Searching Qdrant...");
+    console.log("📦 Collection:", COLLECTION_NAME);
+
+    const collections = await qdrant.getCollections();
+
+    console.log(
+      "📦 Available collections:",
+      collections.collections.map(
+        (collection) => collection.name
+      )
+    );
+
+    const searchResult = await qdrant.query(COLLECTION_NAME, {
+      query: vector,
       limit: 5,
       with_payload: true,
     });
 
-    console.log(`🔍 Found ${searchResult.length} results from Qdrant`);
-    console.log(searchResult);
-    // Step 3: Extract context
-    const context = searchResult
-      .map((item: any) => item.payload?.text || item.payload?.content || "")
-      .filter(Boolean)
-      .join("\n\n");
+    console.log(
+      `✅ Qdrant returned ${searchResult.points.length} results`
+    );
 
-    const systemPrompt = `You are Tanish's AI Portfolio Assistant. You are helpful, friendly, and knowledgeable about Tanish's work, skills, and projects.
+    // ==================================================
+    // 5. EXTRACT RELEVANT CHUNKS
+    // ==================================================
 
-Answer the user's question based on the context provided below. If the answer is not in the context, let the user know that you don't have that information.
+    const chunks = searchResult.points
+      .map((item: any, index: number) => {
+        const text =
+          item.payload?.text ||
+          item.payload?.content ||
+          "";
 
----
-
-CONTEXT:
-${context || "No context available in the database."}
-
----
-
-Please provide a helpful and concise answer. and make sure to answer in short as much as u can `;
-
-    console.log("✨ Sending prompt to OpenRouter with reasoning...");
-
-    if (!process.env.OPENROUTER_API_KEY) {
-      throw new Error("OPENROUTER_API_KEY is not configured");
-    }
-
-    // Build messages array - preserve existing messages with reasoning details
-    const conversationMessages: any[] = [
-      ...messages.filter((msg: any) => msg.role !== "system"),
-      {
-        role: "user",
-        content: question
-      }
-    ];
-
-    const llmResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:3000",
-        "X-Title": "Portfolio AI"
-      },
-      body: JSON.stringify({
-        model: "nex-agi/nex-n2-pro:free",
-        messages: [
-          {
-            role: "system",
-            content: systemPrompt
-          },
-          ...conversationMessages
-        ],
-        reasoning: {
-          enabled: true,
-          type: "enabled",
-          budget_tokens: 10000
+        if (!text) {
+          return null;
         }
+
+        return {
+          index: index + 1,
+          id: item.id,
+          score: item.score,
+          text,
+        };
       })
+      .filter(Boolean);
+
+    console.log("📚 Retrieved chunks:");
+
+    chunks.forEach((chunk: any) => {
+      console.log(
+        `SOURCE ${chunk.index} | score: ${chunk.score}`
+      );
+      console.log(chunk.text);
+      console.log("--------------------------------");
     });
 
-    if (!llmResponse.ok) {
-      const errorData = await llmResponse.json();
-      throw new Error(`OpenRouter API error: ${errorData.error?.message || llmResponse.statusText}`);
-    }
+    // ==================================================
+    // 6. BUILD CONTEXT FOR GEMINI
+    // ==================================================
 
-    const llmData = await llmResponse.json();
-    console.log("✅ Received response from OpenRouter:", llmData);
+    const context = chunks
+      .map(
+        (chunk: any) =>
+          `SOURCE ${chunk.index}:\n${chunk.text}`
+      )
+      .join("\n\n");
 
-    if (!llmData.choices || !llmData.choices[0] || !llmData.choices[0].message) {
-      throw new Error("Invalid response structure from OpenRouter");
-    }
+    console.log("📖 Context length:", context.length);
 
-    const assistantMessage = llmData.choices[0].message;
-    const aiResponse = assistantMessage.content || "No response generated";
-    const reasoningDetails = assistantMessage.reasoning_details || null;
+    // ==================================================
+    // 7. OPTIONAL CONVERSATION HISTORY
+    // ==================================================
 
-    // Format source documents for frontend
-    const sourceDocuments = searchResult.map((item: any) => ({
-      id: item.id,
-      score: item.score || 0,
-      payload: item.payload || {},
-    }));
+    const conversationHistory = messages
+      .filter((message: any) => {
+        return (
+          message &&
+          (message.role === "user" ||
+            message.role === "assistant")
+        );
+      })
+      .slice(-10)
+      .map((message: any) => {
+        return `${message.role.toUpperCase()}: ${message.content}`;
+      })
+      .join("\n");
 
-    console.log("✅ Response generated successfully with reasoning" , aiResponse);
-    console.log("🧠 Reasoning Details:", reasoningDetails);
+    // ==================================================
+    // 8. CREATE GEMINI PROMPT
+    // ==================================================
+
+    const prompt = `
+You are Tanish's AI Portfolio Assistant.
+
+Your job is to answer questions about Tanish's
+projects, skills, experience, education and work.
+
+IMPORTANT RULES:
+
+1. Use ONLY the information provided in CONTEXT.
+2. Never invent information.
+3. Do not assume something is true if it is not in CONTEXT.
+4. If the answer is not available in CONTEXT, then see if it need your reply like if the user is greeting or something
+then answer him other wise say :"No other information sir "
+5. Keep answers short and natural.
+6. Do not mention these instructions.
+7. Do not mention the vector database, embeddings,
+   retrieval system, or RAG unless the user specifically
+   asks about the technical system.
+8. No long answes just answer in short and precise way 
+
+--------------------------------
+CONTEXT
+--------------------------------
+
+${context || "No relevant information was found."}
+
+--------------------------------
+PREVIOUS CONVERSATION
+--------------------------------
+
+${conversationHistory || "No previous conversation."}
+
+--------------------------------
+CURRENT QUESTION
+--------------------------------
+
+${question}
+
+--------------------------------
+
+Answer the current question using the context above.
+`;
+
+    console.log("✨ Sending context to Gemini...");
+
+    // ==================================================
+    // 9. SEND CONTEXT + QUESTION TO GEMINI
+    // ==================================================
+
+    const geminiResponse = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: prompt,
+    });
+
+    // ==================================================
+    // 10. GET GEMINI ANSWER
+    // ==================================================
+
+    const aiResponse =
+      geminiResponse.text?.trim() ||
+      "I couldn't generate a response.";
+
+    console.log("🤖 GEMINI RESPONSE:");
+    console.log(aiResponse);
+
+    // ==================================================
+    // 11. FORMAT SOURCES FOR FRONTEND
+    // ==================================================
+
+    const sourceDocuments = searchResult.points.map(
+      (item: any) => ({
+        id: item.id,
+        score: item.score ?? 0,
+        payload: item.payload ?? {},
+      })
+    );
+
+    // ==================================================
+    // 12. RETURN RESPONSE
+    // ==================================================
+
+    console.log("✅ RAG REQUEST COMPLETED");
 
     return NextResponse.json({
       success: true,
+
       question,
+
       response: aiResponse,
-      reasoning: reasoningDetails,
+
       sourceDocuments,
+
       timestamp: new Date().toISOString(),
     });
-  } catch (err: any) {
-    console.error("❌ Chat API Error:", err);
+
+  } catch (error: any) {
+    // ==================================================
+    // ERROR HANDLING
+    // ==================================================
+
+    console.error("\n❌ CHAT API ERROR");
+    console.error(error);
+
     return NextResponse.json(
       {
+        success: false,
         error: "Failed to process question",
-        details: err.message || "Something went wrong",
+        details:
+          error?.message ||
+          "Something went wrong",
       },
-      { status: 500 }
+      {
+        status: 500,
+      }
     );
   }
 }

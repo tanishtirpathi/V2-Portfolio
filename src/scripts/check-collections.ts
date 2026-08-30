@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new QdrantClient({
-  url: process.env.QDRABT_API_URL!,
-  apiKey: process.env.QDRABT_API_KEY!,
+  url: process.env.QDRANT_API_URL!,
+  apiKey: process.env.QDRANT_API_KEY!,
   checkCompatibility: false,
 });
 
