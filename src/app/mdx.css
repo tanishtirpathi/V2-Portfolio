@@ -1,7 +1,7 @@
 .mdx-wrapper {
   max-width: 760px;
   margin: 0 auto;
-  padding: 56px 24px;
+  padding: 56px 14px;
   font-family: var(--font-geist-sans);
   line-height: 1.82;
   color: rgba(17, 24, 39, 0.88);
@@ -32,7 +32,6 @@
   font-size: clamp(1.5rem, 2.5vw, 1.9rem);
   margin: 36px 0 14px;
   font-family: var(--font-instrument);
-  font-style: italic;
   font-weight: 500;
 }
 
@@ -54,7 +53,7 @@
 
 .mdx-wrapper p {
   font-size: 1.05rem;
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-hanken), sans-serif;
   padding-left: 0;
   margin-bottom: 1rem;
   max-width: 68ch;
@@ -158,25 +157,31 @@
 .dark .mdx-wrapper h2,
 .dark .mdx-wrapper h3,
 .dark .mdx-wrapper h4 {
-  color: rgba(248, 250, 252, 0.96);
+  color: rgba(248, 250, 252, 0.932);
 }
+
 
 .dark .mdx-wrapper pre,
 .dark .mdx-wrapper code {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.dark .mdx-wrapper p {
+  color: rgba(248, 250, 252, 0.703);
+}
 .dark .mdx-wrapper blockquote {
   border-left-color: rgba(248, 250, 252, 0.35);
   color: rgba(248, 250, 252, 0.9);
 }
 
 .dark .mdx-wrapper hr {
-  background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.24), transparent);
+  background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.587), transparent);
+  margin: 68px 0;
 }
 
 .dark .mdx-wrapper strong {
-  color: #fff;
+  color: #d3d3d3;
+  font-weight: 700;
 }
 
 @media (max-width: 640px) {

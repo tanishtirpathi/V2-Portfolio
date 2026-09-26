@@ -38,7 +38,7 @@ export default async function BlogPage({
           Back to blogs
         </Link>
 
-        <div className="prose dark:prose-invert max-w-none px-10">
+        <div className="prose dark:prose-invert max-w-none px-1">
           <MDXRemote source={source} />
         </div>
       </div>

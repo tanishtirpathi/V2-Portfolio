@@ -7,6 +7,12 @@ export interface Blogs {
 }
 
 export const BlogsDetails: Blogs[] = [
+    {
+        title: "How we won the hackathon and what we learned from it",
+        time: "10 Min Read",
+        location: "/blog/Hackathon",
+        image: "/images/Blog/Hack1.webp"
+    },
 
     {
         title: "Why I love Tony stark , and how he influence me to be a better version of myself",
