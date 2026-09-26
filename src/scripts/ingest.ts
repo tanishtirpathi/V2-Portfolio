@@ -1,259 +1,259 @@
-import fs from "fs";
-import path from "path";
-import dotenv from "dotenv";
+// import fs from "fs";
+// import path from "path";
+// import dotenv from "dotenv";
 
-import { QdrantClient } from "@qdrant/js-client-rest";
-import { pipeline } from "@xenova/transformers";
+// import { QdrantClient } from "@qdrant/js-client-rest";
+// import { pipeline } from "@xenova/transformers";
 
-dotenv.config();
+// dotenv.config();
 
-// ======================================================
-// QDRANT
-// ======================================================
+// // ======================================================
+// // QDRANT
+// // ======================================================
 
-const client = new QdrantClient({
-  url: process.env.QDRANT_API_URL!,
-  apiKey: process.env.QDRANT_API_KEY!,
-  checkCompatibility: false,
-});
+// const client = new QdrantClient({
+//   url: process.env.QDRANT_API_URL!,
+//   apiKey: process.env.QDRANT_API_KEY!,
+//   checkCompatibility: false,
+// });
 
-// ======================================================
-// CONFIG
-// ======================================================
+// // ======================================================
+// // CONFIG
+// // ======================================================
 
-const COLLECTION_NAME = "portfolio";
+// const COLLECTION_NAME = "portfolio";
 
-const EMBEDDING_MODEL =
-  "Xenova/all-MiniLM-L6-v2";
+// const EMBEDDING_MODEL =
+//   "Xenova/all-MiniLM-L6-v2";
 
-const dataFolder = path.join(
-  process.cwd(),
-  "src/data/AI"
-);
+// const dataFolder = path.join(
+//   process.cwd(),
+//   "src/data/AI"
+// );
 
-// Number of characters per chunk
-const CHUNK_SIZE = 1000;
+// // Number of characters per chunk
+// const CHUNK_SIZE = 1000;
 
-// Overlap between chunks
-const CHUNK_OVERLAP = 200;
+// // Overlap between chunks
+// const CHUNK_OVERLAP = 200;
 
-// ======================================================
-// EMBEDDING MODEL
-// ======================================================
+// // ======================================================
+// // EMBEDDING MODEL
+// // ======================================================
 
-let embeddingPipeline: any = null;
+// let embeddingPipeline: any = null;
 
-async function getEmbeddingPipeline() {
-  if (!embeddingPipeline) {
-    console.log("🔄 Loading embedding model...");
+// async function getEmbeddingPipeline() {
+//   if (!embeddingPipeline) {
+//     console.log("🔄 Loading embedding model...");
 
-    embeddingPipeline = await pipeline(
-      "feature-extraction",
-      EMBEDDING_MODEL
-    );
+//     embeddingPipeline = await pipeline(
+//       "feature-extraction",
+//       EMBEDDING_MODEL
+//     );
 
-    console.log("✅ Embedding model loaded");
-  }
+//     console.log("✅ Embedding model loaded");
+//   }
 
-  return embeddingPipeline;
-}
+//   return embeddingPipeline;
+// }
 
-// ======================================================
-// CHUNKING
-// ======================================================
+// // ======================================================
+// // CHUNKING
+// // ======================================================
 
-function createChunks(
-  text: string,
-  chunkSize = CHUNK_SIZE,
-  overlap = CHUNK_OVERLAP
-) {
-  const chunks: string[] = [];
-
-  let start = 0;
+// function createChunks(
+//   text: string,
+//   chunkSize = CHUNK_SIZE,
+//   overlap = CHUNK_OVERLAP
+// ) {
+//   const chunks: string[] = [];
+
+//   let start = 0;
 
-  while (start < text.length) {
-    const end = start + chunkSize;
-
-    const chunk = text
-      .slice(start, end)
-      .trim();
+//   while (start < text.length) {
+//     const end = start + chunkSize;
+
+//     const chunk = text
+//       .slice(start, end)
+//       .trim();
 
-    if (chunk.length > 0) {
-      chunks.push(chunk);
-    }
+//     if (chunk.length > 0) {
+//       chunks.push(chunk);
+//     }
 
-    start += chunkSize - overlap;
-  }
+//     start += chunkSize - overlap;
+//   }
 
-  return chunks;
-}
+//   return chunks;
+// }
 
-// ======================================================
-// MAIN INGESTION
-// ======================================================
+// // ======================================================
+// // MAIN INGESTION
+// // ======================================================
 
-async function run() {
-  console.log("🚀 Starting ingestion...\n");
+// async function run() {
+//   console.log("🚀 Starting ingestion...\n");
 
-  // --------------------------------------------------
-  // Check collection
-  // --------------------------------------------------
+//   // --------------------------------------------------
+//   // Check collection
+//   // --------------------------------------------------
 
-  const collections =
-    await client.getCollections();
-
-  const collectionExists =
-    collections.collections.some(
-      (collection) =>
-        collection.name === COLLECTION_NAME
-    );
-
-  if (!collectionExists) {
-    throw new Error(
-      `Collection "${COLLECTION_NAME}" does not exist. Run create-collection first.`
-    );
-  }
-
-  console.log(
-    `✅ Collection "${COLLECTION_NAME}" exists`
-  );
+//   const collections =
+//     await client.getCollections();
+
+//   const collectionExists =
+//     collections.collections.some(
+//       (collection) =>
+//         collection.name === COLLECTION_NAME
+//     );
+
+//   if (!collectionExists) {
+//     throw new Error(
+//       `Collection "${COLLECTION_NAME}" does not exist. Run create-collection first.`
+//     );
+//   }
+
+//   console.log(
+//     `✅ Collection "${COLLECTION_NAME}" exists`
+//   );
 
-  // --------------------------------------------------
-  // Load embedding model
-  // --------------------------------------------------
+//   // --------------------------------------------------
+//   // Load embedding model
+//   // --------------------------------------------------
 
-  const embedder =
-    await getEmbeddingPipeline();
+//   const embedder =
+//     await getEmbeddingPipeline();
 
-  // --------------------------------------------------
-  // Read files
-  // --------------------------------------------------
+//   // --------------------------------------------------
+//   // Read files
+//   // --------------------------------------------------
 
-  const files = fs
-    .readdirSync(dataFolder)
-    .filter((file) => {
-      const filePath = path.join(
-        dataFolder,
-        file
-      );
+//   const files = fs
+//     .readdirSync(dataFolder)
+//     .filter((file) => {
+//       const filePath = path.join(
+//         dataFolder,
+//         file
+//       );
 
-      return fs.statSync(filePath).isFile();
-    });
+//       return fs.statSync(filePath).isFile();
+//     });
 
-  console.log(
-    `📁 Found ${files.length} files\n`
-  );
+//   console.log(
+//     `📁 Found ${files.length} files\n`
+//   );
 
-  // --------------------------------------------------
-  // Process each file
-  // --------------------------------------------------
-
-  for (const file of files) {
-    const filePath = path.join(
-      dataFolder,
-      file
-    );
+//   // --------------------------------------------------
+//   // Process each file
+//   // --------------------------------------------------
+
+//   for (const file of files) {
+//     const filePath = path.join(
+//       dataFolder,
+//       file
+//     );
 
-    const text = fs.readFileSync(
-      filePath,
-      "utf8"
-    ).trim();
+//     const text = fs.readFileSync(
+//       filePath,
+//       "utf8"
+//     ).trim();
 
-    if (!text) {
-      console.log(
-        `⚠️ Skipping empty file: ${file}`
-      );
-      continue;
-    }
+//     if (!text) {
+//       console.log(
+//         `⚠️ Skipping empty file: ${file}`
+//       );
+//       continue;
+//     }
 
-    console.log(
-      `\n📄 Processing: ${file}`
-    );
+//     console.log(
+//       `\n📄 Processing: ${file}`
+//     );
 
-    // ------------------------------------------------
-    // Create chunks
-    // ------------------------------------------------
+//     // ------------------------------------------------
+//     // Create chunks
+//     // ------------------------------------------------
 
-    const chunks = createChunks(text);
+//     const chunks = createChunks(text);
 
-    console.log(
-      `✂️ Created ${chunks.length} chunks`
-    );
+//     console.log(
+//       `✂️ Created ${chunks.length} chunks`
+//     );
 
-    // ------------------------------------------------
-    // Create Qdrant points
-    // ------------------------------------------------
+//     // ------------------------------------------------
+//     // Create Qdrant points
+//     // ------------------------------------------------
 
-    const points = [];
+//     const points = [];
 
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+//     for (let i = 0; i < chunks.length; i++) {
+//       const chunk = chunks[i];
 
-      console.log(
-        `🧠 Embedding chunk ${i + 1}/${chunks.length}`
-      );
+//       console.log(
+//         `🧠 Embedding chunk ${i + 1}/${chunks.length}`
+//       );
 
-      const output = await embedder(chunk, {
-        pooling: "mean",
-        normalize: true,
-      });
+//       const output = await embedder(chunk, {
+//         pooling: "mean",
+//         normalize: true,
+//       });
 
-      const vector =
-        Array.from(output.data) as number[];
+//       const vector =
+//         Array.from(output.data) as number[];
 
-      if (vector.length !== 384) {
-        throw new Error(
-          `Unexpected vector size: ${vector.length}`
-        );
-      }
+//       if (vector.length !== 384) {
+//         throw new Error(
+//           `Unexpected vector size: ${vector.length}`
+//         );
+//       }
 
-      points.push({
-        id: crypto.randomUUID(),
+//       points.push({
+//         id: crypto.randomUUID(),
 
-        vector,
+//         vector,
 
-        payload: {
-          text: chunk,
+//         payload: {
+//           text: chunk,
 
-          source: file,
+//           source: file,
 
-          chunkIndex: i,
+//           chunkIndex: i,
 
-          totalChunks: chunks.length,
-        },
-      });
-    }
+//           totalChunks: chunks.length,
+//         },
+//       });
+//     }
 
-    // ------------------------------------------------
-    // Upload chunks to Qdrant
-    // ------------------------------------------------
+//     // ------------------------------------------------
+//     // Upload chunks to Qdrant
+//     // ------------------------------------------------
 
-    console.log(
-      `⬆️ Uploading ${points.length} chunks...`
-    );
+//     console.log(
+//       `⬆️ Uploading ${points.length} chunks...`
+//     );
 
-    await client.upsert(COLLECTION_NAME, {
-      wait: true,
+//     await client.upsert(COLLECTION_NAME, {
+//       wait: true,
 
-      points,
-    });
+//       points,
+//     });
 
-    console.log(
-      `✅ Uploaded ${file}`
-    );
-  }
+//     console.log(
+//       `✅ Uploaded ${file}`
+//     );
+//   }
 
-  console.log("\n================================");
-  console.log("🎉 INGESTION COMPLETE");
-  console.log("================================");
-}
+//   console.log("\n================================");
+//   console.log("🎉 INGESTION COMPLETE");
+//   console.log("================================");
+// }
 
-run().catch((error) => {
-  console.error(
-    "\n❌ INGESTION ERROR:"
-  );
+// run().catch((error) => {
+//   console.error(
+//     "\n❌ INGESTION ERROR:"
+//   );
 
-  console.error(error);
+//   console.error(error);
 
-  process.exit(1);
-});
+//   process.exit(1);
+// });
