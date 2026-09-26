@@ -1,0 +1,302 @@
+# From Midnight Calls to First Place
+
+Before I even start this one — I need to say this wasn't a normal hackathon story where everything goes smoothly and you win because your idea was "the best."
+
+This is a story about **panic, pivots, sleepless nights, a fumbled answer on stage, and still somehow walking away with the first position.**
+
+Grab something to drink. This one's long.
+
+---
+
+## Where It All Started — 14th September
+
+It was just a normal day. Then someone in our group dropped a message:
+
+> "Guys, there's a hackathon. Problem statements are fixed."
+
+That single message changed the next few days of our lives completely.
+
+The problem statements were:
+
+- A **virtual finance manager for students**
+- A **campus room booking & event management system**
+- A **smart incident alert system for campus**
+- An **AI RAG-based quiz generator**
+
+Four options. Four completely different directions. And we had to pick just one.
+
+We didn't overthink it for too long. After going back and forth, we locked in on the **Campus Room Booking & Event Management** problem statement.
+
+It sounded simple on paper. A booking system — how hard could that be, right?
+
+We had no idea what we were about to get ourselves into.
+
+---
+
+## Day One — "Let's Just Build Something Simple"
+
+The first plan was straightforward: build a basic booking system. Students request a room, someone approves it, done. Nothing fancy.
+
+Simple scope, simple execution, minimal stress.
+
+That plan lasted for about a day.
+
+---
+
+## The Moment Everything Changed
+
+Somewhere in between, we found out something that hit us like cold water on the face:
+
+**A LOT of other teams were building the exact same project.**
+
+Same problem statement. Same basic idea. Probably very similar execution too.
+
+That's when the panic set in — not the "we're going to fail" kind of panic, but the "if we build something basic, we're going to blend in with 20 other basic projects" kind of panic.
+
+So we made a decision that night:
+
+> If everyone is building this at a basic level, we're not doing basic. We're building this at an **insane level** — something that can actually handle real load, real logic, and real complexity.
+
+That one decision changed the entire direction of the project.
+
+---
+
+## The Planning Night — Google Meet, Midnight, and a Whiteboard of Ideas
+
+That same night, we hopped on a Google Meet call. Just to be clear on who "we" is:
+
+- **Me** — handling the development side
+- **My friend** — the designer, responsible for how everything looked and felt
+- **A girl on our team** — our researcher, digging into what actually matters for a system like this
+
+We sat there for hours, throwing ideas at each other, cutting half of them, refining the rest.
+
+By the end of the call, we had locked in the core features:
+
+- Rooms could only be booked by **specially authorized students** — not a free-for-all
+- Every booking request had to go through **admin/teacher approval** before being confirmed
+- **Zero double-booking** — no two people getting the same room at the same time
+- A **full two-sided dashboard** — one for admins to manage bookings, one for students to track theirs
+- ...and a bunch of other features we kept adding as the night went on
+
+By the time the call ended, we weren't building a "room booking app" anymore. We were building a real product.
+
+---
+
+## Going All In — Buying a Domain and a Server
+
+Most hackathon teams stop at "let's deploy it on Vercel and call it a day."
+
+We didn't.
+
+We bought an actual domain — **bookspot.me** — and a **virtual machine** to run everything ourselves. Not because we had to, but because we wanted this to feel like a real, production-grade product, not just a hackathon demo that dies the moment the judges close the tab.
+
+Once the domain and VM were sorted, there was no turning back. We had officially committed.
+
+---
+
+## Building BookSpot
+
+We started building the project in **Next.js**.
+
+If you want to peek at how the project actually looks under the hood, here's the link:
+
+> <a href="https://github.com/tanishtirpathi/caffine/" target="_blank">
+>   https://github.com/tanishtirpathi/caffine/
+> </a>
+
+The days that followed were a blur — coding, testing, breaking things, fixing them, and repeating that cycle over and over.
+
+Once the core was ready, I moved on to hosting it myself on the VM using **Nginx** and **PM2**, along with a bunch of other configuration work to make sure it didn't fall apart under pressure.
+
+There's something oddly satisfying about doing your own deployment instead of clicking a "Deploy" button on some platform. Every Nginx config error, every PM2 process crash at 2 AM, every "why is the server not responding" moment — it all felt like a small war we were fighting just to keep BookSpot alive.
+
+And somewhere in between all of that, the roles quietly settled into place:
+
+- I was buried in backend logic, server configs, and figuring out why things randomly broke at 1 AM
+- My friend was polishing every screen, making sure the dashboard didn't just work — it actually looked like something a college would trust
+- Our researcher teammate kept pulling us back to reality, asking "but will an actual student or teacher use this the way we're imagining?"
+
+That third question ended up shaping a lot of small decisions — like how approval notifications should look, or how a teacher should be able to reject a booking with a reason instead of just a blunt "no."
+
+By the time we were done, BookSpot actually looked like a product, not a hackathon prototype thrown together overnight.
+
+---
+
+<img
+  src="/images/Blog/Hack6.webp"
+  alt="BookSpot website homepage"
+  width="600"
+/>
+
+---
+
+## The Load Testing Reality Check
+
+Here's where things got genuinely interesting.
+
+We stress-tested the platform, and the first results were:
+
+- **~400 concurrent users**
+- **9% error rate**
+
+Not terrible for a first pass, but not something we were proud of either. A 9% error rate at that scale meant that for every 100 people trying to book or manage a room, roughly 9 of them would hit a failure.
+
+That wasn't acceptable. Not for a project we were calling "insane level."
+
+So I went back in and added **Redis** into the mix, along with a few other optimizations under the hood.
+
+The results after that?
+
+- **1200+ concurrent users**
+- **0% error rate**
+
+Going from 400 users with a 9% failure rate to over **1200 concurrent users with zero errors** felt like one of those quiet wins nobody outside the team would ever fully appreciate — but we knew exactly how much work went into that number.
+
+---
+
+<img
+  src="/images/Blog/Hack5.webp"
+  alt="Load testing dashboard showing 1200+ concurrent users at 0% error rate"
+  width="600"
+/>
+
+---
+
+## Hackathon Day — The Real Test Begins
+
+All the late nights, the planning, the redis migration, the domain purchase — it all led to this one day.
+
+### Round 1 — The Quiz
+
+The first round was a **40-question quiz**. Straightforward, no surprises. We cleared it without much drama.
+
+One round down.
+
+### Round 2 — The Pitch That Didn't Land
+
+This round was about giving the judges a basic overview of our project. Only **5 teams** would make it past this stage.
+
+We walked in confident. We had a real product, real load-testing numbers, real thought put into every feature.
+
+And then... the judges just weren't impressed.
+
+No enthusiasm on their faces. No follow-up excitement. Just a polite nod and "okay, next."
+
+We walked out of that room feeling genuinely low. After everything we had put into this project, that reaction stung more than we expected.
+
+There's a very specific kind of silence that happens when three teammates who've spent nights fixing servers and redesigning dashboards walk out of a pitch room and just... don't talk. That silence lasted the whole walk back to where the other teams were sitting. Nobody said "maybe it's fine." Nobody tried to fake positivity. We just sat there, replaying the room in our heads, wondering what we could've said differently.
+
+---
+
+### The Twist
+
+Then came the announcement.
+
+Somehow, against what we expected after that lukewarm reaction, **we were selected for Round 3.**
+
+The moment we heard our team name, the disappointment from a few minutes ago disappeared instantly. We were ecstatic.
+
+---
+
+## Round 3 — The Round That Almost Broke Us
+
+This was the big one. The **PPT round.**
+
+My friend opened the presentation, gave a solid 3-minute intro, setting the tone well.
+
+Then it was my turn.
+
+And right as I started, one of the judges hit me with a question — and I fumbled it.
+
+Not a small stumble. A real, visible fumble. The kind where you can feel your own confidence slipping in real time in front of a panel of judges.
+
+From there, it turned into a back-and-forth of questions and answers, some of which turned into genuinely **heated technical discussions** — judges pushing hard on architecture decisions, scalability choices, and why we made the calls we made.
+
+After about **15 minutes** of this intense back-and-forth, we walked out of that room mentally drained.
+
+And honestly? We were convinced we had messed it up.
+
+---
+
+## Letting Go — The Party
+
+At this point, we made a decision: stop thinking about the result.
+
+We had done what we could. Fumbled question and all, we had genuinely built something we were proud of. So instead of sitting around anxiously refreshing our thoughts about the outcome, we went to the after-party and just... let go.
+
+No stress. No overthinking. Just enjoying the moment with everyone else who had been through the same chaos that day.
+
+---
+
+## The Call That Changed Everything
+
+Then, out of nowhere, one of the hosts called us over.
+
+> "The results are coming out. Come."
+
+We walked over — half curious, half bracing for disappointment after how Round 3 had gone.
+
+**Five minutes later, we found out we had won first place.**
+
+We were in complete shock. Genuinely, physically shocked — the kind where you ask someone to repeat it because you don't trust what you just heard.
+
+---
+
+<img
+  src="/images/Blog/Hack3.webp"
+  alt="Team on stage after winning first place"
+  width="600"
+/>
+
+---
+
+<img
+  src="/images/Blog/Hack4.webp"
+  alt="Team holding the trophy after the win"
+  width="350"
+/>
+
+---
+
+## Why the Judges Picked Us
+
+What made it even more surreal was what the judges told us afterward — in front of the other students.
+
+They said the win came down to one thing: even when I fumbled that first question, I never hesitated to keep engaging technically. I stood by our architecture, defended our decisions, and didn't back down during the heated back-and-forth.
+
+According to them, that technical confidence — even mid-fumble — is what separated us from the other four teams in that final round.
+
+Hearing that changed how the whole day felt in hindsight. What had felt like our worst moment in Round 3 ended up being the exact reason we won.
+
+---
+
+<img
+  src="/images/Blog/Hack1.webp"
+  alt="Team group photo with certificate after winning"
+  width="600"
+/>
+
+---
+
+<img
+  src="/images/Blog/Hack2.webp"
+  alt="Celebrating the first place win"
+  width="350"
+/>
+
+---
+
+## Final Thoughts
+
+Looking back at everything — from that first message about the hackathon on 14th September, to the midnight Google Meet call, to buying a domain and a VM like we were building an actual startup, to going from 400 users with a 9% error rate to 1200+ users at 0%, to fumbling a question in front of judges and still walking away with first place — this hackathon taught me something no tutorial ever could:
+
+**Confidence under pressure matters more than a perfect answer.**
+
+We didn't win because everything went smoothly. We won despite things not going smoothly. We won because when it mattered, we stood behind what we built and didn't flinch.
+
+If there's one thing I'd tell anyone going into their next hackathon, it's this:
+
+> Build the ambitious version. Push through the moments that feel like failure. And don't hesitate when someone questions your work — defend it, because you know it better than anyone else in that room.
+
+Onwards to the next build.
