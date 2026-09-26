@@ -13,21 +13,31 @@ interface GitHubData {
   commit: {
     message: string;
     date: string;
+    url: string;
   };
 }
 
 export default function GithubActivity() {
   const [data, setData] = useState<GitHubData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("/api/github")
-      .then((res) => res.json())
+    const controller = new AbortController();
+
+    fetch("/api/github", { signal: controller.signal })
       .then((res) => {
-        setData(res);
-        setLoading(false);
+        if (!res.ok) throw new Error("Unable to load GitHub activity");
+        return res.json();
       })
-      .catch(() => setLoading(false));
+      .then((response: GitHubData) => setData(response))
+      .catch((requestError: unknown) => {
+        if (requestError instanceof DOMException && requestError.name === "AbortError") return;
+        setError(true);
+      })
+      .finally(() => setLoading(false));
+
+    return () => controller.abort();
   }, []);
 
   const skeleton = (
@@ -61,20 +71,26 @@ export default function GithubActivity() {
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="flex items-center gap-3 bg-black/5 dark:bg-white/5 px-4 py-2 rounded-full border border-black/10 dark:border-white/10"
+                className="flex items-center gap-3 bg-black/5 
+                dark:bg-white/5 px-4 py-2 rounded-full border border-black/10 dark:border-white/10 "
               >
                 <div className="flex items-center gap-2 shrink-0">
                   <div className="relative flex h-2 w-2">
+
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                   </div>
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-black/40 dark:text-white/40">Latest</span>
+                  <span 
+                  className="text-[10px] uppercase tracking-wider
+                   font-bold text-black/40 dark:text-white/40">Latest</span>
                 </div>
                 
                 <a
                   href={data.repo.url}
                   target="_blank"
-                  className="group flex items-center gap-2 text-xs font-medium text-blue-300 dark:text-blue-300 hover:underline underline-offset-4"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-xs font-medium 
+                  text-blue-300 dark:text-blue-300 hover:underline underline-offset-4"
                 >
                   <GitCommit className="w-3 h-3" />
                   <span className="truncate max-w-[150px] sm:max-w-[250px]">{data.commit.message}</span>
@@ -92,7 +108,11 @@ export default function GithubActivity() {
           
           <div className="relative overflow-x-auto p-6 bg-transparent  
           ">
-            {loading ? skeleton : (
+            {loading ? skeleton : error || !data ? (
+              <div className="flex min-h-[120px] items-center justify-center rounded-xl border border-black/10 px-6 text-center text-sm text-black/50 dark:border-white/10 dark:text-white/50">
+                GitHub activity is temporarily unavailable.
+              </div>
+            ) : (
               <a
                 href="https://github.com/tanishtirpathi"
                 target="_blank"
