@@ -42,7 +42,7 @@ export default function Home() {
         <TechStack />
         <GithubActivity />
         <SectionBorder className="mt-6" />
-          <ExperienceSection />
+        <ExperienceSection />
         <Message />
         <SectionBorder className="mt-6" />
         <BlogShow />
@@ -53,7 +53,7 @@ export default function Home() {
         <SectionBorder className="mt-6" />
         <BottomImage />
         <Footer />
-        <AIAgent />
+      
 
       </main>
     </div>

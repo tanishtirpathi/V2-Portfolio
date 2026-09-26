@@ -9,6 +9,14 @@ export interface DataExperence {
 
 export const dataExperence: DataExperence[] = [  {
     id: 1,
+    title: "Dev-Spark Hackathon – Winner",
+    company: "First Position",
+    startDate: "September-2026",
+    description:
+      "Lead a team to develop a fully developed web application who can handle 1200+ concurrent users with a  backend architecture. Implemented advanced features, optimized performance, and ensured scalability. Secured 1st position in the hackathon.",
+    Technologies: ["Concurrent","VM2", "PM2", "Ningx" , "Next js" , "Postgress "]
+  }, {
+    id: 2,
     title: "Smart India Hackathon – Internal Winner",
     company: "College Internal Round",
     startDate: "September-2025",
@@ -17,7 +25,7 @@ export const dataExperence: DataExperence[] = [  {
     Technologies: ["LLM","Mongodb", "Express", "React" , "Next js" , "node-js "]
   },
   {
-    id: 2,
+    id: 3,
     title: "AI Chatbot Developer – Hackathon Winner",
     company: "IBM District Level Hackathon",
     startDate: "December-2024",
@@ -27,7 +35,7 @@ export const dataExperence: DataExperence[] = [  {
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Remote Trainee / Intern",
     company: "Scaler",
     startDate: "June-2024",

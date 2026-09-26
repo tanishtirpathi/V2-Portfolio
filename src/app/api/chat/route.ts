@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { QdrantClient } from "@qdrant/js-client-rest";
 import { GoogleGenAI } from "@google/genai";
-import { pipeline } from "@xenova/transformers";
-
+//! error giving on the hosting 
+import { pipeline, env } from "@huggingface/transformers";
 // ======================================================
 // CONFIG
 // ======================================================
